@@ -1,0 +1,9 @@
+[submodule "externals/CoolProp"]
+	path = externals/CoolProp
+	url = https://github.com/CoolProp/CoolProp.git
+[submodule "externals/ChebTools"]
+	path = externals/ChebTools
+	url = https://github.com/usnistgov/ChebTools.git
+[submodule "externals/teqp"]
+	path = externals/teqp
+	url = https://github.com/usnistgov/teqp
