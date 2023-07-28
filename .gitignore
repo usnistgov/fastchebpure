@@ -3,3 +3,5 @@ bld/
 build/
 kdev/
 bld2/
+/**/.DS_Store
+bldOSX/

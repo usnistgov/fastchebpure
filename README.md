@@ -13,6 +13,8 @@
 4. ``cmake --build . --target fastcheb --config Release``
 5. On windows with visual studio, ``Release\fastcheb.exe``, or on linux, ``./fastcheb``
 
+The output should be in the output folder
+
 ## Questions/issues
 
 Please email ian.bell@nist.gov, or find me online and I'll do my best to help.
