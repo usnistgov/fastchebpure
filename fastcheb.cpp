@@ -227,7 +227,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
         for (auto counter = 0; counter < numsteps; ++counter){
             // Set up the residual function
             teqp::IsothermPureVLEResiduals<decltype(model), my_float_mp, teqp::ADBackends::multicomplex> residual(model, T);
-            auto rhovec = do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoL, rhoV, 10).cast<double>();
+            auto rhovec = teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoL, rhoV, 10).cast<double>();
             rhoL = rhovec[0]; rhoV = rhovec[1];
             auto [drhodTL, drhodTV] = getdrhodTs(model, T, rhoL, rhoV);
             rhoL += drhodTL*dT;
@@ -311,7 +311,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
             
             // Set up the residual function
             teqp::IsothermPureVLEResiduals<decltype(model), my_float_mp, teqp::ADBackends::multicomplex> residual(model, T);
-            decltype(do_pure_VLE_T<decltype(residual), my_float_mp>(residual, 1.0, 1.0, 10)) rhovec;
+            decltype(teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, 1.0, 1.0, 10)) rhovec;
             
             // Try to just do the iteration, let's hope this will work
             if (Theta < critical_polynomial_Theta){
@@ -323,6 +323,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
             }
             else{
                 rhovec = do_pure_VLE_T<decltype(residual), my_float_mp>(residual, anc.rhoL(T), anc.rhoV(T), 10);
+                rhovec = teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, anc.rhoL(T), anc.rhoV(T), 10);
             }
             
             bool bad_solution = false;
@@ -346,7 +347,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
                         // And if that doesn't work, we use the critical extrapolation formula based on the expansion closest
                         // to the critical point that is fully converged
                         double rhoLextrap = last_estimationL.value()(T), rhoVextrap = last_estimationV.value()(T);
-                        rhovec = do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoLextrap, rhoVextrap, 10);
+                            rhovec = teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoLextrap, rhoVextrap, 10);
                     }
                 }
                 else{
@@ -543,8 +544,7 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
             Eigen::ArrayXd rhovec;
             if (std::abs(T - Tcrittrue) > 1e-14 && T < ccL.get_exps().back().xmax() && T < ccV.get_exps().back().xmax()) {
                 teqp::IsothermPureVLEResiduals<decltype(model), my_float_mp, teqp::ADBackends::multicomplex> residual(model, T);
-                rhovec = do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoSAL*(1+1e-5), rhoSAV*(1-1e-5), 10).cast<double>();
-//                rhovec = teqp::pure_VLE_T<decltype(model), my_float_mp, teqp::ADBackends::multicomplex>(model, T, rhoSAL*(1+1e-5), rhoSAV*(1-1e-5), 10).cast<double>();
+                rhovec = teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoSAL*(1+1e-5), rhoSAV*(1-1e-5), 10).cast<double>();
                 if (!std::isfinite(rhovec[0])) {
                     throw FailedIteration(T, "Iteration failed @T=" + std::to_string(T) + " K for " + fluid + ". Tcrittrue is " + std::to_string(Tcrittrue) + " K.");
                 }
