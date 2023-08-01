@@ -468,3 +468,127 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     std::ofstream ofs(ofpath); ofs << jo.dump(2);
     std::cout << std::get<0>(exps).size() << " expansions" << std::endl;
 }
+
+
+/**
+\brief Check the superancillaries
+ 
+ This obtains the degree-doubled nodes for each expansions in the superancillary, and carries out a VLE calculation at the given point.  An output JSON data structure is written to file at the specified location
+ 
+ \param fluid The FLD name coming from REFPROP
+ \param input_file_path The path to the superancillaries to be loaded from, in JSON format
+ \param outfile The path to the file to be written by this file
+ */
+void check_superancillaries(const std::string& fluid, const std::string& input_file_path, const std::string& outfile) {
+    const std::string fluid_json_path = teqp_datapath + "/dev/fluids/" + fluid + ".json";
+    auto model = teqp::build_multifluid_model({ fluid_json_path }, teqp_datapath);
+
+    auto get_collection = [](const std::string& expansion_file){
+        const nlohmann::json jfile = teqp::load_a_JSON_file(expansion_file);
+        
+        std::vector<ChebTools::ChebyshevExpansion> oL;
+        for (const auto& ex : jfile.at("jexpansionsL")) {
+            oL.emplace_back(ex.at("coef").get<std::vector<double>>(), ex.at("xmin"), ex.at("xmax"));
+        }
+        
+        std::vector<ChebTools::ChebyshevExpansion> oV;
+        for (const auto& ex : jfile.at("jexpansionsV")) {
+            oV.emplace_back(ex.at("coef").get<std::vector<double>>(), ex.at("xmin"), ex.at("xmax"));
+        }
+        
+        return std::make_tuple(ChebTools::ChebyshevCollection(oL), ChebTools::ChebyshevCollection(oV));
+    };
+
+    struct FailedIteration : public std::exception {
+        std::string msg;
+        double T;
+        FailedIteration(double T, const std::string& msg) : T(T), msg(msg) {};
+    };
+    auto db = nlohmann::json::array();
+
+    // Load expansions from file for liquid and vapor
+    auto [ccL, ccV] = get_collection(input_file_path);
+    auto& ccL_ = ccL, ccV_ = ccV;
+    auto meta = teqp::load_a_JSON_file(input_file_path)["meta"];
+    double Tcrittrue = meta.at("Tcrittrue / K");
+    double rhocrittrue = meta.at("rhocrittrue / mol/m^3");
+    
+    auto get_degreedoubled_nodes = [&]() {
+        std::vector<double> x;
+        for (auto cc : { ccL_ }) {
+            for (auto& ex : cc.get_exps()) {
+                auto N = ex.coef().size() - 1;
+                auto nodes_doubled = ChebTools::ChebyshevExpansion::factory(2*N, [](double x) { return x; }, ex.xmin(), ex.xmax()).get_nodes_realworld();
+                for (auto& n : nodes_doubled) {
+                    x.push_back(n);
+                }
+            }
+        }
+        std::sort(x.begin(), x.end());
+        return x;
+    };
+
+    // Collect all the nodes from the expansions, and their degree-doubled in-between nodes
+    std::vector<double> Tnodes = get_degreedoubled_nodes();
+    
+    for (auto T : Tnodes) {
+        try {
+            double Theta = (Tcrittrue-T)/Tcrittrue;
+            
+            double rhoSAL = ccL(T) ;//+ rhocrittrue + meta["BrhoL / mol/m^3"].get<double>()*sqrt(Theta);
+            double rhoSAV = ccV(T) ;//+ rhocrittrue + meta["BrhoV / mol/m^3"].get<double>()*sqrt(Theta);
+            
+            Eigen::ArrayXd rhovec;
+            if (std::abs(T - Tcrittrue) > 1e-14 && T < ccL.get_exps().back().xmax() && T < ccV.get_exps().back().xmax()) {
+                teqp::IsothermPureVLEResiduals<decltype(model), my_float_mp, teqp::ADBackends::multicomplex> residual(model, T);
+                rhovec = do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoSAL*(1+1e-5), rhoSAV*(1-1e-5), 10).cast<double>();
+//                rhovec = teqp::pure_VLE_T<decltype(model), my_float_mp, teqp::ADBackends::multicomplex>(model, T, rhoSAL*(1+1e-5), rhoSAV*(1-1e-5), 10).cast<double>();
+                if (!std::isfinite(rhovec[0])) {
+                    throw FailedIteration(T, "Iteration failed @T=" + std::to_string(T) + " K for " + fluid + ". Tcrittrue is " + std::to_string(Tcrittrue) + " K.");
+                }
+            }
+            else {
+                rhovec = (Eigen::Array2d() << rhocrittrue, rhocrittrue).finished();
+            }
+            if (rhovec.size() != 2) {
+                std::cout << "rhovec is not 2 elements in length" << std::endl;
+            }
+            
+            db.push_back(nlohmann::json{
+                {"T / K", T},
+                {"rho'(SA) / mol/m^3", rhoSAL},
+                {"rho'(mp) / mol/m^3", rhovec[0]},
+                {"rho'(SA)/rho'(mp)", rhoSAL/rhovec[0]},
+                {"rho''(SA) / mol/m^3", rhoSAV},
+                {"rho''(mp) / mol/m^3", rhovec[1]},
+                {"rho''(SA)/rho''(mp)", rhoSAV/rhovec[1]},
+            });
+        }
+        catch (FailedIteration& f) {
+            if (f.T > 0.9999 * Tcrittrue) {
+
+            }
+            else {
+                std::cout << f.msg << std::endl;
+            }
+            db.push_back(nlohmann::json{
+                {"T / K", T},
+                {"errmsg", f.msg}
+            });
+        }
+        catch(std::exception& e){
+            std::cout << e.what() << std::endl;
+            db.push_back(nlohmann::json{
+                {"T / K", T},
+                {"errmsg", e.what()}
+            });
+        }
+    }
+    
+    // Return results
+    nlohmann::json jo = {
+        {"meta", meta},
+        {"data", db}
+    };
+    std::ofstream ofs(outfile); ofs << jo.dump(2);
+}
