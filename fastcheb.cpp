@@ -161,6 +161,20 @@ auto paired_dyadic_splitting(const std::size_t N, const PairedDyadicSplittingFun
     return std::make_tuple(expansionsA, expansionsB);
 };
 
+/// A custom exception class that holds onto the temperature
+struct FailedIteration : public std::exception {
+    std::string msg;
+    double T;
+    FailedIteration(double T, const std::string& msg) : T(T), msg(msg) {};
+    const char* what() const noexcept override {
+        return msg.c_str();
+    }
+};
+
+/** The function to  fit a superancillary function for a given fluid
+ 
+ \note It is thread-safe, so can be run in parallel
+ */
 void build_superancillaries(const std::string &fluid, const std::string &ofpath){
     const std::string fluid_json_path = teqp_datapath + "/dev/fluids/" + fluid + ".json";
     auto model = teqp::build_multifluid_model({ fluid_json_path }, teqp_datapath);
@@ -239,8 +253,8 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
             if (Theta < 1e-10){
                 break;
             }
-            std::cout << Theta << "," << rhoL << "," << rhoV << std::endl;
-            if (!std::isfinite(rhoL)){
+//            std::cout << Theta << "," << rhoL << "," << rhoV << std::endl;
+            if (!std::isfinite(rhoL) || !std::isfinite(rhoV) || !std::isfinite(Theta) || rhoL <= rhoV){
                 break;
             }
             
@@ -257,19 +271,20 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
             auto view = (Eigen::Map<Eigen::ArrayXd>(&(Thetas[0]), N)).log();
             A.col(i) = view.pow(i);
         }
-        bL = (Eigen::Map<Eigen::ArrayXd>(&(rhoLs[0]), N)).log();
-        bV = (Eigen::Map<Eigen::ArrayXd>(&(rhoVs[0]), N)).log();
+        bL = (Eigen::Map<Eigen::ArrayXd>(&(rhoLs[0]), N)-rhocrittrue).log();
+        bV = (rhocrittrue-Eigen::Map<Eigen::ArrayXd>(&(rhoVs[0]), N)).log();
         cLarray = A.colPivHouseholderQr().solve(bL).array();
         cVarray = A.colPivHouseholderQr().solve(bV).array();
-        std::cout << cLarray << std::endl;
-        std::cout << cVarray << std::endl;
+//        std::cout << cLarray << std::endl;
+//        std::cout << cVarray << std::endl;
         
-        auto rhoLcheck = ((A*cLarray.matrix()).array()).exp()/Eigen::Map<Eigen::ArrayXd>(&(rhoLs[0]), N)-1;
-        auto rhoVcheck = ((A*cVarray.matrix()).array()).exp()/Eigen::Map<Eigen::ArrayXd>(&(rhoVs[0]), N)-1;
-        std::cout << rhoLcheck.abs().mean() << std::endl;
-        std::cout << rhoVcheck.abs().mean() << std::endl;
-        std::cout << rhoLcheck << std::endl;
-        std::cout << rhoVcheck << std::endl;
+        /////// Code to check the results of the fit
+        auto rhoLcheck = ((A*cLarray.matrix()).array()).exp() + rhocrittrue;
+        auto rhoVcheck = rhocrittrue - ((A*cVarray.matrix()).array()).exp();
+        auto rhoLdev = rhoLcheck/Eigen::Map<Eigen::ArrayXd>(&(rhoLs[0]), N)-1;
+        auto rhoVdev = rhoVcheck/Eigen::Map<Eigen::ArrayXd>(&(rhoVs[0]), N)-1;
+        std::cout << rhoLdev.abs().mean()*100 << "% (liq) for critical ancillary for " << fluid << std::endl;
+        std::cout << rhoVdev.abs().mean()*100 << "% (vap) for critical ancillary for " << fluid << std::endl;
     }
     
     // Get the Brho values for each phase at a specified value of T far enough
@@ -286,14 +301,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
 //    if (pseudo_pure) {
 //        return std::make_tuple(std::vector<ChebTools::ChebyshevExpansion>{}, nlohmann::json{});
 //    }
-    struct FailedIteration : public std::exception {
-        std::string msg;
-        double T;
-        FailedIteration(double T, const std::string& msg) : T(T), msg(msg) {};
-        const char* what() const noexcept override {
-            return msg.c_str();
-        }
-    };
+    
     struct CriticalEstimation {
         double Brho, beta, Tcrittrue, rhocrittrue;
         double operator ()(double T){ return rhocrittrue + Brho*pow((Tcrittrue-T)/Tcrittrue, beta); }
@@ -313,16 +321,17 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
             teqp::IsothermPureVLEResiduals<decltype(model), my_float_mp, teqp::ADBackends::multicomplex> residual(model, T);
             decltype(teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, 1.0, 1.0, 10)) rhovec;
             
+            auto x = log(Theta);
+            auto rhoLpoly = rhocrittrue + exp(cLarray[0] + cLarray[1]*x + cLarray[2]*pow(x, 2) + cLarray[3]*pow(x, 3) + cLarray[4]*pow(x, 4) + cLarray[5]*pow(x, 5) + cLarray[6]*pow(x, 6));
+            auto rhoVpoly = rhocrittrue - exp(cVarray[0] + cVarray[1]*x + cVarray[2]*pow(x, 2) + cVarray[3]*pow(x, 3) + cVarray[4]*pow(x, 4) + cVarray[5]*pow(x, 5) + cVarray[6]*pow(x, 6));
+            
             // Try to just do the iteration, let's hope this will work
             if (Theta < critical_polynomial_Theta){
-                // Now we enter into fallback methods. The first is a polynomial fit to the density in the critical region
-                auto x = log(Theta);
-                auto rhoLpoly = exp(cLarray[0] + cLarray[1]*x + cLarray[2]*pow(x, 2) + cLarray[3]*pow(x, 3) + cLarray[4]*pow(x, 4) + cLarray[5]*pow(x, 5) + cLarray[6]*pow(x, 6));
-                auto rhoVpoly = exp(cVarray[0] + cVarray[1]*x + cVarray[2]*pow(x, 2) + cVarray[3]*pow(x, 3) + cVarray[4]*pow(x, 4) + cVarray[5]*pow(x, 5) + cVarray[6]*pow(x, 6));
-                rhovec = do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoLpoly, rhoVpoly, 10);
+                // Use a polynomial fit to the density in the critical region as starting densities
+                rhovec = teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoLpoly, rhoVpoly, 10);
             }
             else{
-                rhovec = do_pure_VLE_T<decltype(residual), my_float_mp>(residual, anc.rhoL(T), anc.rhoV(T), 10);
+                // Use the conventional ancillary functions as the starting densities
                 rhovec = teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, anc.rhoL(T), anc.rhoV(T), 10);
             }
             
@@ -338,16 +347,17 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
                 
                 if (Theta < critical_polynomial_Theta){
                     // Now we enter into fallback methods. The first is a polynomial fit to the density in the critical region
-                    auto x = log(Theta);
-                    auto rhoLpoly = exp(cLarray[0] + cLarray[1]*x + cLarray[2]*pow(x, 2) + cLarray[3]*pow(x, 3) + cLarray[4]*pow(x, 4) + cLarray[5]*pow(x, 5) + cLarray[6]*pow(x, 6));
-                    auto rhoVpoly = exp(cVarray[0] + cVarray[1]*x + cVarray[2]*pow(x, 2) + cVarray[3]*pow(x, 3) + cVarray[4]*pow(x, 4) + cVarray[5]*pow(x, 5) + cVarray[6]*pow(x, 6));
 //                    std::cout << Theta << "," << rhoLanc << "," << rhoLpoly << "," << rhoVanc << "," << rhoVpoly << std::endl;
-                    rhovec = do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoLpoly, rhoVpoly, 10);
                     if (!std::isfinite(static_cast<double>(rhovec[0])) || rhovec[1] >= rhovec[0] || rhovec[0] < 0){
                         // And if that doesn't work, we use the critical extrapolation formula based on the expansion closest
                         // to the critical point that is fully converged
-                        double rhoLextrap = last_estimationL.value()(T), rhoVextrap = last_estimationV.value()(T);
+                        if (last_estimationL && last_estimationV){
+                            double rhoLextrap = last_estimationL.value()(T), rhoVextrap = last_estimationV.value()(T);
                             rhovec = teqp::do_pure_VLE_T<decltype(residual), my_float_mp>(residual, rhoLextrap, rhoVextrap, 10);
+                        }
+                        else{
+                            throw FailedIteration(T, "last_estimation not available @T="+std::to_string(T)+". Tcrittrue is "+std::to_string(Tcrittrue)+" K");
+                        }
                     }
                 }
                 else{
@@ -502,11 +512,7 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
         return std::make_tuple(ChebTools::ChebyshevCollection(oL), ChebTools::ChebyshevCollection(oV));
     };
 
-    struct FailedIteration : public std::exception {
-        std::string msg;
-        double T;
-        FailedIteration(double T, const std::string& msg) : T(T), msg(msg) {};
-    };
+    
     auto db = nlohmann::json::array();
 
     // Load expansions from file for liquid and vapor
