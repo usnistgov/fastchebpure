@@ -1,0 +1,349 @@
+{
+ "ANCILLARIES": {
+  "pS": {
+   "T_r": 227.51,
+   "Tmax": 227.51,
+   "Tmin": 0.0,
+   "description": "P=Pc*EXP[SUM(Ni*Theta^ti)*Tc/T]",
+   "n": [
+    -6.1905,
+    -9.1398,
+    12.192,
+    -4.7215,
+    -2.0439
+   ],
+   "reducing_value": 3750000.0,
+   "t": [
+    1.0,
+    1.5,
+    1.64,
+    2.5,
+    7.3
+   ],
+   "type": "pL",
+   "using_tau_r": true
+  },
+  "rhoL": {
+   "T_r": 227.51,
+   "Tmax": 227.51,
+   "Tmin": 0.0,
+   "description": "D=Dc*[1+SUM(Ni*Theta^ti)]",
+   "n": [
+    -1.0612,
+    4.4343,
+    -3.8753,
+    2.9825,
+    0.30746
+   ],
+   "reducing_value": 7109.4194,
+   "t": [
+    0.1,
+    0.24,
+    0.4,
+    0.6,
+    3.9
+   ],
+   "type": "rhoLnoexp",
+   "using_tau_r": false
+  },
+  "rhoV": {
+   "T_r": 227.51,
+   "Tmax": 227.51,
+   "Tmin": 0.0,
+   "description": "D=Dc*EXP[SUM(Ni*Theta^ti)]",
+   "n": [
+    -55.804,
+    108.68,
+    -64.257,
+    -1195.4,
+    3668.8,
+    -2595.6
+   ],
+   "reducing_value": 7109.4194,
+   "t": [
+    0.713,
+    0.84,
+    1.0,
+    5.8,
+    6.3,
+    6.6
+   ],
+   "type": "rhoV",
+   "using_tau_r": false
+  }
+ },
+ "EOS": [
+  {
+   "BibTeX_CP0": "",
+   "BibTeX_EOS": "??",
+   "STATES": {
+    "reducing": {
+     "T": 227.51,
+     "T_units": "K",
+     "hmolar": -99999999999.0,
+     "hmolar_units": "J/mol",
+     "p": 3750000.0,
+     "p_units": "Pa",
+     "rhomolar": 7109.4194,
+     "rhomolar_units": "mol/m^3",
+     "smolar": 999999999999999.0,
+     "smolar_units": "J/mol/K"
+    },
+    "sat_min_liquid": {
+     "T": 120.0,
+     "T_units": "K",
+     "hmolar": -999999999999.0,
+     "hmolar_units": "J/mol",
+     "p": 101.2,
+     "p_units": "Pa",
+     "rhomolar": 1e+16,
+     "rhomolar_units": "mol/m^3",
+     "smolar": 1e+20,
+     "smolar_units": "J/mol/K"
+    },
+    "sat_min_vapor": {
+     "T": 120.0,
+     "T_units": "K",
+     "hmolar": 9999999999999.0,
+     "hmolar_units": "J/mol",
+     "p": 101.2,
+     "p_units": "Pa",
+     "rhomolar": 99999999999999.0,
+     "rhomolar_units": "mol/m^3",
+     "smolar": 1e+19,
+     "smolar_units": "J/mol/K"
+    }
+   },
+   "T_max": 623.0,
+   "T_max_units": "K",
+   "Ttriple": 89.54,
+   "Ttriple_units": "K",
+   "acentric": 0.1785,
+   "acentric_units": "-",
+   "alpha0": [
+    {
+     "a1": 0.0,
+     "a2": 0.0,
+     "type": "IdealGasHelmholtzLead"
+    },
+    {
+     "a": -1,
+     "type": "IdealGasHelmholtzLogTau"
+    },
+    {
+     "R": 8.31451,
+     "T0": 298.15,
+     "Tc": 227.51,
+     "c": [
+      3.9465247,
+      -0.0088586725,
+      0.00013939626,
+      -3.0056204e-07,
+      2.0504001e-10
+     ],
+     "t": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0
+     ],
+     "type": "IdealGasHelmholtzCP0PolyT"
+    }
+   ],
+   "alphar": [
+    {
+     "d": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      2.0,
+      2.0,
+      2.0,
+      3.0,
+      3.0,
+      4.0,
+      4.0,
+      5.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      2.0,
+      2.0
+     ],
+     "g": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.99832625,
+      0.99832625,
+      0.99832625,
+      0.99832625,
+      0.99832625,
+      0.99832625
+     ],
+     "l": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0
+     ],
+     "n": [
+      -0.334698748966,
+      0.586690904687,
+      -0.147068929692,
+      1.03999039623,
+      -2.45792025288,
+      0.799614557889,
+      -0.749498954929,
+      0.152177772502,
+      -0.293408331764,
+      0.717794502866,
+      -0.0426467444199,
+      0.226562749365,
+      -0.391091694003,
+      -0.0257394804936,
+      0.0554844884782,
+      0.00610988261204,
+      0.334698748966,
+      -0.586690904687,
+      0.147068929692,
+      -0.190315426142,
+      0.716157133959,
+      -0.703161904626
+     ],
+     "t": [
+      3.0,
+      4.0,
+      5.0,
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      0.0,
+      1.0,
+      2.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      3.0,
+      4.0,
+      5.0,
+      3.0,
+      4.0,
+      5.0
+     ],
+     "type": "ResidualHelmholtzExponential"
+    }
+   ],
+   "gas_constant": 8.31451,
+   "gas_constant_units": "J/mol/K",
+   "molar_mass": 0.08801,
+   "molar_mass_units": "kg/mol",
+   "p_max": 51000000.0,
+   "p_max_units": "Pa",
+   "pseudo_pure": false
+  }
+ ],
+ "INFO": {
+  "2DPNG_URL": "http://www.chemspider.com/ImagesHandler.ashx?id=-1",
+  "ALIASES": [],
+  "CAS": "75-73-0",
+  "CHEMSPIDER_ID": -1,
+  "ENVIRONMENTAL": {
+   "ASHRAE34": "?",
+   "FH": 99999999,
+   "GWP100": 99999999.0,
+   "GWP20": -99999999999,
+   "GWP500": -9999999999,
+   "HH": -999999999,
+   "Name": "R14",
+   "ODP": 99999999.0,
+   "PH": -999999
+  },
+  "FORMULA": "CF4",
+  "INCHI_KEY": "?",
+  "INCHI_STRING": "?",
+  "NAME": "R14",
+  "REFPROP_NAME": "R14",
+  "SMILES": "?"
+ },
+ "STATES": {
+  "critical": {
+   "T": 227.51,
+   "T_units": "K",
+   "hmolar": -99999999999.0,
+   "hmolar_units": "J/mol",
+   "p": 3750000.0,
+   "p_units": "Pa",
+   "rhomolar": 7109.4194,
+   "rhomolar_units": "mol/m^3",
+   "smolar": 999999999999999.0,
+   "smolar_units": "J/mol/K"
+  },
+  "triple_liquid": {
+   "T": 120.0,
+   "T_units": "K",
+   "hmolar": -999999999999.0,
+   "hmolar_units": "J/mol",
+   "p": 101.2,
+   "p_units": "Pa",
+   "rhomolar": 1e+16,
+   "rhomolar_units": "mol/m^3",
+   "smolar": 1e+20,
+   "smolar_units": "J/mol/K"
+  },
+  "triple_vapor": {
+   "T": 120.0,
+   "T_units": "K",
+   "hmolar": 9999999999999.0,
+   "hmolar_units": "J/mol",
+   "p": 101.2,
+   "p_units": "Pa",
+   "rhomolar": 99999999999999.0,
+   "rhomolar_units": "mol/m^3",
+   "smolar": 1e+19,
+   "smolar_units": "J/mol/K"
+  }
+ }
+}
