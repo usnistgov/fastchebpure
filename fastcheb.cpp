@@ -90,6 +90,8 @@ auto paired_factory(const std::size_t N, const PairedDyadicSplittingFunction& fu
     return std::make_tuple(ChebyshevExpansion(L*fL, xmin, xmax), ChebyshevExpansion(L*fR, xmin, xmax));
 }
 
+// A convenience function that returns true if the paired expansions have converged
+// according to the convergence criterion
 bool is_converged(int Msplit, double tol, const ChebTools::ChebyshevExpansion& ceL, const ChebTools::ChebyshevExpansion& ceV){
     // Convenience function to get the M-element norm ratio, which is our convergence criterion
     auto get_err = [Msplit](const ChebTools::ChebyshevExpansion& ce) { return ce.coef().tail(Msplit).norm() / ce.coef().head(Msplit).norm(); };
@@ -308,6 +310,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     };
     std::optional<CriticalEstimation> last_estimationL, last_estimationV;
     
+    // A function to get the co-existing densities for a given value of temperature
     PairedDyadicSplittingFunction get_densities = [&](double T){
         if (std::abs(T / Tcrittrue - 1) < 1e-14) {
             return std::make_tuple(rhocrittrue, rhocrittrue);
@@ -370,8 +373,10 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
                     throw FailedIteration(T, "Iteration invalid liquid density @T="+std::to_string(T)+". Tcrittrue is "+std::to_string(Tcrittrue)+" K");
                 }
             }
+            // We have a good solution, store it in the database
             densitydb.insert(std::make_pair(T, DensitiesType{ rhovec[0], rhovec[1], rhocrittrue+BrhoL*pow(Theta, 0.5), rhocrittrue + BrhoV*pow(Theta, 0.5) }));
         }
+        // Now we obtain values from the database
         auto d = densitydb.at(T); // Retrieve from cache
         return std::make_tuple(static_cast<double>(d.rhoL), static_cast<double>(d.rhoV));
     };
@@ -381,6 +386,8 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     
     Container last_good_exsL, last_good_exsV;
     
+    // This callback function is called after each pass of refinement, to allow you to monitor the process,
+    // or in this case, store diagnostic information about the last good expansion
     PairedDyadicSplittingCallback callback = [&last_good_exsL, &last_good_exsV, &last_estimationL, &last_estimationV, Msplit, tol, &BrhoL, &BrhoV, &Tcrittrue, &rhocrittrue, &model, &getdrhodTs](
       int num_pass, const Container& exsA, const Container& exsB)
     {
@@ -414,6 +421,9 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
             }
         }
     };
+    
+    // Here we drive the fitting, using the custom dyadic splitting function
+    // developed in this work
     std::tuple<Container, Container> exps;
     try {
         exps = paired_dyadic_splitting(
@@ -432,6 +442,9 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     }
     std::cout << std::endl;
     
+    // Write out the expansions, metadata, and
+    // anything else to the output file
+    // in JSON format
     auto tovec = [](const Eigen::ArrayXd& a) {
         std::vector<double> z(a.size());
         for (auto i = 0; i < a.size(); ++i) { z[i] = a[i]; }
@@ -455,7 +468,9 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
         { "gas_constant / J/mol/K", R }
     };
     
-    nlohmann::json jexpansionsL = nlohmann::json::array(), jexpansionsV = nlohmann::json::array();
+    // Collect all the expansions
+    nlohmann::json jexpansionsL = nlohmann::json::array(),
+                   jexpansionsV = nlohmann::json::array();
     
     for (auto j = 0; j < std::get<0>(exps).size(); ++j) {
         auto& exL = std::get<0>(exps)[j];
@@ -477,10 +492,11 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
         {"jexpansionsL", jexpansionsL},
         {"jexpansionsV", jexpansionsV}
     };
+    // Stream the output into the file you specified
     std::ofstream ofs(ofpath); ofs << jo.dump(2);
+    
     std::cout << std::get<0>(exps).size() << " expansions" << std::endl;
 }
-
 
 /**
 \brief Check the superancillaries
@@ -511,7 +527,6 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
         return std::make_tuple(ChebTools::ChebyshevCollection(oL), ChebTools::ChebyshevCollection(oV));
     };
 
-    
     auto db = nlohmann::json::array();
 
     // Load expansions from file for liquid and vapor
