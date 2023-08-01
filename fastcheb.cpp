@@ -544,8 +544,8 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
         try {
             double Theta = (Tcrittrue-T)/Tcrittrue;
             
-            double rhoSAL = ccL(T) ;//+ rhocrittrue + meta["BrhoL / mol/m^3"].get<double>()*sqrt(Theta);
-            double rhoSAV = ccV(T) ;//+ rhocrittrue + meta["BrhoV / mol/m^3"].get<double>()*sqrt(Theta);
+            double rhoSAL = ccL(T);
+            double rhoSAV = ccV(T);
             
             Eigen::ArrayXd rhovec;
             if (std::abs(T - Tcrittrue) > 1e-14 && T < ccL.get_exps().back().xmax() && T < ccV.get_exps().back().xmax()) {
