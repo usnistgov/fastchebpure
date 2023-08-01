@@ -346,8 +346,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
 //                std::cout << rhoLanc << "," << rhoLextrap << "," << rhoVanc << "," << rhoVextrap << std::endl;
                 
                 if (Theta < critical_polynomial_Theta){
-                    // Now we enter into fallback methods. The first is a polynomial fit to the density in the critical region
-//                    std::cout << Theta << "," << rhoLanc << "," << rhoLpoly << "," << rhoVanc << "," << rhoVpoly << std::endl;
+                    // The first fallback method is an extrapolation based on the closest converged expansion to the critical point
                     if (!std::isfinite(static_cast<double>(rhovec[0])) || rhovec[1] >= rhovec[0] || rhovec[0] < 0){
                         // And if that doesn't work, we use the critical extrapolation formula based on the expansion closest
                         // to the critical point that is fully converged
