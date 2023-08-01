@@ -10,10 +10,11 @@
 #include <boost/asio/thread_pool.hpp>
 #include <boost/asio/post.hpp>
 
-const std::string teqp_datapath = "../teqp_REFPROP10";
+// Paths are defined in the actual code
+extern const std::string teqp_datapath;
+extern const std::string output_prefix;
+extern const std::string check_destination;
 
-const std::string output_prefix = "../output/";
-const std::string check_destination = output_prefix + "/check/";
 const int FASTCHEB_PROCESSORS = 6;
 
 // Prototype for builder and checker

@@ -24,8 +24,9 @@ using my_float_mp = boost::multiprecision::number<boost::multiprecision::cpp_bin
 
 #include "ChebTools/ChebTools.h"
 
-const std::string teqp_datapath = "../teqp_REFPROP10";
-const std::string output_prefix = "../output/";
+extern const std::string teqp_datapath = "../teqp_REFPROP10";
+extern const std::string output_prefix = "../output/";
+extern const std::string check_destination = output_prefix + "/check/";
 
 using namespace ChebTools;
 
