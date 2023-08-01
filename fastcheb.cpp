@@ -419,6 +419,19 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
         }
     }
     std::cout << std::endl;
+    
+    auto tovec = [](const Eigen::ArrayXd& a) {
+        std::vector<double> z(a.size());
+        for (auto i = 0; i < a.size(); ++i) { z[i] = a[i]; }
+        return z;
+    };
+    nlohmann::json jcrit_anc = {
+        { "cL", tovec(cLarray) },
+        { "cV", tovec(cVarray) },
+        { "Tc / K", Tcrittrue },
+        { "Theta_min", critical_polynomial_Theta},
+        { "_note", R"(coefficients are for the function like ln(\rho^A) = sum_i c_i \ln(\Theta)^i with \Theta=(Tc_T)/Tc)" }
+    };
     nlohmann::json meta = {
         { "Tcrit / K", Tcrit },
         { "Tcrittrue / K", Tcrittrue },
@@ -431,11 +444,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     };
     
     nlohmann::json jexpansionsL = nlohmann::json::array(), jexpansionsV = nlohmann::json::array();
-    auto tovec = [](const Eigen::ArrayXd& a) {
-        std::vector<double> z(a.size());
-        for (auto i = 0; i < a.size(); ++i) { z[i] = a[i]; }
-        return z;
-    };
+    
     for (auto j = 0; j < std::get<0>(exps).size(); ++j) {
         auto& exL = std::get<0>(exps)[j];
         auto& exV = std::get<1>(exps)[j];
@@ -452,6 +461,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     }
     nlohmann::json jo = {
         {"meta", meta},
+        {"crit_anc", jcrit_anc},
         {"jexpansionsL", jexpansionsL},
         {"jexpansionsV", jexpansionsV}
     };
