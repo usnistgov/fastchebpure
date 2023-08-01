@@ -90,6 +90,16 @@ auto paired_factory(const std::size_t N, const PairedDyadicSplittingFunction& fu
     return std::make_tuple(ChebyshevExpansion(L*fL, xmin, xmax), ChebyshevExpansion(L*fR, xmin, xmax));
 }
 
+bool is_converged(int Msplit, double tol, const ChebTools::ChebyshevExpansion& ceL, const ChebTools::ChebyshevExpansion& ceV){
+    // Convenience function to get the M-element norm ratio, which is our convergence criterion
+    auto get_err = [Msplit](const ChebTools::ChebyshevExpansion& ce) { return ce.coef().tail(Msplit).norm() / ce.coef().head(Msplit).norm(); };
+    
+    auto errL = get_err(ceL);
+    auto errV = get_err(ceV);
+    
+    return errL < tol && errV < tol;
+};
+
 using Container = std::vector<ChebyshevExpansion>;
 using PairedDyadicSplittingCallback = std::function<void(int, const Container&, const Container&)>;
 
@@ -98,9 +108,6 @@ auto paired_dyadic_splitting(const std::size_t N, const PairedDyadicSplittingFun
     const int M, const double tol, const int max_refine_passes = 8,
     const PairedDyadicSplittingCallback& callback = nullptr) -> std::tuple<Container, Container>
 {
-    
-    // Convenience function to get the M-element norm
-    auto get_err = [M](const ChebyshevExpansion& ce) { return ce.coef().tail(M).norm() / ce.coef().head(M).norm(); };
     
     // Start off with the full domain from xmin to xmax
     Container expansionsA, expansionsB;
@@ -114,10 +121,8 @@ auto paired_dyadic_splitting(const std::size_t N, const PairedDyadicSplittingFun
         // Start at the right and move left because insertions will make the length increase
         for (int iexpansion = static_cast<int>(expansionsA.size())-1; iexpansion >= 0; --iexpansion) {
             auto& expanA = expansionsA[iexpansion];
-            auto errA = get_err(expanA);
             auto& expanB = expansionsB[iexpansion];
-            auto errB = get_err(expanB);
-            if (errA > tol || errB > tol) {
+            if (!is_converged(M, tol, expanA, expanB)) {
                 // Splitting is required, do a dyadic split
                 auto xmid = expanA.xmin()*0.25 + expanA.xmax()*0.75;
                 std::cout << "s" << std::endl;
@@ -374,16 +379,12 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
 
         double T, rhoL, rhoV;
 
-        // Convenience function to get the M-element norm ratio, which is our convergence criterion
-        auto get_err = [Msplit](const ChebTools::ChebyshevExpansion& ce) { return ce.coef().tail(Msplit).norm() / ce.coef().head(Msplit).norm(); };
-
+        // Work backwards since we start at the critical point
         for (int k = static_cast<int>(exsA.size())-1; k >= 0; --k) {
             // If is converged, stop, this is the one we seek
             auto ceL = exsA[k];
             auto ceV = exsB[k];
-            auto errL = get_err(ceL);
-            auto errV = get_err(ceV);
-            if (std::isfinite(errL) && errL < tol && std::isfinite(errV) && errV < tol){
+            if (is_converged(Msplit, tol, exsA[k], exsB[k])){
                 T = ceL.xmax();
                 auto Theta = (Tcrittrue-T)/Tcrittrue;
                 rhoL = ceL.y_Clenshaw(T);
