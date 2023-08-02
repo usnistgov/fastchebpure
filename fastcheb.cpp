@@ -454,8 +454,9 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
         { "cL", tovec(cLarray) },
         { "cV", tovec(cVarray) },
         { "Tc / K", Tcrittrue },
+        { "rhoc / mol/m^3", rhocrittrue },
         { "Theta_min", critical_polynomial_Theta},
-        { "_note", R"(coefficients are for the function like ln(\rho^A) = sum_i c_i \ln(\Theta)^i with \Theta=(Tc_T)/Tc)" }
+        { "_note", R"(coefficients are for the function like ln(|rho^A-rhoc|) = sum_i c_i ln(Theta)^i with Theta=(Tc-T)/Tc)" }
     };
     nlohmann::json meta = {
         { "Tcrit / K", Tcrit },
