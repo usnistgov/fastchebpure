@@ -1,0 +1,1471 @@
+
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=1]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=1]{pmu_devs}
+        }
+        
+\caption{13BUTADIENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=1]{devs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=2]{pmu_devs}
+        }
+        
+\caption{1BUTENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=2]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=3]{pmu_devs}
+        }
+        
+\caption{1BUTYNE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=3]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=4]{pmu_devs}
+        }
+        
+\caption{1PENTENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=4]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=5]{pmu_devs}
+        }
+        
+\caption{22DIMETHYLBUTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=5]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=6]{pmu_devs}
+        }
+        
+\caption{23DIMETHYLBUTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=2]{devs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=7]{pmu_devs}
+        }
+        
+\caption{3METHYLPENTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=6]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=8]{pmu_devs}
+        }
+        
+\caption{ACETONE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=7]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=9]{pmu_devs}
+        }
+        
+\caption{ACETYLENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=8]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=10]{pmu_devs}
+        }
+        
+\caption{AMMONIA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=9]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=11]{pmu_devs}
+        }
+        
+\caption{ARGON}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=10]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=12]{pmu_devs}
+        }
+        
+\caption{BENZENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=11]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=13]{pmu_devs}
+        }
+        
+\caption{BUTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=12]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=14]{pmu_devs}
+        }
+        
+\caption{C11}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=3]{devs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=15]{pmu_devs}
+        }
+        
+\caption{C12}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=13]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=16]{pmu_devs}
+        }
+        
+\caption{C16}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=14]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=17]{pmu_devs}
+        }
+        
+\caption{C1CC6}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=15]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=18]{pmu_devs}
+        }
+        
+\caption{C22}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=16]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=19]{pmu_devs}
+        }
+        
+\caption{C2BUTENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=17]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=20]{pmu_devs}
+        }
+        
+\caption{C3CC6}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=18]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=21]{pmu_devs}
+        }
+        
+\caption{C4F10}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=19]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=22]{pmu_devs}
+        }
+        
+\caption{C5F12}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=20]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=23]{pmu_devs}
+        }
+        
+\caption{C6F14}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=21]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=24]{pmu_devs}
+        }
+        
+\caption{CF3I}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=22]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=25]{pmu_devs}
+        }
+        
+\caption{CHLORINE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=23]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=26]{pmu_devs}
+        }
+        
+\caption{CHLOROBENZENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=24]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=27]{pmu_devs}
+        }
+        
+\caption{CO2}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=25]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=28]{pmu_devs}
+        }
+        
+\caption{COS}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=26]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=29]{pmu_devs}
+        }
+        
+\caption{CO}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=27]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=30]{pmu_devs}
+        }
+        
+\caption{CYCLOBUTENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=28]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=31]{pmu_devs}
+        }
+        
+\caption{CYCLOHEX}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=29]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=32]{pmu_devs}
+        }
+        
+\caption{CYCLOPEN}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=30]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=33]{pmu_devs}
+        }
+        
+\caption{CYCLOPRO}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=31]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=34]{pmu_devs}
+        }
+        
+\caption{D2O}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=32]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=35]{pmu_devs}
+        }
+        
+\caption{D2}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=33]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=36]{pmu_devs}
+        }
+        
+\caption{D4}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=34]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=37]{pmu_devs}
+        }
+        
+\caption{D5}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=35]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=38]{pmu_devs}
+        }
+        
+\caption{D6}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=36]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=39]{pmu_devs}
+        }
+        
+\caption{DEA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=37]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=40]{pmu_devs}
+        }
+        
+\caption{DECANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=38]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=41]{pmu_devs}
+        }
+        
+\caption{DEE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=39]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=42]{pmu_devs}
+        }
+        
+\caption{DMC}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=40]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=43]{pmu_devs}
+        }
+        
+\caption{DME}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=41]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=44]{pmu_devs}
+        }
+        
+\caption{EBENZENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=42]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=45]{pmu_devs}
+        }
+        
+\caption{EGLYCOL}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=43]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=46]{pmu_devs}
+        }
+        
+\caption{ETHANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=44]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=47]{pmu_devs}
+        }
+        
+\caption{ETHANOL}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=45]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=48]{pmu_devs}
+        }
+        
+\caption{ETHYLENEOXIDE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=46]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=49]{pmu_devs}
+        }
+        
+\caption{ETHYLENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=47]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=50]{pmu_devs}
+        }
+        
+\caption{FLUORINE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=48]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=51]{pmu_devs}
+        }
+        
+\caption{H2S}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=49]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=52]{pmu_devs}
+        }
+        
+\caption{HCL}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=50]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=53]{pmu_devs}
+        }
+        
+\caption{HELIUM}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=51]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=54]{pmu_devs}
+        }
+        
+\caption{HEPTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=52]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=55]{pmu_devs}
+        }
+        
+\caption{HEXANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=53]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=56]{pmu_devs}
+        }
+        
+\caption{HYDROGEN}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=54]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=57]{pmu_devs}
+        }
+        
+\caption{IBUTENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=55]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=58]{pmu_devs}
+        }
+        
+\caption{IHEXANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=56]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=59]{pmu_devs}
+        }
+        
+\caption{IOCTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=57]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=60]{pmu_devs}
+        }
+        
+\caption{IPENTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=58]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=61]{pmu_devs}
+        }
+        
+\caption{ISOBUTAN}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=59]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=62]{pmu_devs}
+        }
+        
+\caption{KRYPTON}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=60]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=63]{pmu_devs}
+        }
+        
+\caption{MD2M}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=61]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=64]{pmu_devs}
+        }
+        
+\caption{MD3M}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=62]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=65]{pmu_devs}
+        }
+        
+\caption{MD4M}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=63]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=66]{pmu_devs}
+        }
+        
+\caption{MDM}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=64]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=67]{pmu_devs}
+        }
+        
+\caption{MEA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=65]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=68]{pmu_devs}
+        }
+        
+\caption{METHANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=66]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=69]{pmu_devs}
+        }
+        
+\caption{METHANOL}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=67]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=70]{pmu_devs}
+        }
+        
+\caption{MLINOLEA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=68]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=71]{pmu_devs}
+        }
+        
+\caption{MLINOLEN}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=69]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=72]{pmu_devs}
+        }
+        
+\caption{MM}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=70]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=73]{pmu_devs}
+        }
+        
+\caption{MOLEATE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=71]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=74]{pmu_devs}
+        }
+        
+\caption{MPALMITA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=72]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=75]{pmu_devs}
+        }
+        
+\caption{MSTEARAT}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=73]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=76]{pmu_devs}
+        }
+        
+\caption{MXYLENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=74]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=77]{pmu_devs}
+        }
+        
+\caption{N2O}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=75]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=78]{pmu_devs}
+        }
+        
+\caption{NEON}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=76]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=79]{pmu_devs}
+        }
+        
+\caption{NEOPENTN}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=77]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=80]{pmu_devs}
+        }
+        
+\caption{NF3}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=78]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=81]{pmu_devs}
+        }
+        
+\caption{NITROGEN}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=79]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=82]{pmu_devs}
+        }
+        
+\caption{NONANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=80]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=83]{pmu_devs}
+        }
+        
+\caption{NOVEC649}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=81]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=84]{pmu_devs}
+        }
+        
+\caption{OCTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=82]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=85]{pmu_devs}
+        }
+        
+\caption{ORTHOHYD}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=83]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=86]{pmu_devs}
+        }
+        
+\caption{OXYGEN}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=84]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=87]{pmu_devs}
+        }
+        
+\caption{OXYLENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=85]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=88]{pmu_devs}
+        }
+        
+\caption{PARAHYD}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=86]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=89]{pmu_devs}
+        }
+        
+\caption{PENTANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=87]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=90]{pmu_devs}
+        }
+        
+\caption{PROPADIENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=88]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=91]{pmu_devs}
+        }
+        
+\caption{PROPANE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=89]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=92]{pmu_devs}
+        }
+        
+\caption{PROPYLENEOXIDE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=90]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=93]{pmu_devs}
+        }
+        
+\caption{PROPYLEN}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=91]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=94]{pmu_devs}
+        }
+        
+\caption{PROPYNE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=92]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=95]{pmu_devs}
+        }
+        
+\caption{PXYLENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=93]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=96]{pmu_devs}
+        }
+        
+\caption{R1123}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=94]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=97]{pmu_devs}
+        }
+        
+\caption{R113}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=95]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=98]{pmu_devs}
+        }
+        
+\caption{R114}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=96]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=99]{pmu_devs}
+        }
+        
+\caption{R115}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=97]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=100]{pmu_devs}
+        }
+        
+\caption{R116}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=98]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=101]{pmu_devs}
+        }
+        
+\caption{R11}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=99]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=102]{pmu_devs}
+        }
+        
+\caption{R1216}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=100]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=103]{pmu_devs}
+        }
+        
+\caption{R1224YDZ}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=101]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=104]{pmu_devs}
+        }
+        
+\caption{R1233ZDE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=102]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=105]{pmu_devs}
+        }
+        
+\caption{R1234YF}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=103]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=106]{pmu_devs}
+        }
+        
+\caption{R1234ZEE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=104]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=107]{pmu_devs}
+        }
+        
+\caption{R1234ZEZ}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=105]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=108]{pmu_devs}
+        }
+        
+\caption{R123}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=106]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=109]{pmu_devs}
+        }
+        
+\caption{R1243ZF}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=107]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=110]{pmu_devs}
+        }
+        
+\caption{R124}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=108]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=111]{pmu_devs}
+        }
+        
+\caption{R125}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=109]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=112]{pmu_devs}
+        }
+        
+\caption{R12}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=110]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=113]{pmu_devs}
+        }
+        
+\caption{R1336MZZZ}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=111]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=114]{pmu_devs}
+        }
+        
+\caption{R134A}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=112]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=115]{pmu_devs}
+        }
+        
+\caption{R13}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=113]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=116]{pmu_devs}
+        }
+        
+\caption{R141B}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=114]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=117]{pmu_devs}
+        }
+        
+\caption{R142B}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=115]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=118]{pmu_devs}
+        }
+        
+\caption{R143A}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=116]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=119]{pmu_devs}
+        }
+        
+\caption{R14}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=117]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=120]{pmu_devs}
+        }
+        
+\caption{R150}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=118]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=121]{pmu_devs}
+        }
+        
+\caption{R152A}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=119]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=122]{pmu_devs}
+        }
+        
+\caption{R161}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=120]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=123]{pmu_devs}
+        }
+        
+\caption{R218}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=121]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=124]{pmu_devs}
+        }
+        
+\caption{R21}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=122]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=125]{pmu_devs}
+        }
+        
+\caption{R227EA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=123]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=126]{pmu_devs}
+        }
+        
+\caption{R22}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=124]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=127]{pmu_devs}
+        }
+        
+\caption{R236EA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=125]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=128]{pmu_devs}
+        }
+        
+\caption{R236FA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=126]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=129]{pmu_devs}
+        }
+        
+\caption{R23}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=127]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=130]{pmu_devs}
+        }
+        
+\caption{R245CA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=128]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=131]{pmu_devs}
+        }
+        
+\caption{R245FA}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=129]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=132]{pmu_devs}
+        }
+        
+\caption{R32}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=130]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=133]{pmu_devs}
+        }
+        
+\caption{R365MFC}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=131]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=134]{pmu_devs}
+        }
+        
+\caption{R40}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=132]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=135]{pmu_devs}
+        }
+        
+\caption{R41}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=133]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=136]{pmu_devs}
+        }
+        
+\caption{RC318}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=134]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=137]{pmu_devs}
+        }
+        
+\caption{RE143A}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=135]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=138]{pmu_devs}
+        }
+        
+\caption{RE245CB2}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=136]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=139]{pmu_devs}
+        }
+        
+\caption{RE245FA2}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=137]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=140]{pmu_devs}
+        }
+        
+\caption{RE347MCC}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=138]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=141]{pmu_devs}
+        }
+        
+\caption{SF6}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=139]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=142]{pmu_devs}
+        }
+        
+\caption{SO2}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=140]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=143]{pmu_devs}
+        }
+        
+\caption{T2BUTENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=141]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=144]{pmu_devs}
+        }
+        
+\caption{TOLUENE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=142]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=145]{pmu_devs}
+        }
+        
+\caption{VINYLCHLORIDE}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=143]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=146]{pmu_devs}
+        }
+        
+\caption{WATER}
+    \end{figure}
+        \begin{figure}[H]  
+        \centering
+        \subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=144]{gooddevs.pdf}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=147]{pmu_devs}
+        }
+        
+\caption{XENON}
+    \end{figure}

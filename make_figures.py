@@ -10,6 +10,7 @@ import teqp
 from ctREFPROP.ctREFPROP import REFPROPFunctionLibrary
 
 import ChebTools 
+from pypdf import PdfReader
 
 def numprofile_stats():
     N = []
@@ -114,6 +115,7 @@ def plot_worst():
                 plt.close()
 
 def plot_pmu_devs():
+    good_REFPROP, bad_REFPROP = 0, 0
     with PdfPages('pmu_devs.pdf') as PDF:
         for f in sorted(glob.glob('output/check/*.json')):
             
@@ -139,6 +141,17 @@ def plot_pmu_devs():
             df['pVSA / Pa'] = df.apply(get_p, axis=1, rhokey="rho''(SA) / mol/m^3")
             df['errP'] = np.abs(df["pLSA / Pa"]/df["pVSA / Pa"]-1)
 
+            def add_pdev_REFPROP(row):
+                r = RP.REFPROPdll(FLD,'TQ','DLIQ;DVAP;PLIQ;PVAP;T',RP.MOLAR_BASE_SI,0,0,row['T / K'],0,[1.0])
+                if r.ierr == 0:
+                    pl, pv = r.Output[2:4]
+                    # print(pl/pv-1)
+                    return np.abs(pl/pv-1)
+                else:
+                    print(r.herr)
+                    return np.nan
+            df['errP(REFPROP)'] = df.apply(add_pdev_REFPROP, axis=1)
+
             def get_VLEmu(row, rhokey):
                 T = row['T / K']
                 rho = row[rhokey]
@@ -147,8 +160,21 @@ def plot_pmu_devs():
             df['muVLEVSA'] = df.apply(get_VLEmu, axis=1, rhokey="rho''(SA) / mol/m^3")
             df['errmu'] = np.abs(df["muVLELSA"]-df["muVLEVSA"]+np.log(df["rho'(SA) / mol/m^3"]/df["rho''(SA) / mol/m^3"]))
 
+            def add_mudev_REFPROP(row):
+                r = RP.REFPROPdll(FLD,'TQ','DLIQ;DVAP;GLIQ;GVAP;T;R',RP.MOLAR_BASE_SI,0,0,row['T / K'],0,[1.0])
+                if r.ierr == 0:
+                    mul, muv, R, T = r.Output[2:6]
+                    # print(pl/pv-1)
+                    return np.abs((mul-muv)/(R*T))
+                else:
+                    print(r.herr)
+                    return np.nan
+            df['errmu(REFPROP)'] = df.apply(add_mudev_REFPROP, axis=1)
+
             ax1.plot(1-df['T / K']/Tcrit, df['errP'], lw=0.2) 
+            ax1.plot(1-df['T / K']/Tcrit, df['errP(REFPROP)'], lw=0.2, color='r') 
             ax2.plot(1-df['T / K']/Tcrit, df['errmu'], lw=0.2)
+            ax2.plot(1-df['T / K']/Tcrit, df['errmu(REFPROP)'], lw=0.2, color='r') 
 
             ax1.set_xscale('log')
             ax1.set_yscale('log')
@@ -168,6 +194,66 @@ def plot_pmu_devs():
             plt.tight_layout(pad=0.2)
             PDF.savefig(fig)
             plt.close()
+
+            good_REFPROP += sum(np.isfinite(df['errP(REFPROP)']))
+            bad_REFPROP += sum(~np.isfinite(df['errP(REFPROP)']))
+
+    print(abs(bad_REFPROP/(bad_REFPROP+good_REFPROP)-1), '% of calculations fail', bad_REFPROP, good_REFPROP)
+
+def map_pages(PDFs):
+    """ Find all the strings in sets of PDF and cache the locations in the files """
+    maps = {}
+    for PDF in PDFs:
+        reader = PdfReader(PDF)
+        outputs = []
+        for ipage, page in enumerate(reader.pages):
+            # page = reader.pages[0]
+            for text_item in page.extract_text().splitlines():
+                try:
+                    float(text_item)
+                except:
+                    not_FLD = ['r','rp','=SA','=RP','(Tcrit,num T)/Tcrit,num']
+                    if text_item in not_FLD: continue
+                    print(text_item, ipage+1)
+                    outputs.append({'string': text_item, 'pagenum': ipage+1})
+        maps[PDF] = outputs 
+    return maps
+
+def make_SI_figs(*, mapcache):
+
+    def get_devPDF(FLD, candidates=['gooddevs.pdf','devs.pdf']):
+        for PDF, mapping in json.load(open(mapcache)).items():
+            if PDF not in candidates: continue
+            for entry in mapping:
+                if FLD == entry['string']:
+                    return PDF, entry['pagenum']
+        raise KeyError(FLD)
+                
+    output = ''
+    for i, f in enumerate(sorted(glob.glob('output/check/*.json'))):
+        FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
+        # Lookup the name of the deviation file
+        PDFrhodev, pagenumdev = get_devPDF(FLD)
+        _, pagepmu = get_devPDF(FLD, candidates='pmu_devs.pdf')
+
+        header = r"""
+        \begin{figure}[H] %INS% 
+        \centering
+        """
+        footer = r"""\caption{%caption%}
+    \end{figure}""".replace("%caption%", FLD)
+        
+        # o = header.replace("%INS%", "\ContinuedFloat" if i != 0 else "")
+        o = header.replace("%INS%", "")
+        o += r"""\subcaptionbox{Orthobaric density deviations}{
+            \includegraphics[width=3.0in,page=%pagenumdev%]{%PDFrhodev%}
+        }\subcaptionbox{Phase equilibrium conditions}{
+            \includegraphics[width=3.0in,page=%pagepmu%]{pmu_devs}
+        }
+        """.replace("%FLD%", FLD).replace('%root%',root).replace('%pagenumdev%', str(pagenumdev)).replace('%PDFrhodev%', PDFrhodev).replace('%pagepmu%',str(pagepmu)) + '\n'
+        o += footer
+        output += o
+    return output
 
 def plot_ancillary(FLD):
     
@@ -277,13 +363,24 @@ if __name__ == '__main__':
     # import matplotlib
     warnings.filterwarnings("ignore")
 
-    plot_ancillary("PROPANE")
-    plot_worst()
+    # plot_ancillary("PROPANE")
+    # plot_worst()
     plot_pmu_devs()
     # plot_widths('WATER')
+    
+    if not os.path.exists('FLD_page_cache.json'):
+        cache = map_pages(['pmu_devs.pdf','devs.pdf','gooddevs.pdf'])
+        with open('FLD_page_cache.json', 'w') as fp:
+            fp.write(json.dumps(cache, indent=2))
+    
+    SI_figs = make_SI_figs(mapcache='FLD_page_cache.json')
+    with open('SI_figs.tex.in', 'w') as fp:
+        fp.write(SI_figs)
+
+    # with open('all_spin.tex.in', 'w') as fp:
+#     fp.write(make_plot_matrices('spin_Brhobeta', 'Spinodal scaling curves for all fluids in REFPROP 10.0. Formatting follows similar figures in the main manuscript.',Nplots=9))
 
     # plot_REFPROPdevs()
-
     # plot_crit()
     # plot_decrit()
 
