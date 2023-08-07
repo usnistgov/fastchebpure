@@ -4,6 +4,8 @@ os.environ['RPPREFIX'] = os.getenv('HOME') + '/REFPROP10'
 import glob, json, os
 
 import pandas, numpy as np, matplotlib.pyplot as plt
+plt.style.use('classic')
+plt.style.use('mystyle.mplstyle')
 from matplotlib.backends.backend_pdf import PdfPages
 
 import teqp
@@ -43,10 +45,12 @@ def plot_widths(FLD):
     fig, ax = plt.subplots(1,1,figsize=(3.5, 3))
     for jL in json.load(open(f'output/{FLD}_exps.json'))['jexpansionsL']:
         plt.plot(jL['xmin'], jL['xmax']-jL['xmin'], 'k.')
-    plt.xscale('log')
+    # plt.xscale('log')
     plt.yscale('log')
     plt.xlabel(r'$T_{\rm min}$ / K')
     plt.ylabel(r'$T_{\rm max}-T_{\rm min}$ / K')
+    plt.xlim(250, 700)
+    plt.gca().set_xticks([300, 400, 500, 600])
     plt.tight_layout(pad=0.2)
     plt.savefig('widths_of_intervals.pdf')
     plt.close()
@@ -97,6 +101,7 @@ def plot_worst():
                 ax1.set_ylim(1e-16, 100)
                 ax2.set_ylim(1e-16, 100)
                 ax1.legend(loc='best')
+                
                 plt.suptitle(FLD)
                 for ax in ax1, ax2:
                     ax.axhline(1e-12, dashes=[2,2], color='k', lw=0.5)
@@ -108,6 +113,12 @@ def plot_worst():
                 ax2.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
 
                 plt.tight_layout(pad=0.2)
+                xticks = ax.get_xticks()
+                ax.set_xticks(xticks[0:len(xticks):2])
+                for ax in ax1, ax2:
+                    yticks = ax.get_yticks()
+                    ax.set_yticks(yticks[0:len(yticks):2])
+
                 if good:
                     goodPDF.savefig(fig)
                 else:
@@ -171,16 +182,18 @@ def plot_pmu_devs():
                     return np.nan
             df['errmu(REFPROP)'] = df.apply(add_mudev_REFPROP, axis=1)
 
-            ax1.plot(1-df['T / K']/Tcrit, df['errP'], lw=0.2) 
-            ax1.plot(1-df['T / K']/Tcrit, df['errP(REFPROP)'], lw=0.2, color='r') 
+            ax1.plot(1-df['T / K']/Tcrit, df['errP'], lw=0.2, label='SA') 
+            ax1.plot(1-df['T / K']/Tcrit, df['errP(REFPROP)'], lw=0.2, color='r', label='REFPROP', dashes=[3,1,1,1]) 
             ax2.plot(1-df['T / K']/Tcrit, df['errmu'], lw=0.2)
-            ax2.plot(1-df['T / K']/Tcrit, df['errmu(REFPROP)'], lw=0.2, color='r') 
+            ax2.plot(1-df['T / K']/Tcrit, df['errmu(REFPROP)'], lw=0.2, color='r', dashes=[3,1,1,1]) 
 
             ax1.set_xscale('log')
             ax1.set_yscale('log')
             ax2.set_yscale('log')
+            ax1.legend(loc='best')
             ax1.set_ylim(1e-17, 100)
             ax2.set_ylim(1e-17, 100)
+            
             plt.suptitle(FLD)
             for ax in ax1, ax2:
                 ax.axhline(1e-12, dashes=[2,2], color='k', lw=0.5)
@@ -192,6 +205,12 @@ def plot_pmu_devs():
             ax2.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
 
             plt.tight_layout(pad=0.2)
+            xticks = ax.get_xticks()
+            ax.set_xticks(xticks[0:len(xticks):2])
+            for ax in ax1, ax2:
+                yticks = ax.get_yticks()
+                ax.set_yticks(yticks[0:len(yticks):2])
+
             PDF.savefig(fig)
             plt.close()
 
@@ -360,13 +379,12 @@ if __name__ == '__main__':
     RP.SETPATHdll(root)
     
     import warnings
-    # import matplotlib
     warnings.filterwarnings("ignore")
 
-    # plot_ancillary("PROPANE")
-    # plot_worst()
+    plot_ancillary("PROPANE")
+    plot_worst()
     plot_pmu_devs()
-    # plot_widths('WATER')
+    plot_widths('WATER')
     
     if not os.path.exists('FLD_page_cache.json'):
         cache = map_pages(['pmu_devs.pdf','devs.pdf','gooddevs.pdf'])
@@ -377,13 +395,7 @@ if __name__ == '__main__':
     with open('SI_figs.tex.in', 'w') as fp:
         fp.write(SI_figs)
 
-    # with open('all_spin.tex.in', 'w') as fp:
-#     fp.write(make_plot_matrices('spin_Brhobeta', 'Spinodal scaling curves for all fluids in REFPROP 10.0. Formatting follows similar figures in the main manuscript.',Nplots=9))
-
-    # plot_REFPROPdevs()
-    # plot_crit()
-    # plot_decrit()
-
+    # Test compression with brotli
     FLD = 'WATER'
     jj = json.load(open(f'output/{FLD}_exps.json'))
     import brotli
