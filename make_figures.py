@@ -246,9 +246,9 @@ def make_SI_figs(*, mapcache):
         # o = header.replace("%INS%", "\ContinuedFloat" if i != 0 else "")
         o = header.replace("%INS%", "")
         o += r"""\subcaptionbox{Orthobaric density deviations}{
-            \includegraphics[width=3.0in,page=%pagenumdev%]{%PDFrhodev%}
+            \includegraphics[width=2.5in,page=%pagenumdev%]{%PDFrhodev%}
         }\subcaptionbox{Phase equilibrium conditions}{
-            \includegraphics[width=3.0in,page=%pagepmu%]{pmu_devs}
+            \includegraphics[width=2.5in,page=%pagepmu%]{pmu_devs}
         }
         """.replace("%FLD%", FLD).replace('%root%',root).replace('%pagenumdev%', str(pagenumdev)).replace('%PDFrhodev%', PDFrhodev).replace('%pagepmu%',str(pagepmu)) + '\n'
         o += footer
