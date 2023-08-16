@@ -9,6 +9,7 @@
 #include <cmath>
 #include <tuple>
 #include <list>
+#include <vector>
 #include <Eigen/Dense>
 
 #include "teqp/models/multifluid.hpp"
@@ -66,9 +67,9 @@ public:
 };
 static LMatrixLibrary l_matrix_library;
 
-using PairedDyadicSplittingFunction = std::function<std::tuple<double, double>(double)>;
+using VectorDyadicSplittingFunction = std::function<std::vector<double>(double)>;
 
-auto paired_factory(const std::size_t N, const PairedDyadicSplittingFunction& func, const double xmin, const double xmax){
+auto vector_factory(const std::size_t N, const VectorDyadicSplittingFunction& func, const double xmin, const double xmax) -> std::vector<ChebyshevExpansion>{
     
     // Get the precalculated Chebyshev-Lobatto nodes
     const Eigen::VectorXd & x_nodes_n11 = get_CLnodes(N);
@@ -80,57 +81,61 @@ auto paired_factory(const std::size_t N, const PairedDyadicSplittingFunction& fu
         // The extrema in [-1,1] scaled to real-world coordinates
         double x_k = ((xmax - xmin)*x_nodes_n11(k) + (xmax + xmin)) / 2.0;
         auto funcvals = func(x_k);
-        fL(k) = std::get<0>(funcvals);
-        fR(k) = std::get<1>(funcvals);
+        fL(k) = funcvals[0];
+        fR(k) = funcvals[1];
     }
 
     // Step 3: Get coefficients for the L matrix from the library of coefficients
     const Eigen::MatrixXd &L = l_matrix_library.get(N);
     // Step 4: Obtain coefficients from vector - matrix product
-    return std::make_tuple(ChebyshevExpansion(L*fL, xmin, xmax), ChebyshevExpansion(L*fR, xmin, xmax));
+    return {ChebyshevExpansion(L*fL, xmin, xmax), ChebyshevExpansion(L*fR, xmin, xmax)};
 }
 
 // A convenience function that returns true if the paired expansions have converged
 // according to the convergence criterion
-bool is_converged(int Msplit, double tol, const ChebTools::ChebyshevExpansion& ceL, const ChebTools::ChebyshevExpansion& ceV){
+template<typename Container = std::vector<std::vector<ChebTools::ChebyshevExpansion>>>
+bool are_converged(int Msplit, double tol, const Container& ce, std::size_t i){
     // Convenience function to get the M-element norm ratio, which is our convergence criterion
     auto get_err = [Msplit](const ChebTools::ChebyshevExpansion& ce) { return ce.coef().tail(Msplit).norm() / ce.coef().head(Msplit).norm(); };
     
-    auto errL = get_err(ceL);
-    auto errV = get_err(ceV);
-    
-    return errL < tol && errV < tol;
+    for (auto iancillary = 0; iancillary < ce.size(); ++iancillary){
+        if (get_err(ce[iancillary][i]) > tol){
+            return false;
+        }
+    }
+    return true;
 };
 
-using Container = std::vector<ChebyshevExpansion>;
-using PairedDyadicSplittingCallback = std::function<void(int, const Container&, const Container&)>;
+using Container = std::vector<std::vector<ChebyshevExpansion>>;
+using VectorDyadicSplittingCallback = std::function<void(int, const Container&)>;
 
 template<typename Container = std::vector<ChebyshevExpansion>>
-auto paired_dyadic_splitting(const std::size_t N, const PairedDyadicSplittingFunction& func, const double xmin, const double xmax,
+auto vectored_dyadic_splitting(const std::size_t N, const VectorDyadicSplittingFunction& func, const double xmin, const double xmax,
     const int M, const double tol, const int max_refine_passes = 8,
-    const PairedDyadicSplittingCallback& callback = nullptr) -> std::tuple<Container, Container>
+    const VectorDyadicSplittingCallback& callback = nullptr) -> std::vector<Container>
 {
     
     // Start off with the full domain from xmin to xmax
-    Container expansionsA, expansionsB;
-    auto paired_expansions = paired_factory(N, func, xmin, xmax);
-    expansionsA.emplace_back(std::get<0>(paired_expansions));
-    expansionsB.emplace_back(std::get<1>(paired_expansions));
+    std::vector<Container> expansions;
+    auto vector_expansions = vector_factory(N, func, xmin, xmax);
+    for (auto i = 0; i < vector_expansions.size(); ++i){
+        expansions[i].emplace_back(vector_expansions[i]);
+    }
 
     // Now enter into refinement passes
     for (int refine_pass = 0; refine_pass < max_refine_passes; ++refine_pass) {
         bool all_converged = true;
         // Start at the right and move left because insertions will make the length increase
-        for (int iexpansion = static_cast<int>(expansionsA.size())-1; iexpansion >= 0; --iexpansion) {
-            auto& expanA = expansionsA[iexpansion];
-            auto& expanB = expansionsB[iexpansion];
-            if (!is_converged(M, tol, expanA, expanB)) {
+        for (int iexpansion = static_cast<int>(expansions[0].size())-1; iexpansion >= 0; --iexpansion) {
+            if (!are_converged(M, tol, expansions, iexpansion)) {
+                double xmin = expansions[0][iexpansion].xmin();
+                double xmax = expansions[0][iexpansion].xmax();
                 // Splitting is required, do a dyadic split
-                auto xmid = expanA.xmin()*0.25 + expanA.xmax()*0.75;
+                auto xmid = xmin*0.25 + xmax*75;
                 std::cout << "s" << std::endl;
-                auto newleft = paired_factory(N, func, expanA.xmin(), xmid);
-                auto newright = paired_factory(N, func, xmid, expanA.xmax());
-                using ArrayType = decltype(std::get<0>(newleft).coef());
+                auto newleft = vector_factory(N, func, xmin, xmid);
+                auto newright = vector_factory(N, func, xmid, xmax);
+                using ArrayType = decltype(newleft[0].coef());
 
                 // Function to check if any coefficients are invalid (evidence of a bad function value)
                 auto all_coeffs_ok = [](const ArrayType& v) {
@@ -140,27 +145,33 @@ auto paired_dyadic_splitting(const std::size_t N, const PairedDyadicSplittingFun
                     return true;
                 };
                 // Check if any coefficients are invalid, stop if so
-                if (!all_coeffs_ok(std::get<0>(newleft).coef()) || !all_coeffs_ok(std::get<0>(newright).coef())
-                    || !all_coeffs_ok(std::get<1>(newleft).coef()) || !all_coeffs_ok(std::get<1>(newright).coef())) {
-                    throw std::invalid_argument("At least one coefficient is non-finite");
+                for (auto& expansion: newleft){
+                    if (!all_coeffs_ok(expansion.coef())) {
+                        throw std::invalid_argument("At least one coefficient is non-finite in new left");
+                    }
+                }
+                for (auto& expansion: newright){
+                    if (!all_coeffs_ok(expansion.coef())) {
+                        throw std::invalid_argument("At least one coefficient is non-finite in new right");
+                    }
                 }
                 
-                std::swap(expanA, std::get<0>(newleft));
-                expansionsA.insert(expansionsA.begin() + iexpansion+1, std::get<0>(newright));
-                std::swap(expanB, std::get<1>(newleft));
-                expansionsB.insert(expansionsB.begin() + iexpansion+1, std::get<1>(newright));
+                for (auto iancillary = 0; iancillary < expansions.size(); ++iancillary){
+                    std::swap(expansions[iancillary][iexpansion], newleft[iancillary]);
+                    expansions[iancillary].insert(expansions[iancillary].begin() + iexpansion+1, newright[iancillary]);
+                }
                 
                 all_converged = false;
             }
         }
         if (callback != nullptr) {
 //            const PairedDyadicSplittingCallback func = callback.value();
-            callback(refine_pass, expansionsA, expansionsB);
+            callback(refine_pass, expansions);
         }
         
         if (all_converged) { break; }
     }
-    return std::make_tuple(expansionsA, expansionsB);
+    return expansions;
 };
 
 /// A custom exception class that holds onto the temperature
@@ -214,7 +225,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     };
     
     // The calculation cache for results of calculations
-    struct DensitiesType { const my_float_mp rhoL, rhoV, DeltarhocritL, DeltarhocritV; };
+    struct DensitiesType { const my_float_mp rhoL, rhoV, pL, pV, DeltarhocritL, DeltarhocritV; };
     std::unordered_map<double, DensitiesType, boost::hash<double>> densitydb;
 
     auto j = teqp::load_a_JSON_file(fluid_json_path);
@@ -311,9 +322,9 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     std::optional<CriticalEstimation> last_estimationL, last_estimationV;
     
     // A function to get the co-existing densities for a given value of temperature
-    PairedDyadicSplittingFunction get_densities = [&](double T){
+    VectorDyadicSplittingFunction get_densities = [&](double T) -> std::vector<double>{
         if (std::abs(T / Tcrittrue - 1) < 1e-14) {
-            return std::make_tuple(rhocrittrue, rhocrittrue);
+            return {rhocrittrue, rhocrittrue};
         }
         else if (densitydb.count(T) == 0) { // If not in cache...
             // Do the calculation and store in cache
@@ -374,34 +385,38 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
                 }
             }
             // We have a good solution, store it in the database
-            densitydb.insert(std::make_pair(T, DensitiesType{ rhovec[0], rhovec[1], rhocrittrue+BrhoL*pow(Theta, 0.5), rhocrittrue + BrhoV*pow(Theta, 0.5) }));
+            using tdxflt = teqp::TDXDerivatives<decltype(model), my_float_mp, Eigen::ArrayX<my_float_mp>>;
+            const auto z = (Eigen::ArrayX<my_float_mp>(1) << 1.0).finished();
+            auto pL = rhovec[0]*R*T*(1.0 + tdxflt::get_Ar01<teqp::ADBackends::multicomplex>(model, T, rhovec[0], z));
+            auto pV = rhovec[1]*R*T*(1.0 + tdxflt::get_Ar01<teqp::ADBackends::multicomplex>(model, T, rhovec[1], z));
+            densitydb.insert(std::make_pair(T, DensitiesType{ rhovec[0], rhovec[1], pL, pV, rhocrittrue+BrhoL*pow(Theta, 0.5), rhocrittrue + BrhoV*pow(Theta, 0.5) }));
         }
         // Now we obtain values from the database
         auto d = densitydb.at(T); // Retrieve from cache
-        return std::make_tuple(static_cast<double>(d.rhoL), static_cast<double>(d.rhoV));
+        return {static_cast<double>(d.rhoL), static_cast<double>(d.rhoV)};
     };
 
     double Tmin = std::max(Ttriple, Tmin_sat), Tmax = Tcrittrue, tol = 1e-12;
     int N = 12, Msplit = 3, max_refine_passes = 12;
     
-    Container last_good_exsL, last_good_exsV;
+    std::vector<Container> last_good_exsL, last_good_exsV;
     
     // This callback function is called after each pass of refinement, to allow you to monitor the process,
     // or in this case, store diagnostic information about the last good expansion
-    PairedDyadicSplittingCallback callback = [&last_good_exsL, &last_good_exsV, &last_estimationL, &last_estimationV, Msplit, tol, &BrhoL, &BrhoV, &Tcrittrue, &rhocrittrue, &model, &getdrhodTs](
-      int num_pass, const Container& exsA, const Container& exsB)
+    VectorDyadicSplittingCallback callback = [&last_good_exsL, &last_good_exsV, &last_estimationL, &last_estimationV, Msplit, tol, &BrhoL, &BrhoV, &Tcrittrue, &rhocrittrue, &model, &getdrhodTs](
+      int num_pass, const Container& expansions)
     {
         std::cout << ".";
-        last_good_exsL = exsA;
+//        last_good_exsL = exsA;
 
         double T, rhoL, rhoV;
 
         // Work backwards since we start at the critical point
-        for (int k = static_cast<int>(exsA.size())-1; k >= 0; --k) {
+        for (int k = static_cast<int>(expansions[0].size())-1; k >= 0; --k) {
             // If is converged, stop, this is the one we seek
-            auto ceL = exsA[k];
-            auto ceV = exsB[k];
-            if (is_converged(Msplit, tol, exsA[k], exsB[k])){
+            auto ceL = expansions[0][k];
+            auto ceV = expansions[1][k];
+            if (are_converged(Msplit, tol, expansions, k)){
                 T = ceL.xmax();
                 auto Theta = (Tcrittrue-T)/Tcrittrue;
                 rhoL = ceL.y_Clenshaw(T);
@@ -424,9 +439,9 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     
     // Here we drive the fitting, using the custom dyadic splitting function
     // developed in this work
-    std::tuple<Container, Container> exps;
+    Container exps;
     try {
-        exps = paired_dyadic_splitting(
+        exps = vectored_dyadic_splitting(
             N,
             get_densities,
             Tmin, Tmax, Msplit, tol, max_refine_passes, callback
@@ -473,18 +488,18 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     nlohmann::json jexpansionsL = nlohmann::json::array(),
                    jexpansionsV = nlohmann::json::array();
     
-    for (auto j = 0; j < std::get<0>(exps).size(); ++j) {
-        auto& exL = std::get<0>(exps)[j];
-        auto& exV = std::get<1>(exps)[j];
+    for (auto j = 0; j < exps[0].size(); ++j) {
+        auto& exrhoL = exps[0][j];
+        auto& exrhoV = exps[1][j];
         jexpansionsL.push_back({
-            {"coef", tovec(exL.coef())},
-            {"xmin", exL.xmin()},
-            {"xmax", exL.xmax()},
+            {"coef", tovec(exrhoL.coef())},
+            {"xmin", exrhoL.xmin()},
+            {"xmax", exrhoL.xmax()},
         });
         jexpansionsV.push_back({
-            {"coef", tovec(exV.coef())},
-            {"xmin", exV.xmin()},
-            {"xmax", exV.xmax()},
+            {"coef", tovec(exrhoV.coef())},
+            {"xmin", exrhoV.xmin()},
+            {"xmax", exrhoV.xmax()},
         });
     }
     nlohmann::json jo = {
@@ -496,7 +511,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     // Stream the output into the file you specified
     std::ofstream ofs(ofpath); ofs << jo.dump(2);
     
-    std::cout << std::get<0>(exps).size() << " expansions" << std::endl;
+    std::cout << exps[0].size() << " expansions" << std::endl;
 }
 
 /**
