@@ -41,6 +41,7 @@ def plot_water_nonmono(RP):
 
     FLD = 'WATER'
     ceL, ceV = get_expansions(FLD=FLD)
+    fig, ax = plt.subplots(1,1,figsize=(5.0, 3))
     j = json.load(open(f'output/check/{FLD}_check.json'))
     Tcrit = j['meta']['Tcrittrue / K']
     df = pandas.DataFrame(j['data'])
@@ -60,6 +61,7 @@ def plot_water_nonmono(RP):
             print(r.herr)
         plt.plot(r.Output[0], rho, 'kX', mfc=None)
     plt.gca().set(xlabel='$T$ / K', ylabel=r"$\rho'$ / mol/m$^3$")
+    plt.tight_layout(pad=0.2)
     plt.savefig('water_nonmono.pdf')
     plt.close()
 
