@@ -131,7 +131,7 @@ auto vectored_dyadic_splitting(const std::size_t N, const VectorDyadicSplittingF
                 double xmin = expansions[0][iexpansion].xmin();
                 double xmax = expansions[0][iexpansion].xmax();
                 // Splitting is required, do a dyadic split
-                auto xmid = xmin*0.25 + xmax*75;
+                auto xmid = xmin*0.25 + xmax*0.75;
                 std::cout << "s" << std::endl;
                 auto newleft = vector_factory(N, func, xmin, xmid);
                 auto newright = vector_factory(N, func, xmid, xmax);
