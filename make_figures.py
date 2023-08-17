@@ -17,18 +17,59 @@ from pypdf import PdfReader
 def numprofile_stats():
     N = []
     for f in sorted(glob.glob('output/*_exps.json')):
-        jL = json.load(open(f))['jexpansionsL']
+        jL = json.load(open(f))['jexpansions_rhoL']
         N.append(len(jL))
     print(np.std(N), np.mean(N))
 numprofile_stats()
 # quit()
 
-def profile_evaluation(FLD):
+def get_expansions(FLD):
     expsL, expsV = [], []
-    for jL in json.load(open(f'output/{FLD}_exps.json'))['jexpansionsL']:
+    for jL in json.load(open(f'output/{FLD}_exps.json'))['jexpansions_rhoL']:
         eL = ChebTools.ChebyshevExpansion(jL['coef'], jL['xmin'], jL['xmax'])
         expsL.append(eL)
-    for jV in json.load(open(f'output/{FLD}_exps.json'))['jexpansionsL']:
+    for jV in json.load(open(f'output/{FLD}_exps.json'))['jexpansions_rhoV']:
+        eV = ChebTools.ChebyshevExpansion(jV['coef'], jV['xmin'], jV['xmax'])
+        expsV.append(eV)
+
+    ceL = ChebTools.ChebyshevCollection(expsL)
+    ceV = ChebTools.ChebyshevCollection(expsV)
+
+    return ceL, ceV
+
+def plot_water_nonmono(RP):
+
+    FLD = 'WATER'
+    ceL, ceV = get_expansions(FLD=FLD)
+    j = json.load(open(f'output/check/{FLD}_check.json'))
+    Tcrit = j['meta']['Tcrittrue / K']
+    df = pandas.DataFrame(j['data'])
+    df['errL'] = np.abs(df["rho'(SA) / mol/m^3"]/df["rho'(mp) / mol/m^3"]-1)
+    df['errV'] = np.abs(df["rho''(SA) / mol/m^3"]/df["rho''(mp) / mol/m^3"]-1)
+    df['Theta'] = (Tcrit-df['T / K'])/Tcrit
+    plt.plot(df['T / K'], df["rho'(mp) / mol/m^3"], 'o')
+    x = np.linspace(273.15, 285, 10000)
+    y = [ceL(x_) for x_ in x]
+    plt.plot(x, y)
+    plt.xlim(273.15, 285)
+    plt.ylim(55470, 55510)
+    RP.SETFLUIDSdll(FLD)
+    for rho in np.linspace(55470, np.max(df["rho'(mp) / mol/m^3"]), 200):
+        r = RP.REFPROPdll('', 'DSAT','T',RP.MOLAR_BASE_SI, 0, 0,rho, 0,[1.0])
+        if r.ierr != 0:
+            print(r.herr)
+        plt.plot(r.Output[0], rho, 'kX', mfc=None)
+    plt.gca().set(xlabel='$T$ / K', ylabel=r"$\rho'$ / mol/m$^3$")
+    plt.savefig('water_nonmono.pdf')
+    plt.close()
+
+
+def profile_evaluation(FLD):
+    expsL, expsV = [], []
+    for jL in json.load(open(f'output/{FLD}_exps.json'))['jexpansions_rhoL']:
+        eL = ChebTools.ChebyshevExpansion(jL['coef'], jL['xmin'], jL['xmax'])
+        expsL.append(eL)
+    for jV in json.load(open(f'output/{FLD}_exps.json'))['jexpansions_rhoV']:
         eV = ChebTools.ChebyshevExpansion(jV['coef'], jV['xmin'], jV['xmax'])
         expsV.append(eV)
 
@@ -43,7 +84,7 @@ def profile_evaluation(FLD):
 
 def plot_widths(FLD):
     fig, ax = plt.subplots(1,1,figsize=(3.5, 3))
-    for jL in json.load(open(f'output/{FLD}_exps.json'))['jexpansionsL']:
+    for jL in json.load(open(f'output/{FLD}_exps.json'))['jexpansions_rhoL']:
         plt.plot(jL['xmin'], jL['xmax']-jL['xmin'], 'k.')
     # plt.xscale('log')
     plt.yscale('log')
@@ -111,6 +152,9 @@ def plot_worst():
                 ax1.set_ylabel(r"$|\rho'_{\Upsilon}/\rho'_{\rm ep}-1|$")
                 ax2.set_ylabel(r"$|\rho''_{\Upsilon}/\rho''_{\rm ep}-1|$")
                 ax2.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
+
+                if FLD in ['R152A', 'NF3']:
+                    df.to_csv(f'{FLD}_calcs.csv', index=False)
 
                 plt.tight_layout(pad=0.2)
                 xticks = ax.get_xticks()
@@ -218,6 +262,96 @@ def plot_pmu_devs():
             bad_REFPROP += sum(~np.isfinite(df['errP(REFPROP)']))
 
     print(abs(bad_REFPROP/(bad_REFPROP+good_REFPROP)-1), '% of calculations fail', bad_REFPROP, good_REFPROP)
+
+def plot_panc_devs():
+    with PdfPages('panc_from_rhoanc_devs.pdf') as PDF:
+        for f in sorted(glob.glob('output/check/*.json')):
+            
+            FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
+            ceL, ceV = get_expansions(FLD)
+
+            fig, (ax1) = plt.subplots(1,1,sharex=True,figsize=(4,3), )
+        
+            j = json.load(open(f))
+            Tcrit = j['meta']['Tcrittrue / K']
+            REOS = j['meta']['gas_constant / J/mol/K']
+            df = pandas.DataFrame(j['data'])
+            df['Theta'] = (Tcrit-df['T / K'])/Tcrit
+            Tmin = df['T / K'].min()
+
+            df['(p/R)_ep'] = df['p(mp) / Pa']/REOS
+
+            model = teqp.build_multifluid_model([f'teqp_REFPROP10/dev/fluids/{FLD}.json'], teqp.get_datapath())
+            z = np.array([1.0])
+            R = model.get_R(z)
+            print(R, FLD, REOS)
+
+            def build_panc_from_rhoanc():
+                def get_p(T):
+                    rhoL = ceL(T)
+                    rhoV = ceV(T)
+                    pL = rhoL*R*T*(1+model.get_Ar01(T, rhoL, z))
+                    pV = rhoV*R*T*(1+model.get_Ar01(T, rhoV, z))
+                    return (pL + pV)/2
+                return ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_p, Tmin, Tcrit, 3, 1e-12, 8, None))
+            panc = build_panc_from_rhoanc()
+
+            def get_p(row, rhokey):
+                T = row['T / K']
+                rho = row[rhokey]
+                return rho*T*(1+model.get_Ar01(T, rho, z))
+            df['pLSA/R'] = df.apply(get_p, axis=1, rhokey="rho'(SA) / mol/m^3")
+            # df['pVSA / Pa'] = df.apply(get_p, axis=1, rhokey="rho''(SA) / mol/m^3")
+
+            df['panc(T)/R'] = df.apply(lambda row: panc(row['T / K']), axis=1)/R
+            ax1.plot(df['Theta'], np.abs(df['panc(T)/R']/df['(p/R)_ep']-1), color='b', label='p(rho(T))')
+
+            ax1.plot(df['Theta'], np.abs((df['p(SA) / Pa']/REOS)/df['(p/R)_ep']-1), color='green', label='p(T)')
+
+            RP.SETFLUIDSdll(FLD)
+            RP.FLAGSdll('R', 2)
+            errmsgs = []
+            def add_poverR_REFPROP(row):
+                r = RP.REFPROPdll('','TQ','DLIQ;DVAP;PLIQ;PVAP;T;R',RP.MOLAR_BASE_SI,0,0,row['T / K'],0,[1.0])
+                if r.ierr == 0:
+                    pl, pv = r.Output[2:4]
+                    R = r.Output[5]
+                    return pl/R
+                else:
+                    print(r.herr)
+                    errmsgs.append(r.herr.strip())
+                    return np.nan
+            for msg in set(errmsgs):
+                print(msg)
+            df['p(REFPROP)/R'] = df.apply(add_poverR_REFPROP, axis=1)
+            ax1.plot(df['Theta'], np.abs(df['p(REFPROP)/R']/df['(p/R)_ep']-1), color='r', label='REFPROP')
+
+            ax1.set_xscale('log')
+            ax1.set_yscale('log')
+            # ax2.set_yscale('log')
+            ax1.legend(loc='best')
+            ax1.set_ylim(1e-17, 100)
+            # ax2.set_ylim(1e-17, 100)
+            
+            plt.suptitle(FLD)
+            for ax in [ax1]:
+                ax.axhline(1e-12, dashes=[2,2], color='k', lw=0.5)
+                ax.axvline(1e-6, dashes=[2,2], color='k', lw=0.5)
+            if ax1.get_xlim()[0] < 1e-10:
+                ax1.set_xlim(left=1e-10)
+            ax1.set_ylabel(r"$(p/R)/(p/R)_{\rm SA}-1$")
+            # ax2.set_ylabel(r"$r_\mu$")
+            # ax2.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
+
+            plt.tight_layout(pad=0.2)
+            xticks = ax.get_xticks()
+            ax.set_xticks(xticks[0:len(xticks):2])
+            for ax in [ax1]:
+                yticks = ax.get_yticks()
+                ax.set_yticks(yticks[0:len(yticks):2])
+            
+            PDF.savefig(fig)
+            plt.close()
 
 def map_pages(PDFs):
     """ Find all the strings in sets of PDF and cache the locations in the files """
@@ -366,6 +500,41 @@ def plot_ancillary(FLD):
     plt.savefig('ancillary_boost.pdf')
     plt.show()
 
+def check_all_conversions(RP, FLUIDS):
+
+    for FLD in glob.glob(FLUIDS+'/*.FLD'):
+        RP.FLAGSdll('R', 2)
+        RP.SETFLUIDSdll(FLD)
+        RP.FLAGSdll('R', 2)
+        FLD = os.path.split(FLD)[1].split('.')[0]
+
+        path = 'teqp_REFPROP10/dev/fluids/'+FLD+'.json'
+        if not os.path.exists(path):
+            print(path)
+        model = teqp.build_multifluid_model([path], teqp.get_datapath())
+
+        Tcrit, rhocrit = RP.REFPROPdll('','','TCRIT;DCRIT',RP.MOLAR_BASE_SI,0,0,0,0,[1.0]).Output[0:2]
+
+        T = Tcrit*1.1
+        z = np.array([1.0])
+
+        for rho in np.geomspace(1e-10, 1.5*rhocrit):
+            r = RP.REFPROPdll('','TD&','P;R',RP.MOLAR_BASE_SI,0,0,T,rho,[1.0])
+            pR_REFPROP = r.Output[0]/r.Output[1]
+            pR_teqp = rho*T*(1+model.get_Ar01(T,rho,z))
+            err = 100*(pR_teqp/pR_REFPROP-1)
+            if abs(err) > 1e-12:
+                print(FLD, err, pR_REFPROP, pR_teqp, T, rho)
+
+            if FLD == 'NF3':
+                o = RP.REFPROPdll('/Users/ihb/Desktop/NF3BWRfixed.FLD','TD&','P;R',RP.MOLAR_BASE_SI,0,0,T,rho,[1.0])
+                print(pR_REFPROP, pR_teqp, o.Output[0]/o.Output[1]) 
+                o = RP.REFPROPdll('/Users/ihb/Desktop/NF3fromsandbox.FLD','TD&','P;R',RP.MOLAR_BASE_SI,0,0,T,rho,[1.0])
+                print(pR_REFPROP, pR_teqp, o.Output[0]/o.Output[1])
+                o = RP.REFPROPdll('/Users/ihb/Desktop/NF3fromfixedversion10.0.FLD','TD&','P;R',RP.MOLAR_BASE_SI,0,0,T,rho,[1.0])
+                print(pR_REFPROP, pR_teqp, o.Output[0]/o.Output[1])
+
+
 if __name__ == '__main__':
 
     root = os.getenv('RPPREFIX')
@@ -377,10 +546,14 @@ if __name__ == '__main__':
 
     RP = REFPROPFunctionLibrary(root)
     RP.SETPATHdll(root)
+    # check_all_conversions(RP, FLUIDS=os.getenv('RPPREFIX')+'/FLUIDS')
+    # quit()
     
     import warnings
     warnings.filterwarnings("ignore")
 
+    plot_water_nonmono(RP)
+    plot_panc_devs()
     plot_ancillary("PROPANE")
     plot_worst()
     plot_pmu_devs()
