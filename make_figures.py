@@ -270,7 +270,7 @@ def plot_panc_devs():
             FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
             ceL, ceV = get_expansions(FLD)
 
-            fig, (ax1) = plt.subplots(1,1,sharex=True,figsize=(4,3), )
+            fig, axes = plt.subplots(1,2,sharey=True,figsize=(4,3), width_ratios=[2,2])
         
             j = json.load(open(f))
             Tcrit = j['meta']['Tcrittrue / K']
@@ -304,9 +304,9 @@ def plot_panc_devs():
             # df['pVSA / Pa'] = df.apply(get_p, axis=1, rhokey="rho''(SA) / mol/m^3")
 
             df['panc(T)/R'] = df.apply(lambda row: panc(row['T / K']), axis=1)/R
-            ax1.plot(df['Theta'], np.abs(df['panc(T)/R']/df['(p/R)_ep']-1), color='b', label='p(rho(T))')
-
-            ax1.plot(df['Theta'], np.abs((df['p(SA) / Pa']/REOS)/df['(p/R)_ep']-1), color='green', label='p(T)')
+            for ax in axes:
+                ax.plot(df['Theta'], np.abs(df['panc(T)/R']/df['(p/R)_ep']-1), color='b', label=r'$p_{\rm SA}(\rho_{\rm SA}(T))$', dashes=[2,2])
+                ax.plot(df['Theta'], np.abs((df['p(SA) / Pa']/REOS)/df['(p/R)_ep']-1), color='green', label=r'$p_{\rm SA}(T)$')
 
             RP.SETFLUIDSdll(FLD)
             RP.FLAGSdll('R', 2)
@@ -318,40 +318,47 @@ def plot_panc_devs():
                     R = r.Output[5]
                     return pl/R
                 else:
-                    print(r.herr)
+                    # print(r.herr)
                     errmsgs.append(r.herr.strip())
                     return np.nan
             for msg in set(errmsgs):
                 print(msg)
             df['p(REFPROP)/R'] = df.apply(add_poverR_REFPROP, axis=1)
-            ax1.plot(df['Theta'], np.abs(df['p(REFPROP)/R']/df['(p/R)_ep']-1), color='r', label='REFPROP')
+            for ax in axes:
+                ax.plot(df['Theta'], np.abs(df['p(REFPROP)/R']/df['(p/R)_ep']-1), color='r', label='REFPROP', dashes=[3,3])
+
+            ax1, ax2 = axes
 
             ax1.set_xscale('log')
             ax1.set_yscale('log')
             # ax2.set_yscale('log')
             ax1.legend(loc='best')
-            ax1.set_ylim(1e-17, 100)
-            # ax2.set_ylim(1e-17, 100)
-            
-            plt.suptitle(FLD)
-            for ax in [ax1]:
-                ax.axhline(1e-12, dashes=[2,2], color='k', lw=0.5)
-                ax.axvline(1e-6, dashes=[2,2], color='k', lw=0.5)
+
+            Thetasplit = 0.1
             if ax1.get_xlim()[0] < 1e-10:
                 ax1.set_xlim(left=1e-10)
-            ax1.set_ylabel(r"$(p/R)/(p/R)_{\rm SA}-1$")
-            # ax2.set_ylabel(r"$r_\mu$")
-            # ax2.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
+            ax1.set_xlim(ax1.get_xlim()[0], Thetasplit)
+            ax2.set_xlim(Thetasplit, ax2.get_xlim()[1])
+            
+            plt.suptitle(FLD)            
+            ax1.set_ylabel(r"$(p/R)/(p/R)_{\rm ep}-1$")
+            ax1.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
 
             plt.tight_layout(pad=0.2)
-            xticks = ax.get_xticks()
-            ax.set_xticks(xticks[0:len(xticks):2])
+
+            for ax in [ax1, ax2]:
+                xticks = ax.get_xticks()
+                ax.set_xticks(xticks[0:len(xticks):2])
             for ax in [ax1]:
                 yticks = ax.get_yticks()
-                ax.set_yticks(yticks[0:len(yticks):2])
+                ax.set_yticks(10.0**np.arange(-17, 2, 2))
+            ax1.set_xlim(ax1.get_xlim()[0], Thetasplit)
+            ax1.set_ylim(1e-17, 100)
             
             PDF.savefig(fig)
             plt.close()
+
+            # break
 
 def map_pages(PDFs):
     """ Find all the strings in sets of PDF and cache the locations in the files """
