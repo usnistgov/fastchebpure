@@ -76,19 +76,20 @@ auto vector_factory(const std::size_t N, const VectorDyadicSplittingFunction& fu
 
     // Step 1&2: Grid points functional values (function evaluated at the
     // extrema of the Chebyshev polynomial of order N - there are N+1 of them)
-    Eigen::VectorXd fL(N + 1), fR(N+1);
+    Eigen::VectorXd fL(N + 1), fR(N+1), fp(N+1);
     for (int k = 0; k <= N; ++k) {
         // The extrema in [-1,1] scaled to real-world coordinates
         double x_k = ((xmax - xmin)*x_nodes_n11(k) + (xmax + xmin)) / 2.0;
         auto funcvals = func(x_k);
         fL(k) = funcvals[0];
         fR(k) = funcvals[1];
+        fp(k) = funcvals[2];
     }
 
     // Step 3: Get coefficients for the L matrix from the library of coefficients
     const Eigen::MatrixXd &L = l_matrix_library.get(N);
     // Step 4: Obtain coefficients from vector - matrix product
-    return {ChebyshevExpansion(L*fL, xmin, xmax), ChebyshevExpansion(L*fR, xmin, xmax)};
+    return {ChebyshevExpansion(L*fL, xmin, xmax), ChebyshevExpansion(L*fR, xmin, xmax), ChebyshevExpansion(L*fp, xmin, xmax)};
 }
 
 // A convenience function that returns true if the paired expansions have converged
@@ -109,15 +110,15 @@ bool are_converged(int Msplit, double tol, const Container& ce, std::size_t i){
 using Container = std::vector<std::vector<ChebyshevExpansion>>;
 using VectorDyadicSplittingCallback = std::function<void(int, const Container&)>;
 
-template<typename Container = std::vector<ChebyshevExpansion>>
+template<typename Container = std::vector<std::vector<ChebyshevExpansion>>>
 auto vectored_dyadic_splitting(const std::size_t N, const VectorDyadicSplittingFunction& func, const double xmin, const double xmax,
     const int M, const double tol, const int max_refine_passes = 8,
-    const VectorDyadicSplittingCallback& callback = nullptr) -> std::vector<Container>
+    const VectorDyadicSplittingCallback& callback = nullptr) -> Container
 {
     
     // Start off with the full domain from xmin to xmax
-    std::vector<Container> expansions;
     auto vector_expansions = vector_factory(N, func, xmin, xmax);
+    Container expansions(vector_expansions.size());
     for (auto i = 0; i < vector_expansions.size(); ++i){
         expansions[i].emplace_back(vector_expansions[i]);
     }
@@ -241,6 +242,10 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     double Tcrittrue, rhocrittrue;
     std::tie(Tcrittrue, rhocrittrue) = solve_pure_critical(model, Tcrit, rhomolarcrit);
     
+    using tdxflt = teqp::TDXDerivatives<decltype(model), my_float_mp, Eigen::ArrayX<my_float_mp>>;
+    const auto z = (Eigen::ArrayX<my_float_mp>(1) << 1.0).finished();
+    auto pcrittrue = rhocrittrue*R*Tcrittrue*(1.0 + tdxflt::get_Ar01<teqp::ADBackends::multicomplex>(model, Tcrittrue, rhocrittrue, z));
+    
     auto anc = build_ancillaries(model, Tcrittrue, rhocrittrue);
     
     // Build critical region polynomial for each phase
@@ -321,10 +326,10 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     };
     std::optional<CriticalEstimation> last_estimationL, last_estimationV;
     
-    // A function to get the co-existing densities for a given value of temperature
-    VectorDyadicSplittingFunction get_densities = [&](double T) -> std::vector<double>{
+    // A function to get the co-existing densities and pressure for a given value of temperature
+    VectorDyadicSplittingFunction get_VLE_values = [&](double T) -> std::vector<double>{
         if (std::abs(T / Tcrittrue - 1) < 1e-14) {
-            return {rhocrittrue, rhocrittrue};
+            return {rhocrittrue, rhocrittrue, static_cast<double>(pcrittrue)};
         }
         else if (densitydb.count(T) == 0) { // If not in cache...
             // Do the calculation and store in cache
@@ -384,16 +389,17 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
                     throw FailedIteration(T, "Iteration invalid liquid density @T="+std::to_string(T)+". Tcrittrue is "+std::to_string(Tcrittrue)+" K");
                 }
             }
-            // We have a good solution, store it in the database
+            // Calculate the pressures in each phase
             using tdxflt = teqp::TDXDerivatives<decltype(model), my_float_mp, Eigen::ArrayX<my_float_mp>>;
             const auto z = (Eigen::ArrayX<my_float_mp>(1) << 1.0).finished();
             auto pL = rhovec[0]*R*T*(1.0 + tdxflt::get_Ar01<teqp::ADBackends::multicomplex>(model, T, rhovec[0], z));
             auto pV = rhovec[1]*R*T*(1.0 + tdxflt::get_Ar01<teqp::ADBackends::multicomplex>(model, T, rhovec[1], z));
+            // We have a good solution, store it in the database
             densitydb.insert(std::make_pair(T, DensitiesType{ rhovec[0], rhovec[1], pL, pV, rhocrittrue+BrhoL*pow(Theta, 0.5), rhocrittrue + BrhoV*pow(Theta, 0.5) }));
         }
         // Now we obtain values from the database
         auto d = densitydb.at(T); // Retrieve from cache
-        return {static_cast<double>(d.rhoL), static_cast<double>(d.rhoV)};
+        return {static_cast<double>(d.rhoL), static_cast<double>(d.rhoV), static_cast<double>(d.pL)};
     };
 
     double Tmin = std::max(Ttriple, Tmin_sat), Tmax = Tcrittrue, tol = 1e-12;
@@ -443,7 +449,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     try {
         exps = vectored_dyadic_splitting(
             N,
-            get_densities,
+            get_VLE_values,
             Tmin, Tmax, Msplit, tol, max_refine_passes, callback
         );
     }
@@ -485,28 +491,36 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     };
     
     // Collect all the expansions
-    nlohmann::json jexpansionsL = nlohmann::json::array(),
-                   jexpansionsV = nlohmann::json::array();
+    nlohmann::json jexpansionsrhoL = nlohmann::json::array(),
+                   jexpansionsrhoV = nlohmann::json::array(),
+                   jexpansionsp = nlohmann::json::array();
     
     for (auto j = 0; j < exps[0].size(); ++j) {
         auto& exrhoL = exps[0][j];
         auto& exrhoV = exps[1][j];
-        jexpansionsL.push_back({
+        auto& expp = exps[2][j];
+        jexpansionsrhoL.push_back({
             {"coef", tovec(exrhoL.coef())},
             {"xmin", exrhoL.xmin()},
             {"xmax", exrhoL.xmax()},
         });
-        jexpansionsV.push_back({
+        jexpansionsrhoV.push_back({
             {"coef", tovec(exrhoV.coef())},
             {"xmin", exrhoV.xmin()},
             {"xmax", exrhoV.xmax()},
+        });
+        jexpansionsp.push_back({
+            {"coef", tovec(expp.coef())},
+            {"xmin", expp.xmin()},
+            {"xmax", expp.xmax()},
         });
     }
     nlohmann::json jo = {
         {"meta", meta},
         {"crit_anc", jcrit_anc},
-        {"jexpansionsL", jexpansionsL},
-        {"jexpansionsV", jexpansionsV}
+        {"jexpansions_rhoL", jexpansionsrhoL},
+        {"jexpansions_rhoV", jexpansionsrhoV},
+        {"jexpansions_p", jexpansionsp},
     };
     // Stream the output into the file you specified
     std::ofstream ofs(ofpath); ofs << jo.dump(2);
@@ -529,27 +543,25 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
 
     auto get_collection = [](const std::string& expansion_file){
         const nlohmann::json jfile = teqp::load_a_JSON_file(expansion_file);
+        auto parser_ = [&](const auto& key){
+            std::vector<ChebTools::ChebyshevExpansion> o;
+            for (const auto& ex : jfile.at(key)) {
+                o.emplace_back(ex.at("coef").template get<std::vector<double>>(), ex.at("xmin"), ex.at("xmax"));
+            }
+            return ChebTools::ChebyshevCollection(o);
+        };
         
-        std::vector<ChebTools::ChebyshevExpansion> oL;
-        for (const auto& ex : jfile.at("jexpansionsL")) {
-            oL.emplace_back(ex.at("coef").get<std::vector<double>>(), ex.at("xmin"), ex.at("xmax"));
-        }
-        
-        std::vector<ChebTools::ChebyshevExpansion> oV;
-        for (const auto& ex : jfile.at("jexpansionsV")) {
-            oV.emplace_back(ex.at("coef").get<std::vector<double>>(), ex.at("xmin"), ex.at("xmax"));
-        }
-        
-        return std::make_tuple(ChebTools::ChebyshevCollection(oL), ChebTools::ChebyshevCollection(oV));
+        return std::make_tuple(parser_("jexpansions_rhoL"), parser_("jexpansions_rhoV"), parser_("jexpansions_p"));
     };
 
     auto db = nlohmann::json::array();
 
     // Load expansions from file for liquid and vapor
-    auto [ccL, ccV] = get_collection(input_file_path);
+    auto [ccL, ccV, ccp] = get_collection(input_file_path);
     auto& ccL_ = ccL, ccV_ = ccV;
     auto meta = teqp::load_a_JSON_file(input_file_path)["meta"];
     double Tcrittrue = meta.at("Tcrittrue / K");
+    double R = meta.at("gas_constant / J/mol/K");
     double rhocrittrue = meta.at("rhocrittrue / mol/m^3");
     
     auto get_degreedoubled_nodes = [&]() {
@@ -576,6 +588,7 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
             
             double rhoSAL = ccL(T);
             double rhoSAV = ccV(T);
+            double pSA = ccp(T);
             
             Eigen::ArrayXd rhovec;
             if (std::abs(T - Tcrittrue) > 1e-14 && T < ccL.get_exps().back().xmax() && T < ccV.get_exps().back().xmax()) {
@@ -592,6 +605,11 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
                 std::cout << "rhovec is not 2 elements in length" << std::endl;
             }
             
+            // Calculate the pressures in each phase
+            using tdxflt = teqp::TDXDerivatives<decltype(model), my_float_mp, Eigen::ArrayX<my_float_mp>>;
+            const auto z = (Eigen::ArrayX<my_float_mp>(1) << 1.0).finished();
+            auto pmp = static_cast<double>(rhovec[0]*R*T*(1.0 + tdxflt::get_Ar01<teqp::ADBackends::multicomplex>(model, T, rhovec[0], z)));
+            
             db.push_back(nlohmann::json{
                 {"T / K", T},
                 {"rho'(SA) / mol/m^3", rhoSAL},
@@ -600,6 +618,8 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
                 {"rho''(SA) / mol/m^3", rhoSAV},
                 {"rho''(mp) / mol/m^3", rhovec[1]},
                 {"rho''(SA)/rho''(mp)", rhoSAV/rhovec[1]},
+                {"p(mp) / Pa", pmp},
+                {"p(SA) / Pa", pSA}
             });
         }
         catch (FailedIteration& f) {
