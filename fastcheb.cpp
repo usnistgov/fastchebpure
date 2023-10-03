@@ -99,8 +99,8 @@ bool are_converged(int Msplit, double tol, const Container& ce, std::size_t i){
     // Convenience function to get the M-element norm ratio, which is our convergence criterion
     auto get_err = [Msplit](const ChebTools::ChebyshevExpansion& ce) { return ce.coef().tail(Msplit).norm() / ce.coef().head(Msplit).norm(); };
     
-    for (auto iancillary = 0; iancillary < ce.size(); ++iancillary){
-        if (get_err(ce[iancillary][i]) > tol){
+    for (auto iexpansion = 0; iexpansion < ce.size(); ++iexpansion){
+        if (get_err(ce[iexpansion][i]) > tol){
             return false;
         }
     }
