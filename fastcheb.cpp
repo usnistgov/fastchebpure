@@ -185,6 +185,74 @@ struct FailedIteration : public std::exception {
     }
 };
 
+/**
+ With a range of starting points covering a range of points around the ceritical point given
+ by the EOS developers, search for the numerical critical critical point satisfying
+ dp/drho|T = 0 and d2p/drho^2|T = 0. There are in some cases multiple solutions to
+ these constraints, so apply additional screening to rule out numerical wiggles that
+ satisfy the derivative constraints but should be rejected
+ */
+template<class Model>
+auto aggressively_solve_pure_critical(const Model& model, double Tcrit0, double rhocrit0){
+    
+    using tdx = teqp::TDXDerivatives<Model, double, Eigen::ArrayXd>;
+    auto molefrac = (Eigen::ArrayXd(1) << 1.0).finished();
+    auto R = model.R(molefrac);
+    auto Trange = Eigen::ArrayXd::LinSpaced(50, 0.9*Tcrit0, 2*Tcrit0);
+    auto rhorange = Eigen::ArrayXd::LinSpaced(50, 0.5*rhocrit0, 2*rhocrit0);
+    
+    std::vector<double>Tsolns, rhosolns;
+    for (auto Tstart: Trange){
+        for (auto rhostart: rhorange){
+            double Tsoln, rhosoln;
+            std::tie(Tsoln, rhosoln) = solve_pure_critical(model, Tstart, rhostart);
+            
+            if ((Tsoln < Trange.minCoeff()) || (Tsoln > Trange.maxCoeff())){ continue;  }
+            if ((rhosoln < rhorange.minCoeff()) || (rhosoln > rhorange.maxCoeff())){ continue;  }
+            if (!std::isfinite(Tsoln) || !std::isfinite(rhosoln)){ continue; }
+            
+            auto get_derivs = [&](double T, double rho){
+                auto Ar0n = tdx::template get_Ar0n<3>(model, T, rho, molefrac);
+                double Ar00 = Ar0n[0], Ar01 = Ar0n[1], Ar02 = Ar0n[2], Ar03 = Ar0n[3];
+                
+                double dpdrho = R*T*(1 + 2*Ar01 + Ar02);
+                double d2pdrho2 = R*T/rho*(2*Ar01 + 4*Ar02 + Ar03);
+                return std::make_tuple(dpdrho, d2pdrho2);
+            };
+            auto [dpdrho, d2pdrho2] = get_derivs(Tsoln, rhosoln);
+            if (std::abs(dpdrho) > 1e-9){ continue; }
+            if (std::abs(d2pdrho2) > 1e-9){ continue; }
+            
+            double drho = 1e-2*rhosoln;
+            // dp/drho|T should be positive to the left and right of solution along the isotherm
+            // and d2p/drho2|T should change sign on either side of the solution
+            auto [dpdrhoR, d2pdrho2R] = get_derivs(Tsoln, rhosoln+drho);
+            auto [dpdrhoL, d2pdrho2L] = get_derivs(Tsoln, rhosoln-drho);
+            if (dpdrhoL < 0 || dpdrhoR < 0){ continue; }
+            if (d2pdrho2L*d2pdrho2R > 0) { continue; }
+            
+//            std::cout << Tsoln << "," << rhosoln << std::endl;
+            Tsolns.push_back(Tsoln);
+            rhosolns.push_back(rhosoln);
+        }
+    }
+    Eigen::ArrayXd Tsolns_ = Eigen::Map<Eigen::ArrayXd>(&Tsolns[0], Tsolns.size());
+    Eigen::ArrayXd rhosolns_ = Eigen::Map<Eigen::ArrayXd>(&rhosolns[0], rhosolns.size());
+    auto stddev = [](Eigen::ArrayXd& vec){ return std::sqrt((vec - vec.mean()).square().sum()/(vec.size()-1)); };
+    
+    double fracerr_T = stddev(Tsolns_)/Tsolns_.mean();
+    double fracerr_rho = stddev(rhosolns_)/rhosolns_.mean();
+//    std::cout << stddev(Tsolns_) << "," << Tsolns_.mean() << std::endl;
+//    std::cout << stddev(rhosolns_) << "," << rhosolns_.mean() << std::endl;
+    
+    if (fracerr_T < 1e-10 && fracerr_rho < 1e-7){
+        return std::make_tuple(Tsolns_.mean(), rhosolns_.mean());
+    }
+    else{
+        throw std::invalid_argument("Could not solve for critical point. There were "+std::to_string(Tsolns_.size())+" solutions and relative log10(std(y)/mean(y)) for T and rho were: "+std::to_string(log10(fracerr_T)) + "," + std::to_string(log10(fracerr_rho)));
+    }
+}
+
 /** The function to  fit a superancillary function for a given fluid
  
  \note It is thread-safe, so can be run in parallel
@@ -240,7 +308,12 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     double R = j.at("EOS")[0].at("gas_constant"); // Gas constant being used
 
     double Tcrittrue, rhocrittrue;
-    std::tie(Tcrittrue, rhocrittrue) = solve_pure_critical(model, Tcrit, rhomolarcrit);
+    if (fluid == "NITROGEN"){
+        std::tie(Tcrittrue, rhocrittrue) = solve_pure_critical(model, Tcrit, rhomolarcrit);
+    }
+    else{
+        std::tie(Tcrittrue, rhocrittrue) = aggressively_solve_pure_critical(model, Tcrit, rhomolarcrit);
+    }
     
     using tdxflt = teqp::TDXDerivatives<decltype(model), my_float_mp, Eigen::ArrayX<my_float_mp>>;
     const auto z = (Eigen::ArrayX<my_float_mp>(1) << 1.0).finished();
