@@ -16,6 +16,7 @@
 #include "teqp/models/multifluid_ancillaries.hpp"
 #include "teqp/algorithms/VLE_pure.hpp"
 #include "teqp/algorithms/critical_pure.hpp"
+#include "teqp/derivs.hpp"
 
 // Imports from boost
 #include <boost/multiprecision/cpp_bin_float.hpp>
@@ -193,7 +194,7 @@ struct FailedIteration : public std::exception {
  satisfy the derivative constraints but should be rejected
  */
 template<class Model>
-auto aggressively_solve_pure_critical(const Model& model, double Tcrit0, double rhocrit0){
+auto aggressively_solve_pure_critical(const Model& model, double Tcrit0, double rhocrit0, double fracerr_rho_tol=1e-7){
     
     using tdx = teqp::TDXDerivatives<Model, double, Eigen::ArrayXd>;
     auto molefrac = (Eigen::ArrayXd(1) << 1.0).finished();
@@ -245,7 +246,7 @@ auto aggressively_solve_pure_critical(const Model& model, double Tcrit0, double 
 //    std::cout << stddev(Tsolns_) << "," << Tsolns_.mean() << std::endl;
 //    std::cout << stddev(rhosolns_) << "," << rhosolns_.mean() << std::endl;
     
-    if (fracerr_T < 1e-10 && fracerr_rho < 1e-7){
+    if (fracerr_T < 1e-10 && fracerr_rho < fracerr_rho_tol){
         return std::make_tuple(Tsolns_.mean(), rhosolns_.mean());
     }
     else{
@@ -310,6 +311,11 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     double Tcrittrue, rhocrittrue;
     if (fluid == "NITROGEN"){
         std::tie(Tcrittrue, rhocrittrue) = solve_pure_critical(model, Tcrit, rhomolarcrit);
+    }
+    else if (fluid == "DMC" || fluid == "MXYLENE"){
+        // Need to relax the tolerance a bit because these ones have multiple critical points
+        // The temperature is good, but the densities are not. Maybe this is catastrophic truncation?
+        std::tie(Tcrittrue, rhocrittrue) = aggressively_solve_pure_critical(model, Tcrit, rhomolarcrit, 1e-5);
     }
     else{
         std::tie(Tcrittrue, rhocrittrue) = aggressively_solve_pure_critical(model, Tcrit, rhomolarcrit);
