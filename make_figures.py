@@ -819,18 +819,22 @@ def plot_ancillary(FLD):
             })
         except:
             pass
+    plt.subplots(figsize=(3.5, 3.5))
     df = pandas.DataFrame(o)
-    plt.plot(df['Theta'], np.abs(df['rhoLcrit']/df['rhoLmp']-1), 'o-', label='liquid(crit)', ms=1)
-    plt.plot(df['Theta'], np.abs(df['rhoVcrit']/df['rhoVmp']-1), 'o-', label='vapor(crit)', dashes=[2,2], ms=1)
+    plt.plot(df['Theta'], np.abs(df['rhoLcrit']/df['rhoLmp']-1), 'r-', label='liquid(crit)', lw=3)
+    plt.plot(df['Theta'], np.abs(df['rhoVcrit']/df['rhoVmp']-1), 'b-', label='vapor(crit)', dashes=[2,2], lw=3)
 
-    plt.plot(df['Theta'], np.abs(df['rhoLconv']/df['rhoLmp']-1), 'o-', label='liquid(conv)')
-    plt.plot(df['Theta'], np.abs(df['rhoVconv']/df['rhoVmp']-1), 'o-', label='vapor(conv)', dashes=[2,2])
+    plt.plot(df['Theta'], np.abs(df['rhoLconv']/df['rhoLmp']-1), 'r--', label='liquid(conv)')
+    plt.plot(df['Theta'], np.abs(df['rhoVconv']/df['rhoVmp']-1), 'b--', label='vapor(conv)', dashes=[2,2])
     plt.xscale('log')
     plt.yscale('log')
 
     plt.gca().set(xlabel=r'$\Theta = (T_{\rm crit, num}-T)/T_{\rm crit, num}$', ylabel=r'$|\rho^{\pi}_{\rm anc}/\rho^{\pi}_{\rm ep}-1|$')
-    plt.legend()
+    plt.legend(loc='best')
     plt.tight_layout(pad=0.2)
+    xticks = plt.gca().get_xticks()
+    plt.gca().set_xticks(xticks[0:len(xticks):2])
+    plt.ylim(1e-6, 1e-1)
     plt.savefig('ancillary_boost.pdf')
     plt.show()
 
