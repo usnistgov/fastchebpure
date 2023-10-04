@@ -410,6 +410,30 @@ def test_inverse_functions():
                 plt.savefig(f'nonmono_rhoL_{FLD}_{ce.xmin()}.pdf')
                 plt.close()
 
+def whyrt4():
+
+    FLD = 'PROPANE'
+    f = f'output/check/{FLD}_check.json'
+
+    j = json.load(open(f))
+    Tcrit = j['meta']['Tcrittrue / K']
+    df = pandas.DataFrame(j['data'])
+    df['Theta'] = (Tcrit-df['T / K'])/Tcrit
+
+    _, __, cep = get_expansions(FLD, and_p=True)
+    p = [cep(T) for T in df['T / K']]
+    fig, (ax1, ax2, ax3) = plt.subplots(3, 1)
+    ax1.plot(df['T / K'], p)
+    ax2.plot(df['T / K'], np.log10(p))
+    ax3.plot(df['T / K'], np.array(p)**0.25)
+    ax3.set_xlabel('$T$ / K')
+    ax1.set_ylabel(r'$p$ / Pa')
+    ax2.set_ylabel(r'$\log_{10}(p~/~{\rm Pa})$')
+    ax3.set_ylabel(r'$(p~/~{\rm Pa})^{1/4}$')
+    plt.tight_layout(pad=0.2)
+    plt.savefig('whyrt4_PROPANE.pdf')
+    plt.show()
+
 def plot_invpanc_devs():
     with PdfPages('invpanc_devs.pdf') as PDF:
         for f in sorted(glob.glob('output/check/*.json')):
@@ -842,7 +866,8 @@ if __name__ == '__main__':
 
     # test_inverse_functions()
     # plot_panc_devs()
-    plot_invpanc_devs()
+    whyrt4()
+    # plot_invpanc_devs()
     # plot_water_nonmono(RP)
     # plot_ancillary("PROPANE")
     # plot_worst()
