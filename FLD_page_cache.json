@@ -1,0 +1,2360 @@
+{
+  "pmu_devs.pdf": [
+    {
+      "string": "13BUTADIENE",
+      "pagenum": 1
+    },
+    {
+      "string": "1BUTENE",
+      "pagenum": 2
+    },
+    {
+      "string": "1BUTYNE",
+      "pagenum": 3
+    },
+    {
+      "string": "1PENTENE",
+      "pagenum": 4
+    },
+    {
+      "string": "22DIMETHYLBUTANE",
+      "pagenum": 5
+    },
+    {
+      "string": "23DIMETHYLBUTANE",
+      "pagenum": 6
+    },
+    {
+      "string": "3METHYLPENTANE",
+      "pagenum": 7
+    },
+    {
+      "string": "ACETONE",
+      "pagenum": 8
+    },
+    {
+      "string": "ACETYLENE",
+      "pagenum": 9
+    },
+    {
+      "string": "AMMONIA",
+      "pagenum": 10
+    },
+    {
+      "string": "ARGON",
+      "pagenum": 11
+    },
+    {
+      "string": "BENZENE",
+      "pagenum": 12
+    },
+    {
+      "string": "BUTANE",
+      "pagenum": 13
+    },
+    {
+      "string": "C11",
+      "pagenum": 14
+    },
+    {
+      "string": "C12",
+      "pagenum": 15
+    },
+    {
+      "string": "C16",
+      "pagenum": 16
+    },
+    {
+      "string": "C1CC6",
+      "pagenum": 17
+    },
+    {
+      "string": "C22",
+      "pagenum": 18
+    },
+    {
+      "string": "C2BUTENE",
+      "pagenum": 19
+    },
+    {
+      "string": "C3CC6",
+      "pagenum": 20
+    },
+    {
+      "string": "C4F10",
+      "pagenum": 21
+    },
+    {
+      "string": "C5F12",
+      "pagenum": 22
+    },
+    {
+      "string": "C6F14",
+      "pagenum": 23
+    },
+    {
+      "string": "CF3I",
+      "pagenum": 24
+    },
+    {
+      "string": "CHLORINE",
+      "pagenum": 25
+    },
+    {
+      "string": "CHLOROBENZENE",
+      "pagenum": 26
+    },
+    {
+      "string": "CO2",
+      "pagenum": 27
+    },
+    {
+      "string": "COS",
+      "pagenum": 28
+    },
+    {
+      "string": "CO",
+      "pagenum": 29
+    },
+    {
+      "string": "CYCLOBUTENE",
+      "pagenum": 30
+    },
+    {
+      "string": "CYCLOHEX",
+      "pagenum": 31
+    },
+    {
+      "string": "CYCLOPEN",
+      "pagenum": 32
+    },
+    {
+      "string": "CYCLOPRO",
+      "pagenum": 33
+    },
+    {
+      "string": "D2O",
+      "pagenum": 34
+    },
+    {
+      "string": "D2",
+      "pagenum": 35
+    },
+    {
+      "string": "D4",
+      "pagenum": 36
+    },
+    {
+      "string": "D5",
+      "pagenum": 37
+    },
+    {
+      "string": "D6",
+      "pagenum": 38
+    },
+    {
+      "string": "DEA",
+      "pagenum": 39
+    },
+    {
+      "string": "DECANE",
+      "pagenum": 40
+    },
+    {
+      "string": "DEE",
+      "pagenum": 41
+    },
+    {
+      "string": "DMC",
+      "pagenum": 42
+    },
+    {
+      "string": "DME",
+      "pagenum": 43
+    },
+    {
+      "string": "EBENZENE",
+      "pagenum": 44
+    },
+    {
+      "string": "EGLYCOL",
+      "pagenum": 45
+    },
+    {
+      "string": "ETHANE",
+      "pagenum": 46
+    },
+    {
+      "string": "ETHANOL",
+      "pagenum": 47
+    },
+    {
+      "string": "ETHYLENEOXIDE",
+      "pagenum": 48
+    },
+    {
+      "string": "ETHYLENE",
+      "pagenum": 49
+    },
+    {
+      "string": "FLUORINE",
+      "pagenum": 50
+    },
+    {
+      "string": "H2S",
+      "pagenum": 51
+    },
+    {
+      "string": "HCL",
+      "pagenum": 52
+    },
+    {
+      "string": "HELIUM",
+      "pagenum": 53
+    },
+    {
+      "string": "HEPTANE",
+      "pagenum": 54
+    },
+    {
+      "string": "HEXANE",
+      "pagenum": 55
+    },
+    {
+      "string": "HYDROGEN",
+      "pagenum": 56
+    },
+    {
+      "string": "IBUTENE",
+      "pagenum": 57
+    },
+    {
+      "string": "IHEXANE",
+      "pagenum": 58
+    },
+    {
+      "string": "IOCTANE",
+      "pagenum": 59
+    },
+    {
+      "string": "IPENTANE",
+      "pagenum": 60
+    },
+    {
+      "string": "ISOBUTAN",
+      "pagenum": 61
+    },
+    {
+      "string": "KRYPTON",
+      "pagenum": 62
+    },
+    {
+      "string": "MD2M",
+      "pagenum": 63
+    },
+    {
+      "string": "MD3M",
+      "pagenum": 64
+    },
+    {
+      "string": "MD4M",
+      "pagenum": 65
+    },
+    {
+      "string": "MDM",
+      "pagenum": 66
+    },
+    {
+      "string": "MEA",
+      "pagenum": 67
+    },
+    {
+      "string": "METHANE",
+      "pagenum": 68
+    },
+    {
+      "string": "METHANOL",
+      "pagenum": 69
+    },
+    {
+      "string": "MLINOLEA",
+      "pagenum": 70
+    },
+    {
+      "string": "MLINOLEN",
+      "pagenum": 71
+    },
+    {
+      "string": "MM",
+      "pagenum": 72
+    },
+    {
+      "string": "MOLEATE",
+      "pagenum": 73
+    },
+    {
+      "string": "MPALMITA",
+      "pagenum": 74
+    },
+    {
+      "string": "MSTEARAT",
+      "pagenum": 75
+    },
+    {
+      "string": "MXYLENE",
+      "pagenum": 76
+    },
+    {
+      "string": "N2O",
+      "pagenum": 77
+    },
+    {
+      "string": "NEON",
+      "pagenum": 78
+    },
+    {
+      "string": "NEOPENTN",
+      "pagenum": 79
+    },
+    {
+      "string": "NF3",
+      "pagenum": 80
+    },
+    {
+      "string": "NITROGEN",
+      "pagenum": 81
+    },
+    {
+      "string": "NONANE",
+      "pagenum": 82
+    },
+    {
+      "string": "NOVEC649",
+      "pagenum": 83
+    },
+    {
+      "string": "OCTANE",
+      "pagenum": 84
+    },
+    {
+      "string": "ORTHOHYD",
+      "pagenum": 85
+    },
+    {
+      "string": "OXYGEN",
+      "pagenum": 86
+    },
+    {
+      "string": "OXYLENE",
+      "pagenum": 87
+    },
+    {
+      "string": "PARAHYD",
+      "pagenum": 88
+    },
+    {
+      "string": "PENTANE",
+      "pagenum": 89
+    },
+    {
+      "string": "PROPADIENE",
+      "pagenum": 90
+    },
+    {
+      "string": "PROPANE",
+      "pagenum": 91
+    },
+    {
+      "string": "PROPYLENEOXIDE",
+      "pagenum": 92
+    },
+    {
+      "string": "PROPYLEN",
+      "pagenum": 93
+    },
+    {
+      "string": "PROPYNE",
+      "pagenum": 94
+    },
+    {
+      "string": "PXYLENE",
+      "pagenum": 95
+    },
+    {
+      "string": "R1123",
+      "pagenum": 96
+    },
+    {
+      "string": "R113",
+      "pagenum": 97
+    },
+    {
+      "string": "R114",
+      "pagenum": 98
+    },
+    {
+      "string": "R115",
+      "pagenum": 99
+    },
+    {
+      "string": "R116",
+      "pagenum": 100
+    },
+    {
+      "string": "R11",
+      "pagenum": 101
+    },
+    {
+      "string": "R1216",
+      "pagenum": 102
+    },
+    {
+      "string": "R1224YDZ",
+      "pagenum": 103
+    },
+    {
+      "string": "R1233ZDE",
+      "pagenum": 104
+    },
+    {
+      "string": "R1234YF",
+      "pagenum": 105
+    },
+    {
+      "string": "R1234ZEE",
+      "pagenum": 106
+    },
+    {
+      "string": "R1234ZEZ",
+      "pagenum": 107
+    },
+    {
+      "string": "R123",
+      "pagenum": 108
+    },
+    {
+      "string": "R1243ZF",
+      "pagenum": 109
+    },
+    {
+      "string": "R124",
+      "pagenum": 110
+    },
+    {
+      "string": "R125",
+      "pagenum": 111
+    },
+    {
+      "string": "R12",
+      "pagenum": 112
+    },
+    {
+      "string": "R1336MZZZ",
+      "pagenum": 113
+    },
+    {
+      "string": "R134A",
+      "pagenum": 114
+    },
+    {
+      "string": "R13",
+      "pagenum": 115
+    },
+    {
+      "string": "R141B",
+      "pagenum": 116
+    },
+    {
+      "string": "R142B",
+      "pagenum": 117
+    },
+    {
+      "string": "R143A",
+      "pagenum": 118
+    },
+    {
+      "string": "R14",
+      "pagenum": 119
+    },
+    {
+      "string": "R150",
+      "pagenum": 120
+    },
+    {
+      "string": "R152A",
+      "pagenum": 121
+    },
+    {
+      "string": "R161",
+      "pagenum": 122
+    },
+    {
+      "string": "R218",
+      "pagenum": 123
+    },
+    {
+      "string": "R21",
+      "pagenum": 124
+    },
+    {
+      "string": "R227EA",
+      "pagenum": 125
+    },
+    {
+      "string": "R22",
+      "pagenum": 126
+    },
+    {
+      "string": "R236EA",
+      "pagenum": 127
+    },
+    {
+      "string": "R236FA",
+      "pagenum": 128
+    },
+    {
+      "string": "R23",
+      "pagenum": 129
+    },
+    {
+      "string": "R245CA",
+      "pagenum": 130
+    },
+    {
+      "string": "R245FA",
+      "pagenum": 131
+    },
+    {
+      "string": "R32",
+      "pagenum": 132
+    },
+    {
+      "string": "R365MFC",
+      "pagenum": 133
+    },
+    {
+      "string": "R40",
+      "pagenum": 134
+    },
+    {
+      "string": "R41",
+      "pagenum": 135
+    },
+    {
+      "string": "RC318",
+      "pagenum": 136
+    },
+    {
+      "string": "RE143A",
+      "pagenum": 137
+    },
+    {
+      "string": "RE245CB2",
+      "pagenum": 138
+    },
+    {
+      "string": "RE245FA2",
+      "pagenum": 139
+    },
+    {
+      "string": "RE347MCC",
+      "pagenum": 140
+    },
+    {
+      "string": "SF6",
+      "pagenum": 141
+    },
+    {
+      "string": "SO2",
+      "pagenum": 142
+    },
+    {
+      "string": "T2BUTENE",
+      "pagenum": 143
+    },
+    {
+      "string": "TOLUENE",
+      "pagenum": 144
+    },
+    {
+      "string": "VINYLCHLORIDE",
+      "pagenum": 145
+    },
+    {
+      "string": "WATER",
+      "pagenum": 146
+    },
+    {
+      "string": "XENON",
+      "pagenum": 147
+    }
+  ],
+  "devs.pdf": [
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 1
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 1
+    },
+    {
+      "string": "1BUTENE",
+      "pagenum": 1
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 2
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 2
+    },
+    {
+      "string": "3METHYLPENTANE",
+      "pagenum": 2
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 3
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 3
+    },
+    {
+      "string": "C12",
+      "pagenum": 3
+    }
+  ],
+  "gooddevs.pdf": [
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 1
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 1
+    },
+    {
+      "string": "13BUTADIENE",
+      "pagenum": 1
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 2
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 2
+    },
+    {
+      "string": "1BUTYNE",
+      "pagenum": 2
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 3
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 3
+    },
+    {
+      "string": "1PENTENE",
+      "pagenum": 3
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 4
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 4
+    },
+    {
+      "string": "22DIMETHYLBUTANE",
+      "pagenum": 4
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 5
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 5
+    },
+    {
+      "string": "23DIMETHYLBUTANE",
+      "pagenum": 5
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 6
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 6
+    },
+    {
+      "string": "ACETONE",
+      "pagenum": 6
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 7
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 7
+    },
+    {
+      "string": "ACETYLENE",
+      "pagenum": 7
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 8
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 8
+    },
+    {
+      "string": "AMMONIA",
+      "pagenum": 8
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 9
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 9
+    },
+    {
+      "string": "ARGON",
+      "pagenum": 9
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 10
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 10
+    },
+    {
+      "string": "BENZENE",
+      "pagenum": 10
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 11
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 11
+    },
+    {
+      "string": "BUTANE",
+      "pagenum": 11
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 12
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 12
+    },
+    {
+      "string": "C11",
+      "pagenum": 12
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 13
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 13
+    },
+    {
+      "string": "C16",
+      "pagenum": 13
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 14
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 14
+    },
+    {
+      "string": "C1CC6",
+      "pagenum": 14
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 15
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 15
+    },
+    {
+      "string": "C22",
+      "pagenum": 15
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 16
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 16
+    },
+    {
+      "string": "C2BUTENE",
+      "pagenum": 16
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 17
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 17
+    },
+    {
+      "string": "C3CC6",
+      "pagenum": 17
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 18
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 18
+    },
+    {
+      "string": "C4F10",
+      "pagenum": 18
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 19
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 19
+    },
+    {
+      "string": "C5F12",
+      "pagenum": 19
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 20
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 20
+    },
+    {
+      "string": "C6F14",
+      "pagenum": 20
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 21
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 21
+    },
+    {
+      "string": "CF3I",
+      "pagenum": 21
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 22
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 22
+    },
+    {
+      "string": "CHLORINE",
+      "pagenum": 22
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 23
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 23
+    },
+    {
+      "string": "CHLOROBENZENE",
+      "pagenum": 23
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 24
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 24
+    },
+    {
+      "string": "CO2",
+      "pagenum": 24
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 25
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 25
+    },
+    {
+      "string": "COS",
+      "pagenum": 25
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 26
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 26
+    },
+    {
+      "string": "CO",
+      "pagenum": 26
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 27
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 27
+    },
+    {
+      "string": "CYCLOBUTENE",
+      "pagenum": 27
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 28
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 28
+    },
+    {
+      "string": "CYCLOHEX",
+      "pagenum": 28
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 29
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 29
+    },
+    {
+      "string": "CYCLOPEN",
+      "pagenum": 29
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 30
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 30
+    },
+    {
+      "string": "CYCLOPRO",
+      "pagenum": 30
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 31
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 31
+    },
+    {
+      "string": "D2O",
+      "pagenum": 31
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 32
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 32
+    },
+    {
+      "string": "D2",
+      "pagenum": 32
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 33
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 33
+    },
+    {
+      "string": "D4",
+      "pagenum": 33
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 34
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 34
+    },
+    {
+      "string": "D5",
+      "pagenum": 34
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 35
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 35
+    },
+    {
+      "string": "D6",
+      "pagenum": 35
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 36
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 36
+    },
+    {
+      "string": "DEA",
+      "pagenum": 36
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 37
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 37
+    },
+    {
+      "string": "DECANE",
+      "pagenum": 37
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 38
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 38
+    },
+    {
+      "string": "DEE",
+      "pagenum": 38
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 39
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 39
+    },
+    {
+      "string": "DMC",
+      "pagenum": 39
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 40
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 40
+    },
+    {
+      "string": "DME",
+      "pagenum": 40
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 41
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 41
+    },
+    {
+      "string": "EBENZENE",
+      "pagenum": 41
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 42
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 42
+    },
+    {
+      "string": "EGLYCOL",
+      "pagenum": 42
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 43
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 43
+    },
+    {
+      "string": "ETHANE",
+      "pagenum": 43
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 44
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 44
+    },
+    {
+      "string": "ETHANOL",
+      "pagenum": 44
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 45
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 45
+    },
+    {
+      "string": "ETHYLENEOXIDE",
+      "pagenum": 45
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 46
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 46
+    },
+    {
+      "string": "ETHYLENE",
+      "pagenum": 46
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 47
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 47
+    },
+    {
+      "string": "FLUORINE",
+      "pagenum": 47
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 48
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 48
+    },
+    {
+      "string": "H2S",
+      "pagenum": 48
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 49
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 49
+    },
+    {
+      "string": "HCL",
+      "pagenum": 49
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 50
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 50
+    },
+    {
+      "string": "HELIUM",
+      "pagenum": 50
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 51
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 51
+    },
+    {
+      "string": "HEPTANE",
+      "pagenum": 51
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 52
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 52
+    },
+    {
+      "string": "HEXANE",
+      "pagenum": 52
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 53
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 53
+    },
+    {
+      "string": "HYDROGEN",
+      "pagenum": 53
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 54
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 54
+    },
+    {
+      "string": "IBUTENE",
+      "pagenum": 54
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 55
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 55
+    },
+    {
+      "string": "IHEXANE",
+      "pagenum": 55
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 56
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 56
+    },
+    {
+      "string": "IOCTANE",
+      "pagenum": 56
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 57
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 57
+    },
+    {
+      "string": "IPENTANE",
+      "pagenum": 57
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 58
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 58
+    },
+    {
+      "string": "ISOBUTAN",
+      "pagenum": 58
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 59
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 59
+    },
+    {
+      "string": "KRYPTON",
+      "pagenum": 59
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 60
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 60
+    },
+    {
+      "string": "MD2M",
+      "pagenum": 60
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 61
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 61
+    },
+    {
+      "string": "MD3M",
+      "pagenum": 61
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 62
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 62
+    },
+    {
+      "string": "MD4M",
+      "pagenum": 62
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 63
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 63
+    },
+    {
+      "string": "MDM",
+      "pagenum": 63
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 64
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 64
+    },
+    {
+      "string": "MEA",
+      "pagenum": 64
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 65
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 65
+    },
+    {
+      "string": "METHANE",
+      "pagenum": 65
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 66
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 66
+    },
+    {
+      "string": "METHANOL",
+      "pagenum": 66
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 67
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 67
+    },
+    {
+      "string": "MLINOLEA",
+      "pagenum": 67
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 68
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 68
+    },
+    {
+      "string": "MLINOLEN",
+      "pagenum": 68
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 69
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 69
+    },
+    {
+      "string": "MM",
+      "pagenum": 69
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 70
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 70
+    },
+    {
+      "string": "MOLEATE",
+      "pagenum": 70
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 71
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 71
+    },
+    {
+      "string": "MPALMITA",
+      "pagenum": 71
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 72
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 72
+    },
+    {
+      "string": "MSTEARAT",
+      "pagenum": 72
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 73
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 73
+    },
+    {
+      "string": "MXYLENE",
+      "pagenum": 73
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 74
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 74
+    },
+    {
+      "string": "N2O",
+      "pagenum": 74
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 75
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 75
+    },
+    {
+      "string": "NEON",
+      "pagenum": 75
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 76
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 76
+    },
+    {
+      "string": "NEOPENTN",
+      "pagenum": 76
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 77
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 77
+    },
+    {
+      "string": "NF3",
+      "pagenum": 77
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 78
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 78
+    },
+    {
+      "string": "NITROGEN",
+      "pagenum": 78
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 79
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 79
+    },
+    {
+      "string": "NONANE",
+      "pagenum": 79
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 80
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 80
+    },
+    {
+      "string": "NOVEC649",
+      "pagenum": 80
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 81
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 81
+    },
+    {
+      "string": "OCTANE",
+      "pagenum": 81
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 82
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 82
+    },
+    {
+      "string": "ORTHOHYD",
+      "pagenum": 82
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 83
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 83
+    },
+    {
+      "string": "OXYGEN",
+      "pagenum": 83
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 84
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 84
+    },
+    {
+      "string": "OXYLENE",
+      "pagenum": 84
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 85
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 85
+    },
+    {
+      "string": "PARAHYD",
+      "pagenum": 85
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 86
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 86
+    },
+    {
+      "string": "PENTANE",
+      "pagenum": 86
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 87
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 87
+    },
+    {
+      "string": "PROPADIENE",
+      "pagenum": 87
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 88
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 88
+    },
+    {
+      "string": "PROPANE",
+      "pagenum": 88
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 89
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 89
+    },
+    {
+      "string": "PROPYLENEOXIDE",
+      "pagenum": 89
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 90
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 90
+    },
+    {
+      "string": "PROPYLEN",
+      "pagenum": 90
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 91
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 91
+    },
+    {
+      "string": "PROPYNE",
+      "pagenum": 91
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 92
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 92
+    },
+    {
+      "string": "PXYLENE",
+      "pagenum": 92
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 93
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 93
+    },
+    {
+      "string": "R1123",
+      "pagenum": 93
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 94
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 94
+    },
+    {
+      "string": "R113",
+      "pagenum": 94
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 95
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 95
+    },
+    {
+      "string": "R114",
+      "pagenum": 95
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 96
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 96
+    },
+    {
+      "string": "R115",
+      "pagenum": 96
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 97
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 97
+    },
+    {
+      "string": "R116",
+      "pagenum": 97
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 98
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 98
+    },
+    {
+      "string": "R11",
+      "pagenum": 98
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 99
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 99
+    },
+    {
+      "string": "R1216",
+      "pagenum": 99
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 100
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 100
+    },
+    {
+      "string": "R1224YDZ",
+      "pagenum": 100
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 101
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 101
+    },
+    {
+      "string": "R1233ZDE",
+      "pagenum": 101
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 102
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 102
+    },
+    {
+      "string": "R1234YF",
+      "pagenum": 102
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 103
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 103
+    },
+    {
+      "string": "R1234ZEE",
+      "pagenum": 103
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 104
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 104
+    },
+    {
+      "string": "R1234ZEZ",
+      "pagenum": 104
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 105
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 105
+    },
+    {
+      "string": "R123",
+      "pagenum": 105
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 106
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 106
+    },
+    {
+      "string": "R1243ZF",
+      "pagenum": 106
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 107
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 107
+    },
+    {
+      "string": "R124",
+      "pagenum": 107
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 108
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 108
+    },
+    {
+      "string": "R125",
+      "pagenum": 108
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 109
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 109
+    },
+    {
+      "string": "R12",
+      "pagenum": 109
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 110
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 110
+    },
+    {
+      "string": "R1336MZZZ",
+      "pagenum": 110
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 111
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 111
+    },
+    {
+      "string": "R134A",
+      "pagenum": 111
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 112
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 112
+    },
+    {
+      "string": "R13",
+      "pagenum": 112
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 113
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 113
+    },
+    {
+      "string": "R141B",
+      "pagenum": 113
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 114
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 114
+    },
+    {
+      "string": "R142B",
+      "pagenum": 114
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 115
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 115
+    },
+    {
+      "string": "R143A",
+      "pagenum": 115
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 116
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 116
+    },
+    {
+      "string": "R14",
+      "pagenum": 116
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 117
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 117
+    },
+    {
+      "string": "R150",
+      "pagenum": 117
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 118
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 118
+    },
+    {
+      "string": "R152A",
+      "pagenum": 118
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 119
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 119
+    },
+    {
+      "string": "R161",
+      "pagenum": 119
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 120
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 120
+    },
+    {
+      "string": "R218",
+      "pagenum": 120
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 121
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 121
+    },
+    {
+      "string": "R21",
+      "pagenum": 121
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 122
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 122
+    },
+    {
+      "string": "R227EA",
+      "pagenum": 122
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 123
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 123
+    },
+    {
+      "string": "R22",
+      "pagenum": 123
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 124
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 124
+    },
+    {
+      "string": "R236EA",
+      "pagenum": 124
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 125
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 125
+    },
+    {
+      "string": "R236FA",
+      "pagenum": 125
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 126
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 126
+    },
+    {
+      "string": "R23",
+      "pagenum": 126
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 127
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 127
+    },
+    {
+      "string": "R245CA",
+      "pagenum": 127
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 128
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 128
+    },
+    {
+      "string": "R245FA",
+      "pagenum": 128
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 129
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 129
+    },
+    {
+      "string": "R32",
+      "pagenum": 129
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 130
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 130
+    },
+    {
+      "string": "R365MFC",
+      "pagenum": 130
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 131
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 131
+    },
+    {
+      "string": "R40",
+      "pagenum": 131
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 132
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 132
+    },
+    {
+      "string": "R41",
+      "pagenum": 132
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 133
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 133
+    },
+    {
+      "string": "RC318",
+      "pagenum": 133
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 134
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 134
+    },
+    {
+      "string": "RE143A",
+      "pagenum": 134
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 135
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 135
+    },
+    {
+      "string": "RE245CB2",
+      "pagenum": 135
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 136
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 136
+    },
+    {
+      "string": "RE245FA2",
+      "pagenum": 136
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 137
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 137
+    },
+    {
+      "string": "RE347MCC",
+      "pagenum": 137
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 138
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 138
+    },
+    {
+      "string": "SF6",
+      "pagenum": 138
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 139
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 139
+    },
+    {
+      "string": "SO2",
+      "pagenum": 139
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 140
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 140
+    },
+    {
+      "string": "T2BUTENE",
+      "pagenum": 140
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 141
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 141
+    },
+    {
+      "string": "TOLUENE",
+      "pagenum": 141
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 142
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 142
+    },
+    {
+      "string": "VINYLCHLORIDE",
+      "pagenum": 142
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 143
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 143
+    },
+    {
+      "string": "WATER",
+      "pagenum": 143
+    },
+    {
+      "string": "|/prime//primeep 1|",
+      "pagenum": 144
+    },
+    {
+      "string": "|/prime/prime//prime/primeep 1|",
+      "pagenum": 144
+    },
+    {
+      "string": "XENON",
+      "pagenum": 144
+    }
+  ]
+}

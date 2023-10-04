@@ -13,17 +13,57 @@ from ctREFPROP.ctREFPROP import REFPROPFunctionLibrary
 
 import ChebTools 
 from pypdf import PdfReader
+import scipy.optimize 
+
+import teqp
+
+def plot_criticals_FLD(*, FLD):
+    model = teqp.build_multifluid_model([FLD], 'teqp_REFPROP10')
+    j = json.load(open(f'output/check/{FLD}_check.json'))
+    df = pandas.DataFrame(j['data'])
+    df.info()
+    plt.plot(df["rho'(mp) / mol/m^3"], df['T / K'], 'k.')
+    plt.plot(df["rho''(mp) / mol/m^3"], df['T / K'], 'k.')
+
+    plt.plot(0.5*df["rho''(mp) / mol/m^3"]+0.5*df["rho'(mp) / mol/m^3"], df['T / K'], 'r.')
+
+    Tcrit =  model.get_Tcvec()[0]
+    rhomolarcrit = 1/model.get_vcvec()[0]
+    Tbox = 0.9*Tcrit, 2*Tcrit
+    rhobox = 0.5*rhomolarcrit, 2*rhomolarcrit
+
+    for T in np.linspace(*Tbox):
+        for rho in np.linspace(*rhobox):
+            Tcrittrue, rhocrittrue = model.solve_pure_critical(T, rho)
+            molefrac = np.array([1.0])
+            R = model.get_R(molefrac)
+            _, Ar01, Ar02 = model.get_Ar02n(Tcrittrue, rhocrittrue, molefrac)
+            dpdrho = R*Tcrittrue*(1 + 2*Ar01 + Ar02)
+            d2pdrho2 = R*Tcrittrue/(rhocrittrue)*(2*model.get_Ar01(Tcrittrue, rhocrittrue, molefrac) + 4*model.get_Ar02(Tcrittrue, rhocrittrue, molefrac)+model.get_Ar03(Tcrittrue, rhocrittrue, molefrac))
+            if abs(dpdrho) > 1e-9: continue
+            if abs(d2pdrho2) > 1e-9: continue
+            print(Tcrittrue, rhocrittrue, dpdrho, d2pdrho2)
+            plt.plot(rhocrittrue, Tcrittrue, 'o')
+    plt.xlim(*rhobox)
+    plt.ylim(Tcrit*.9, Tcrit*1.1)
+    plt.plot(rhomolarcrit, Tcrit, '*', color='yellow', ms=12)
+    plt.show()
+
+# plot_criticals_FLD(FLD='PROPANE')
 
 def numprofile_stats():
     N = []
     for f in sorted(glob.glob('output/*_exps.json')):
         jL = json.load(open(f))['jexpansions_rhoL']
         N.append(len(jL))
-    print(np.std(N), np.mean(N))
+    print(np.std(N), np.mean(N), 'std and mean of len of expansions per fluid')
 numprofile_stats()
 # quit()
 
-def get_expansions(FLD):
+def get_expansions(FLD, *, and_p=False):
+    """ 
+    Return a tuple containing the ChebyshevCollection for the two density superancillary functions
+    """
     expsL, expsV = [], []
     for jL in json.load(open(f'output/{FLD}_exps.json'))['jexpansions_rhoL']:
         eL = ChebTools.ChebyshevExpansion(jL['coef'], jL['xmin'], jL['xmax'])
@@ -34,13 +74,21 @@ def get_expansions(FLD):
 
     ceL = ChebTools.ChebyshevCollection(expsL)
     ceV = ChebTools.ChebyshevCollection(expsV)
+    if and_p:
+        exps = []
+        for jV in json.load(open(f'output/{FLD}_exps.json'))['jexpansions_p']:
+            eV = ChebTools.ChebyshevExpansion(jV['coef'], jV['xmin'], jV['xmax'])
+            exps.append(eV)
+        cep = ChebTools.ChebyshevCollection(exps)
+        return ceL, ceV, cep
+    else:
 
-    return ceL, ceV
+        return ceL, ceV
 
 def plot_water_nonmono(RP):
 
     FLD = 'WATER'
-    ceL, ceV = get_expansions(FLD=FLD)
+    ceL, ceV, cep = get_expansions(FLD=FLD, and_p=True)
     fig, ax = plt.subplots(1,1,figsize=(5.0, 3))
     j = json.load(open(f'output/check/{FLD}_check.json'))
     Tcrit = j['meta']['Tcrittrue / K']
@@ -49,11 +97,25 @@ def plot_water_nonmono(RP):
     df['errV'] = np.abs(df["rho''(SA) / mol/m^3"]/df["rho''(mp) / mol/m^3"]-1)
     df['Theta'] = (Tcrit-df['T / K'])/Tcrit
     plt.plot(df['T / K'], df["rho'(mp) / mol/m^3"], 'o')
+    i = np.argmax(df["rho'(mp) / mol/m^3"])
+    print(df['T / K'].iloc[i]-273.15, '°C at density maximum')
     x = np.linspace(273.15, 285, 10000)
     y = [ceL(x_) for x_ in x]
     plt.plot(x, y)
     plt.xlim(273.15, 285)
     plt.ylim(55470, 55510)
+
+    cepinverses = cep.make_inverse(12, 273.15, ceV.get_exps()[-1].xmax(), 3, 1e-12, 12, True)
+    for T in np.linspace(273.15, 283):
+        # Tback = cepinverses(cep(T))
+
+        Tback2 = cep.solve_for_x(cep(T)+0.0001)
+        print(Tback2)
+        print(T, Tback2/T-1)
+
+    # for ce in cepinverses.get_exps():
+    #     print(ce.xmin(), ce.xmax())
+
     RP.SETFLUIDSdll(FLD)
     for rho in np.linspace(55470, np.max(df["rho'(mp) / mol/m^3"]), 200):
         r = RP.REFPROPdll('', 'DSAT','T',RP.MOLAR_BASE_SI, 0, 0,rho, 0,[1.0])
@@ -64,7 +126,6 @@ def plot_water_nonmono(RP):
     plt.tight_layout(pad=0.2)
     plt.savefig('water_nonmono.pdf')
     plt.close()
-
 
 def profile_evaluation(FLD):
     expsL, expsV = [], []
@@ -265,21 +326,220 @@ def plot_pmu_devs():
 
     print(abs(bad_REFPROP/(bad_REFPROP+good_REFPROP)-1), '% of calculations fail', bad_REFPROP, good_REFPROP)
 
+def test_inverse_functions():
+    for f in sorted(glob.glob('output/check/*.json')):
+        FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
+        if FLD != 'MXYLENE': continue
+
+        j = json.load(open(f))
+        Tcrit = j['meta']['Tcrittrue / K']
+        rhocrit = j['meta']['rhocrittrue / mol/m^3']
+        df = pandas.DataFrame(j['data'])
+        df['Theta'] = (Tcrit-df['T / K'])/Tcrit
+
+        model = teqp.build_multifluid_model([FLD], 'teqp_REFPROP10')
+        Tcnum, rhocnum = model.solve_pure_critical(j['meta']['Tcrit / K'], j['meta']['rhocrittrue / mol/m^3']*1.01)
+        if abs(Tcnum/Tcrit-1) > 1e-10:
+            print(FLD, Tcnum, Tcrit)
+        if abs(rhocnum/rhocrit-1) > 1e-10:
+            print(FLD, rhocnum, rhocrit)
+
+        ceL, ceV, cep = get_expansions(FLD, and_p=True)
+        # for ce,name in zip([ceL, ceV, cep],['ceL','ceV','cep']):
+        #     Tmin = ce.get_exps()[0].xmin()
+        #     try:
+        #         inv = ce.make_inverse(12, Tmin, Tcrit, 3, 1e-12, 12, assume_monotonic=False, unsafe_evaluation=True)
+        #         print(FLD, name, len(inv.get_exps()))
+        #     except BaseException as be:
+        #         print(FLD, be)
+
+        for ce in cep.get_exps():
+            xx = np.linspace(ce.xmin(), ce.xmax(), 100000)
+            yy = ce.y(xx)
+            all_increasing = all(np.diff(yy) > 0)
+            if not all_increasing:
+                print('[P]:', FLD, ce.xmin(), ce.xmax(), ce.deriv(1).has_real_roots_Descartes(1e-10), ce.is_monotonic(), all_increasing)
+                plt.plot(xx, yy)
+                plt.savefig(f'nonmono_p_{FLD}_{ce.xmin()}.pdf')
+                plt.close()
+        
+        for ce in ceV.get_exps():
+            TT = np.linspace(ce.xmin(), ce.xmax(), 10000)
+            yy = ce.y(TT)
+            Theta = (Tcrit-TT)/Tcrit
+            all_increasing = all(np.diff(yy) > 0)
+            if not all_increasing:
+                print('[V]:', FLD, ce.xmin(), ce.xmax(), ce.deriv(1).has_real_roots_Descartes(1e-10), ce.is_monotonic(), all_increasing)
+                print(j['meta'] )
+                plt.plot(df['Theta'], df["rho''(mp) / mol/m^3"], '.')
+                plt.plot(Theta, yy)
+                for iarg, d in enumerate(np.diff(yy)):
+                    if d <= 0:
+                        plt.axvline(Theta[iarg])
+                        print(Theta[iarg])
+                if np.min(Theta) < 0.1:
+                    plt.xscale('log')
+                plt.xlim(np.min(Theta), np.max(Theta))
+                plt.ylim(np.min(yy), np.max(yy))
+                
+                # plt.axvline(Tcrit, dashes=[2,2])
+                plt.title('rhoV')
+                plt.savefig(f'nonmono_rhoV_{FLD}_{ce.xmin()}.pdf')
+                plt.close()
+
+        for ce in ceL.get_exps():
+            TT = np.linspace(ce.xmin(), ce.xmax(), 10000)
+            yy = ce.y(TT)
+            Theta = (Tcrit-TT)/Tcrit
+            all_decreasing = all(np.diff(yy) < 0)
+            if not all_decreasing:
+                print('[L]:', FLD, ce.xmin(), ce.xmax(), ce.deriv(1).has_real_roots_Descartes(1e-10), ce.is_monotonic(), all_decreasing)
+                plt.plot(df['Theta'], df["rho'(mp) / mol/m^3"], '.')
+                plt.plot(Theta, yy)
+                for iarg, d in enumerate(np.diff(yy)):
+                    if d >= 0:
+                        plt.axvline(Theta[iarg])
+                        print(Theta[iarg])
+
+                if np.min(Theta) < 0.1:
+                    plt.xscale('log')
+                plt.xlim(np.min(Theta), np.max(Theta))
+                plt.ylim(np.min(yy), np.max(yy))
+                # plt.axvline(Tcrit, dashes=[2,2])
+                plt.title('rhoL')
+                plt.savefig(f'nonmono_rhoL_{FLD}_{ce.xmin()}.pdf')
+                plt.close()
+
+def plot_invpanc_devs():
+    with PdfPages('invpanc_devs.pdf') as PDF:
+        for f in sorted(glob.glob('output/check/*.json')):
+
+            fig, axes = plt.subplots(1, 2, sharey=True, figsize=(6,3), width_ratios=[2,2])
+            
+            FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
+            # if FLD != 'PROPANE': continue
+            print('inv(p) for ' + FLD)
+
+            j = json.load(open(f))
+            Tcrit = j['meta']['Tcrittrue / K']
+            df = pandas.DataFrame(j['data'])
+            df['Theta'] = (Tcrit-df['T / K'])/Tcrit
+
+            ceL, ceV, cep = get_expansions(FLD, and_p=True)
+            Tmin = cep.get_exps()[0].xmin()
+            Tmax = cep.get_exps()[-1].xmax()
+            pmin = cep(Tmin)
+            pmax = cep(Tmax)
+
+            n = 4.0
+            def get_T(rt4p):
+                p = rt4p**n
+                def objective(T):
+                    return cep(T)-p
+                fL = objective(Tmin)
+                fR = objective(Tmax)
+                if abs(fL) < 1e-10*p:
+                    return Tmin
+                if abs(fR) < 1e-10*p:
+                    return Tmax
+                return scipy.optimize.brentq(objective, Tmin, Tmax)
+            invrt4pBrent = ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_T, pmin**(1/n), pmax**(1/n), 3, 1e-13, 20, None))
+                    
+            # def add_Troundtrip(row):
+            #     try:
+            #         # Evaluate the expansion
+            #         p = cep(row['T / K'])
+            #         # Evaluate the inverse function to get T
+            #         return invp.y_unsafe(p)
+            #     except BaseException as be:
+            #         print('[Ttroundtrip]:', be)
+            #         return np.nan
+            # df['Troundtrip(SA/inv) / K'] = df.apply(add_Troundtrip, axis=1)
+            
+            def add_Troundtrip(row):
+                try:
+                    # Evaluate the expansion
+                    p = cep(row['T / K'])
+                    # Evaluate the inverse function to get T
+                    # with p^{1/4} as independent variable
+                    return invrt4pBrent.y_unsafe(p**(1/n))
+                except BaseException as be:
+                    print('[Ttroundtrip/SA/invBrentrt4]:', be, '@', row.to_dict())
+                    return np.nan
+            df['Troundtrip(SA/invBrentrt4) / K'] = df.apply(add_Troundtrip, axis=1)
+            
+            def add_TroundtripBrent(row):
+                try:
+                    # Evaluate the expansion
+                    p = cep(row['T / K'])
+                    # Use Brent's method on expansion itself to get the value
+                    return scipy.optimize.brentq(lambda T: cep(T)-p, Tmin, Tmax)
+                except BaseException as be:
+                    print('[Ttroundtrip/Brent]:', be, '@', row.to_dict())
+                    return np.nan
+            df['Troundtrip(SA/Brent) / K'] = df.apply(add_TroundtripBrent, axis=1)
+
+            RP.SETFLUIDSdll(FLD)
+            RP.FLAGSdll('R', 2)
+            def add_Troundtrip_REFPROP(row):
+                r = RP.REFPROPdll('','TQ','P',RP.MOLAR_BASE_SI,0,0,row['T / K'],0,[1.0])
+                p = r.Output[0]
+                if r.ierr != 0:
+                    return np.nan
+                r = RP.REFPROPdll('','PQ','T',RP.MOLAR_BASE_SI,0,0,p,0,[1.0])
+                if r.ierr != 0:
+                    return np.nan
+                return r.Output[0]
+            df['Troundtrip(REFPROP) / K'] = df.apply(add_Troundtrip_REFPROP, axis=1)
+
+            for ax in axes:
+                # ax.plot(df['Theta'], np.abs(df['Troundtrip(SA/inv) / K'] - df['T / K']), label='SA/inv')
+                ax.plot(df['Theta'], np.abs(df['Troundtrip(SA/invBrentrt4) / K'] - df['T / K']), label=r'SA/invBrent($\sqrt[4]{p}$)')
+                ax.plot(df['Theta'], np.abs(df['Troundtrip(SA/Brent) / K'] - df['T / K']), label='SA/Brent')
+                ax.plot(df['Theta'], np.abs(df['Troundtrip(REFPROP) / K'] - df['T / K']), label='REFPROP')
+
+            axes[0].set_xscale('log')
+            axes[1].set_xscale('linear')
+
+            plt.suptitle(FLD)
+            axes[0].set_ylabel(r'$|T_{\rm roundtrip} - T_{\rm orig}|$ / K')
+            axes[0].set_ylim(1e-17, 100)
+            axes[0].set_yscale('log')
+            plt.tight_layout(pad=0.2)
+            axes[0].legend(loc='best')
+            Thetasplit = 0.1
+            axes[0].set_xlim(right=Thetasplit)
+            axes[1].set_xlim(left=Thetasplit)
+            xticks = axes[0].get_xticks()
+            axes[0].set_xticks([x for x in xticks[0:len(xticks):2] if x <= Thetasplit])
+
+            plt.tight_layout(pad=0.2,rect=[0.0, 0.07, 1, 0.92])
+
+            # add a big axis, hide frame
+            fig.add_subplot(111, frameon=False)
+            # hide tick and tick label of the big axis
+            plt.tick_params(labelcolor='none', which='both', top=False, bottom=False, left=False, right=False)
+            plt.xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
+
+            PDF.savefig(plt.gcf())
+            plt.close()
+
 def plot_panc_devs():
     with PdfPages('panc_from_rhoanc_devs.pdf') as PDF:
         for f in sorted(glob.glob('output/check/*.json')):
             
             FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
-            ceL, ceV = get_expansions(FLD)
+            # if FLD != 'WATER': continue 
+            ceL, ceV = get_expansions(FLD, and_p=False)
 
-            fig, axes = plt.subplots(1,2,sharey=True,figsize=(4,3), width_ratios=[2,2])
+            fig, axes = plt.subplots(1,2,sharey=True,figsize=(6,3), width_ratios=[2,2])
         
             j = json.load(open(f))
             Tcrit = j['meta']['Tcrittrue / K']
             REOS = j['meta']['gas_constant / J/mol/K']
             df = pandas.DataFrame(j['data'])
             df['Theta'] = (Tcrit-df['T / K'])/Tcrit
-            Tmin = df['T / K'].min()
+            Tmin = ceL.get_exps()[0].xmin()
 
             df['(p/R)_ep'] = df['p(mp) / Pa']/REOS
 
@@ -287,6 +547,9 @@ def plot_panc_devs():
             z = np.array([1.0])
             R = model.get_R(z)
             print(R, FLD, REOS)
+            print('{0:20.16f} {1:20.16f}'.format(ceL.get_exps()[0].xmin(), ceL.get_exps()[-1].xmax()))
+            print('{0:20.16f} {1:20.16f}'.format(Tmin+1e-10, Tcrit-1e-10))
+            print('{0:20.16f} {1:20.16f}'.format(df['T / K'].iloc[0], df['T / K'].iloc[-1]))
 
             def build_panc_from_rhoanc():
                 def get_p(T):
@@ -295,8 +558,10 @@ def plot_panc_devs():
                     pL = rhoL*R*T*(1+model.get_Ar01(T, rhoL, z))
                     pV = rhoV*R*T*(1+model.get_Ar01(T, rhoV, z))
                     return (pL + pV)/2
-                return ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_p, Tmin, Tcrit, 3, 1e-12, 8, None))
+                return ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_p, Tmin, Tcrit, 3, 1e-12, 12))
             panc = build_panc_from_rhoanc()
+            # invp = panc.make_inverse(12, Tmin, Tcrit, 3, 1e-12, 12, True)
+            # print(invp(4e6))
 
             def get_p(row, rhokey):
                 T = row['T / K']
@@ -305,7 +570,13 @@ def plot_panc_devs():
             df['pLSA/R'] = df.apply(get_p, axis=1, rhokey="rho'(SA) / mol/m^3")
             # df['pVSA / Pa'] = df.apply(get_p, axis=1, rhokey="rho''(SA) / mol/m^3")
 
-            df['panc(T)/R'] = df.apply(lambda row: panc(row['T / K']), axis=1)/R
+            def evalp(row):
+                try: 
+                    return panc(row['T / K']) 
+                except BaseException as be:
+                    print(be) 
+                    return np.nan
+            df['panc(T)/R'] = df.apply(evalp, axis=1)/R
             for ax in axes:
                 ax.plot(df['Theta'], np.abs(df['panc(T)/R']/df['(p/R)_ep']-1), color='b', label=r'$p_{\rm SA}(\rho_{\rm SA}(T))$', dashes=[2,2])
                 ax.plot(df['Theta'], np.abs((df['p(SA) / Pa']/REOS)/df['(p/R)_ep']-1), color='green', label=r'$p_{\rm SA}(T)$')
@@ -342,20 +613,28 @@ def plot_panc_devs():
             ax1.set_xlim(ax1.get_xlim()[0], Thetasplit)
             ax2.set_xlim(Thetasplit, ax2.get_xlim()[1])
             
-            plt.suptitle(FLD)            
+            # plt.suptitle(FLD)            
             ax1.set_ylabel(r"$(p/R)/(p/R)_{\rm ep}-1$")
-            ax1.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
-
-            plt.tight_layout(pad=0.2)
+            # ax1.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
 
             for ax in [ax1, ax2]:
                 xticks = ax.get_xticks()
                 ax.set_xticks(xticks[0:len(xticks):2])
             for ax in [ax1]:
-                yticks = ax.get_yticks()
                 ax.set_yticks(10.0**np.arange(-17, 2, 2))
             ax1.set_xlim(ax1.get_xlim()[0], Thetasplit)
             ax1.set_ylim(1e-17, 100)
+            xticks = [t for t in ax1.get_xticks() if t <= Thetasplit-1e-6]
+            ax1.set_xticks(xticks[0:len(xticks)])
+
+            plt.tight_layout(pad=0.2,rect=[0.0,0.07,1,0.92])
+
+            # add a big axis, hide frame
+            fig.add_subplot(111, frameon=False)
+            # hide tick and tick label of the big axis
+            plt.tick_params(labelcolor='none', which='both', top=False, bottom=False, left=False, right=False)
+            plt.xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
+            plt.title(FLD)
             
             PDF.savefig(fig)
             plt.close()
@@ -561,12 +840,14 @@ if __name__ == '__main__':
     import warnings
     warnings.filterwarnings("ignore")
 
-    plot_water_nonmono(RP)
-    plot_panc_devs()
-    plot_ancillary("PROPANE")
-    plot_worst()
-    plot_pmu_devs()
-    plot_widths('WATER')
+    # test_inverse_functions()
+    # plot_panc_devs()
+    plot_invpanc_devs()
+    # plot_water_nonmono(RP)
+    # plot_ancillary("PROPANE")
+    # plot_worst()
+    # plot_pmu_devs()
+    # plot_widths('WATER')
     
     if not os.path.exists('FLD_page_cache.json'):
         cache = map_pages(['pmu_devs.pdf','devs.pdf','gooddevs.pdf'])
@@ -579,7 +860,9 @@ if __name__ == '__main__':
 
     # Test compression with brotli
     FLD = 'WATER'
-    jj = json.load(open(f'output/{FLD}_exps.json'))
-    import brotli
-    with open('WATER_comp.jsonbrotli', 'wb') as fp:
-        fp.write(brotli.compress(json.dumps(jj).encode('ascii')))
+    fname = f'output/{FLD}_exps.json'
+    if os.path.exists(fname):
+        jj = json.load(open(fname))
+        import brotli
+        with open('WATER_comp.jsonbrotli', 'wb') as fp:
+            fp.write(brotli.compress(json.dumps(jj).encode('ascii')))
