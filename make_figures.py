@@ -329,7 +329,7 @@ def plot_pmu_devs():
 def test_inverse_functions():
     for f in sorted(glob.glob('output/check/*.json')):
         FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
-        if FLD != 'MXYLENE': continue
+        # if FLD != 'MXYLENE': continue
 
         j = json.load(open(f))
         Tcrit = j['meta']['Tcrittrue / K']
@@ -337,24 +337,17 @@ def test_inverse_functions():
         df = pandas.DataFrame(j['data'])
         df['Theta'] = (Tcrit-df['T / K'])/Tcrit
 
-        model = teqp.build_multifluid_model([FLD], 'teqp_REFPROP10')
-        Tcnum, rhocnum = model.solve_pure_critical(j['meta']['Tcrit / K'], j['meta']['rhocrittrue / mol/m^3']*1.01)
-        if abs(Tcnum/Tcrit-1) > 1e-10:
-            print(FLD, Tcnum, Tcrit)
-        if abs(rhocnum/rhocrit-1) > 1e-10:
-            print(FLD, rhocnum, rhocrit)
+        # model = teqp.build_multifluid_model([FLD], 'teqp_REFPROP10')
+        # Tcnum, rhocnum = model.solve_pure_critical(j['meta']['Tcrit / K'], j['meta']['rhocrittrue / mol/m^3']*1.01)
+        # if abs(Tcnum/Tcrit-1) > 1e-10:
+        #     print(FLD, Tcnum, Tcrit)
+        # if abs(rhocnum/rhocrit-1) > 1e-10:
+        #     print(FLD, rhocnum, rhocrit)
 
         ceL, ceV, cep = get_expansions(FLD, and_p=True)
-        # for ce,name in zip([ceL, ceV, cep],['ceL','ceV','cep']):
-        #     Tmin = ce.get_exps()[0].xmin()
-        #     try:
-        #         inv = ce.make_inverse(12, Tmin, Tcrit, 3, 1e-12, 12, assume_monotonic=False, unsafe_evaluation=True)
-        #         print(FLD, name, len(inv.get_exps()))
-        #     except BaseException as be:
-        #         print(FLD, be)
 
         for ce in cep.get_exps():
-            xx = np.linspace(ce.xmin(), ce.xmax(), 100000)
+            xx = np.linspace(ce.xmin(), ce.xmax(), 1000000)
             yy = ce.y(xx)
             all_increasing = all(np.diff(yy) > 0)
             if not all_increasing:
@@ -454,7 +447,16 @@ def whyrt4():
     ax3.set_ylabel(r'$(p~/~{\rm Pa})^{1/4}$')
     plt.tight_layout(pad=0.2)
     plt.savefig('whyrt4_PROPANE.pdf')
-    plt.show()
+    plt.close()
+
+    N = 120
+    j = np.arange(0, N+1)
+    x = np.cos(j*np.pi/N)
+    print(x)
+    pmin = p[0]
+    pmax = p[-1]
+    pnodes = (pmax-pmin)/2*x + (pmax+pmin)/2
+    print(pnodes, pmin, pmax, pnodes[0]/pmax, pnodes[-1]/pmin)
 
 def plot_invpanc_devs():
     with PdfPages('invpanc_devs.pdf') as PDF:
@@ -477,19 +479,23 @@ def plot_invpanc_devs():
             pmin = cep(Tmin)
             pmax = cep(Tmax)
 
-            n = 4.0
+            n = 1.0
             def get_T(rt4p):
+                if rt4p <= pmin**(1/n): return Tmin
+                if rt4p >= pmax**(1/n): return Tmax
                 p = rt4p**n
                 def objective(T):
-                    return cep(T)-p
+                    return (cep(T)-p)/p
                 fL = objective(Tmin)
                 fR = objective(Tmax)
-                if abs(fL) < 1e-10*p:
+                if abs(fL) < 1e-10:
                     return Tmin
-                if abs(fR) < 1e-10*p:
+                if abs(fR) < 1e-10:
                     return Tmax
                 return scipy.optimize.brentq(objective, Tmin, Tmax)
-            invrt4pBrent = ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_T, pmin**(1/n), pmax**(1/n), 3, 1e-13, 20, None))
+            def callback(i, exps):
+                print(i)
+            invrt4pBrent = ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_T, pmin**(1/n), pmax**(1/n), 3, 1e-13, 20, callback))
                     
             # def add_Troundtrip(row):
             #     try:
@@ -519,7 +525,7 @@ def plot_invpanc_devs():
                     # Evaluate the expansion
                     p = cep(row['T / K'])
                     # Use Brent's method on expansion itself to get the value
-                    return scipy.optimize.brentq(lambda T: cep(T)-p, Tmin, Tmax)
+                    return scipy.optimize.brentq(lambda T: (cep(T)-p)/p, Tmin, Tmax)
                 except BaseException as be:
                     print('[Ttroundtrip/Brent]:', be, '@', row.to_dict())
                     return np.nan
@@ -892,8 +898,8 @@ if __name__ == '__main__':
 
     # test_inverse_functions()
     # plot_panc_devs()
-    whyrt4()
-    # plot_invpanc_devs()
+    # whyrt4()
+    plot_invpanc_devs()
     # plot_water_nonmono(RP)
     # plot_ancillary("PROPANE")
     # plot_worst()
