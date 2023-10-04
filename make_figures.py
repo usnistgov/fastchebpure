@@ -1105,7 +1105,7 @@ if __name__ == '__main__':
 
     FLDs = sorted([os.path.split(FLD)[1].split('.')[0] for FLD in glob.glob(root+'/FLUIDS/*.FLD')])
     ref = get_all_references(FLDs)
-    bibs = dois2bibs(ref.dois+ref.newdois)
+    bibs = dois2bibs(list(set(ref.dois+ref.newdois)))
     with open('FLD_bibs.bib', 'w', encoding='utf-8') as fp:
         fp.write(bibs)
     cleanupbibtex('FLD_bibs.bib')
