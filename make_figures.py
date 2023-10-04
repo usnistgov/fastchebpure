@@ -1,4 +1,7 @@
 import os, timeit
+from dataclasses import dataclass
+from typing import List, Dict
+
 os.environ['RPPREFIX'] = os.getenv('HOME') + '/REFPROP10'
 
 import glob, json, os
@@ -84,6 +87,66 @@ def get_expansions(FLD, *, and_p=False):
     else:
 
         return ceL, ceV
+    
+def dois2bibs(dois):
+    import requests 
+    import re
+    def doi2bib(doi):
+        """
+        Return a bibTeX string of metadata for a given DOI. See https://gist.github.com/jrsmith3/5513926
+        """
+        headers = {"accept": "application/x-bibtex"}
+        r = requests.get("http://dx.doi.org/" + doi, headers = headers)
+        r.encoding = r.apparent_encoding
+        if r.ok:
+            s = re.sub(r'article{([\S\_]+),', 'article{' + doi + ',', r.text)
+            s = re.sub(r'techreport{([\S\_]+),', 'article{' + doi + ',', s)
+            return s
+        else:
+            print("Couldn't get this DOI: {doi}")
+            return '?'
+        
+    print('getting the bibtex for the DOI, be patient...')
+    s = '\n\n'.join([doi2bib(doi) for doi in dois if doi])
+    s = s.replace(r'{\&}amp$\mathsemicolon$', 'and').replace(r'$\less$/i$\greater$','$')
+    s = s.replace(r'$\less$i$\greater$','$').replace(r'{\textendash}','-')
+    s = s.replace(r'$\less$b$\greater$$\uprho$$\less$/b$\greater$',r'$\rho$').replace(r'\uprho',r'\rho')
+    return s
+
+@dataclass
+class ReferenceInfo:
+    FLDs: List[str]
+    dois: List[str]
+    newdois: List[str] # Published since REFPROP 10.0 came out
+    FLD_use_CoolProp: List[str]
+    keymap: Dict[str, str]
+
+def get_all_references(FLDs):
+    dois = []
+    newdois = []
+    keymap = {}
+    FLD_use_CoolProp = ['R114','R113','METHANOL','R12','RC318','R14','FLUORINE','R124','R21','CYCLOPRO','PROPYNE']
+
+    for FLD in FLDs:
+        import CoolProp.CoolProp as CP
+        if FLD in FLD_use_CoolProp:
+            keymap[FLD] = CP.get_fluid_param_string(FLD, 'BibTeX-EOS')
+            continue 
+        DOI = RP.REFPROPdll(FLD, '','DOI_EOS',0,0,0,0,0,[1.0]).hUnits
+        if not DOI:
+            hcite = RP.GETMODdll(1,'EOS').hcite
+            sandbox = os.getenv('HOME') +  '/Documents/Code/REFPROP-sandbox'
+            DOI = RP.REFPROPdll(sandbox+'/FLUIDS/'+FLD+'.FLD', '','DOI_EOS',0,0,0,0,0,[1.0]).hUnits
+            if DOI: 
+                newdois.append(DOI)
+                keymap[FLD] = DOI
+            else:
+                print(hcite)
+        else:
+            keymap[FLD] = DOI
+            dois.append(DOI)
+    
+    return ReferenceInfo(dois=dois, newdois=newdois, FLD_use_CoolProp=FLD_use_CoolProp, FLDs=FLDs, keymap=keymap)
 
 def plot_water_nonmono(RP):
 
@@ -807,6 +870,40 @@ def make_SI_figs(*, mapcache):
         output += o
     return output
 
+def make_SI_figs_p(*, mapcache):
+
+    def get_devPDF(FLD, candidates=['panc_from_rhoanc_devs.pdf','invpanc_devs.pdf']):
+        for PDF, mapping in json.load(open(mapcache)).items():
+            if PDF not in candidates: continue
+            for entry in mapping:
+                if FLD == entry['string']:
+                    return PDF, entry['pagenum']
+        raise KeyError(FLD)
+                
+    output = ''
+    for i, f in enumerate(sorted(glob.glob('output/check/*.json'))):
+        FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
+        pagenum = i+1
+
+        header = r"""
+        \begin{figure}[H] %INS% 
+        \centering
+        """
+        footer = r"""\caption{%caption%}
+    \end{figure}""".replace("%caption%", FLD)
+        
+        # o = header.replace("%INS%", "\ContinuedFloat" if i != 0 else "")
+        o = header.replace("%INS%", "")
+        o += r"""\subcaptionbox{Pressure deviations}{
+            \includegraphics[width=2.5in,page=%pagenumdev%]{panc_from_rhoanc_devs}
+        }\subcaptionbox{Inverse pressure roundtrip error}{
+            \includegraphics[width=2.5in,page=%pagepmu%]{invpanc_devs}
+        }
+        """.replace("%FLD%", FLD).replace('%root%',root).replace('%pagenumdev%', str(pagenum)).replace('%pagepmu%',str(pagenum)) + '\n'
+        o += footer
+        output += o
+    return output
+
 def plot_ancillary(FLD):
     
     class CritAncillary:
@@ -937,6 +1034,60 @@ def check_all_conversions(RP, FLUIDS):
                 o = RP.REFPROPdll('/Users/ihb/Desktop/NF3fromfixedversion10.0.FLD','TD&','P;R',RP.MOLAR_BASE_SI,0,0,T,rho,[1.0])
                 print(pR_REFPROP, pR_teqp, o.Output[0]/o.Output[1])
 
+def make_fluid_info_table(ref):
+    o = []
+    for FLD in ref.FLDs:
+        key = ref.keymap.get(FLD, None)
+        if key is None:
+            refstring = ''
+        else:
+            refstring = r'Ref. \citenum{' + key + '}' 
+            if key in ref.newdois:
+                refstring += '(n)'
+
+        ceL, ceV, cep = get_expansions(FLD=FLD, and_p=True)
+        Tcheck = np.floor(cep.get_exps()[-1].xmax()*0.9)
+        check_vals = f'{ceL(Tcheck):20.12e},{ceV(Tcheck):20.12e},{cep(Tcheck):20.12e}'
+        
+        o.append({
+            'REFPROP name': FLD,
+            'authors': refstring,
+            '$T$ / K': Tcheck,
+            "$\rho'$ / mol/m$^3$, $\rho''$ / mol/m$^3$, $p$ / Pa": check_vals
+        })
+    caption = r"""
+    Equations of state considered in this work with check values calculated from the superancillary functions.\listsumdelim The 
+    temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. All EOS coefficients 
+    are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for 
+    books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients 
+    are assumed to be the same as in REFPROP 10.0.
+    """
+    caption = ' '.join(caption.split('\n'))
+    df = pandas.DataFrame(o)
+    with pandas.option_context("max_colwidth", 1000):
+        with open('EOS_info.tex.in', 'w') as fp:
+            fp.write(df.to_latex(index=False, caption=caption, longtable=True, label='tab:EOSlist', escape=False))
+
+def cleanupbibtex(BibTeXfile):
+    f = open(BibTeXfile, encoding='utf-8').read()
+    journal_map = {
+        'Journal of Physical and Chemical Reference Data': 'J. Phys. Chem. Ref. Data',
+        'Journal of Chemical and Engineering Data': 'J. Chem. Eng. Data',
+        'Fluid Phase Equilibria': 'Fluid Phase Equilib.',
+        'Thermal Engineering': 'Therm. Eng.',
+        'International Journal of Thermophysics': 'Int. J. Thermophys.',
+        'Chemical Engineering Science': 'Chem. Eng. Sci.',
+        'Industrial and Engineering Chemistry Research': 'Ind. Eng. Chem. Res.'
+    }
+    for k,v in journal_map.items():
+        f = f.replace(k,v)
+
+    # Protect title capitalization with outer { }
+    import re
+    f = re.sub(r'title = \{(.+)\}', r'title = {{\1}}', f)
+
+    with open(BibTeXfile, 'w', encoding='utf-8') as fp:
+        fp.write(f)
 
 if __name__ == '__main__':
 
@@ -951,34 +1102,43 @@ if __name__ == '__main__':
     RP.SETPATHdll(root)
     # check_all_conversions(RP, FLUIDS=os.getenv('RPPREFIX')+'/FLUIDS')
     # quit()
-    
-    import warnings
-    warnings.filterwarnings("ignore")
+
+    FLDs = sorted([os.path.split(FLD)[1].split('.')[0] for FLD in glob.glob(root+'/FLUIDS/*.FLD')])
+    ref = get_all_references(FLDs)
+    # with open('FLD_bibs.bib','w', encoding='utf-8') as fp:
+    #     fp.write(dois2bibs(ref.dois+ref.newdois))
+    cleanupbibtex('FLD_bibs.bib')
 
     # test_inverse_functions()
     # plot_panc_devs()
     # whyrt4()
     # plot_invpanc_devs()
-    plot_water_nonmono(RP)
+    # plot_water_nonmono(RP)
     # plot_ancillary("PROPANE")
     # plot_worst()
     # plot_pmu_devs()
     # plot_widths('WATER')
     
     if not os.path.exists('FLD_page_cache.json'):
-        cache = map_pages(['pmu_devs.pdf','devs.pdf','gooddevs.pdf'])
+        cache = map_pages(['pmu_devs.pdf','devs.pdf','gooddevs.pdf','invpanc_devs.pdf'])
         with open('FLD_page_cache.json', 'w') as fp:
             fp.write(json.dumps(cache, indent=2))
     
     SI_figs = make_SI_figs(mapcache='FLD_page_cache.json')
+    SI_figs_p = make_SI_figs_p(mapcache='FLD_page_cache.json')
     with open('SI_figs.tex.in', 'w') as fp:
         fp.write(SI_figs)
+    with open('SI_figs_p.tex.in', 'w') as fp:
+        fp.write(SI_figs_p)
 
-    # Test compression with brotli
-    FLD = 'WATER'
-    fname = f'output/{FLD}_exps.json'
-    if os.path.exists(fname):
-        jj = json.load(open(fname))
-        import brotli
-        with open('WATER_comp.jsonbrotli', 'wb') as fp:
-            fp.write(brotli.compress(json.dumps(jj).encode('ascii')))
+    # # Test compression with brotli
+    # FLD = 'WATER'
+    # fname = f'output/{FLD}_exps.json'
+    # if os.path.exists(fname):
+    #     jj = json.load(open(fname))
+    #     import brotli
+    #     with open('WATER_comp.jsonbrotli', 'wb') as fp:
+    #         fp.write(brotli.compress(json.dumps(jj).encode('ascii')))
+
+    # Make table of fluid information, with check values
+    make_fluid_info_table(ref)

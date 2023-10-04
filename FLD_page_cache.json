@@ -1,588 +1,2352 @@
 {
   "pmu_devs.pdf": [
     {
+      "string": "101105rpSA",
+      "pagenum": 1
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 1
+    },
+    {
+      "string": "101105r",
+      "pagenum": 1
+    },
+    {
       "string": "13BUTADIENE",
       "pagenum": 1
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 2
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 2
+    },
+    {
+      "string": "101105r",
+      "pagenum": 2
     },
     {
       "string": "1BUTENE",
       "pagenum": 2
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 3
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 3
+    },
+    {
+      "string": "101105r",
+      "pagenum": 3
+    },
+    {
       "string": "1BUTYNE",
       "pagenum": 3
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 4
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 4
+    },
+    {
+      "string": "101105r",
+      "pagenum": 4
     },
     {
       "string": "1PENTENE",
       "pagenum": 4
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 5
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 5
+    },
+    {
+      "string": "101105r",
+      "pagenum": 5
+    },
+    {
       "string": "22DIMETHYLBUTANE",
       "pagenum": 5
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 6
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 6
+    },
+    {
+      "string": "101105r",
+      "pagenum": 6
     },
     {
       "string": "23DIMETHYLBUTANE",
       "pagenum": 6
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 7
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 7
+    },
+    {
+      "string": "101105r",
+      "pagenum": 7
+    },
+    {
       "string": "3METHYLPENTANE",
       "pagenum": 7
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 8
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 8
+    },
+    {
+      "string": "101105r",
+      "pagenum": 8
     },
     {
       "string": "ACETONE",
       "pagenum": 8
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 9
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 9
+    },
+    {
+      "string": "101105r",
+      "pagenum": 9
+    },
+    {
       "string": "ACETYLENE",
       "pagenum": 9
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 10
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 10
+    },
+    {
+      "string": "101105r",
+      "pagenum": 10
     },
     {
       "string": "AMMONIA",
       "pagenum": 10
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 11
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 11
+    },
+    {
+      "string": "101105r",
+      "pagenum": 11
+    },
+    {
       "string": "ARGON",
       "pagenum": 11
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 12
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 12
+    },
+    {
+      "string": "101105r",
+      "pagenum": 12
     },
     {
       "string": "BENZENE",
       "pagenum": 12
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 13
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 13
+    },
+    {
+      "string": "101105r",
+      "pagenum": 13
+    },
+    {
       "string": "BUTANE",
       "pagenum": 13
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 14
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 14
+    },
+    {
+      "string": "101105r",
+      "pagenum": 14
     },
     {
       "string": "C11",
       "pagenum": 14
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 15
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 15
+    },
+    {
+      "string": "101105r",
+      "pagenum": 15
+    },
+    {
       "string": "C12",
       "pagenum": 15
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 16
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 16
+    },
+    {
+      "string": "101105r",
+      "pagenum": 16
     },
     {
       "string": "C16",
       "pagenum": 16
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 17
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 17
+    },
+    {
+      "string": "101105r",
+      "pagenum": 17
+    },
+    {
       "string": "C1CC6",
       "pagenum": 17
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 18
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 18
+    },
+    {
+      "string": "101105r",
+      "pagenum": 18
     },
     {
       "string": "C22",
       "pagenum": 18
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 19
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 19
+    },
+    {
+      "string": "101105r",
+      "pagenum": 19
+    },
+    {
       "string": "C2BUTENE",
       "pagenum": 19
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 20
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 20
+    },
+    {
+      "string": "101105r",
+      "pagenum": 20
     },
     {
       "string": "C3CC6",
       "pagenum": 20
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 21
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 21
+    },
+    {
+      "string": "101105r",
+      "pagenum": 21
+    },
+    {
       "string": "C4F10",
       "pagenum": 21
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 22
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 22
+    },
+    {
+      "string": "101105r",
+      "pagenum": 22
     },
     {
       "string": "C5F12",
       "pagenum": 22
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 23
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 23
+    },
+    {
+      "string": "101105r",
+      "pagenum": 23
+    },
+    {
       "string": "C6F14",
       "pagenum": 23
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 24
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 24
+    },
+    {
+      "string": "101105r",
+      "pagenum": 24
     },
     {
       "string": "CF3I",
       "pagenum": 24
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 25
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 25
+    },
+    {
+      "string": "101105r",
+      "pagenum": 25
+    },
+    {
       "string": "CHLORINE",
       "pagenum": 25
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 26
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 26
+    },
+    {
+      "string": "101105r",
+      "pagenum": 26
     },
     {
       "string": "CHLOROBENZENE",
       "pagenum": 26
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 27
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 27
+    },
+    {
+      "string": "101105r",
+      "pagenum": 27
+    },
+    {
       "string": "CO2",
       "pagenum": 27
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 28
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 28
+    },
+    {
+      "string": "101105r",
+      "pagenum": 28
     },
     {
       "string": "COS",
       "pagenum": 28
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 29
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 29
+    },
+    {
+      "string": "101105r",
+      "pagenum": 29
+    },
+    {
       "string": "CO",
       "pagenum": 29
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 30
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 30
+    },
+    {
+      "string": "101105r",
+      "pagenum": 30
     },
     {
       "string": "CYCLOBUTENE",
       "pagenum": 30
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 31
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 31
+    },
+    {
+      "string": "101105r",
+      "pagenum": 31
+    },
+    {
       "string": "CYCLOHEX",
       "pagenum": 31
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 32
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 32
+    },
+    {
+      "string": "101105r",
+      "pagenum": 32
     },
     {
       "string": "CYCLOPEN",
       "pagenum": 32
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 33
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 33
+    },
+    {
+      "string": "101105r",
+      "pagenum": 33
+    },
+    {
       "string": "CYCLOPRO",
       "pagenum": 33
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 34
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 34
+    },
+    {
+      "string": "101105r",
+      "pagenum": 34
     },
     {
       "string": "D2O",
       "pagenum": 34
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 35
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 35
+    },
+    {
+      "string": "101105r",
+      "pagenum": 35
+    },
+    {
       "string": "D2",
       "pagenum": 35
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 36
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 36
+    },
+    {
+      "string": "101105r",
+      "pagenum": 36
     },
     {
       "string": "D4",
       "pagenum": 36
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 37
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 37
+    },
+    {
+      "string": "101105r",
+      "pagenum": 37
+    },
+    {
       "string": "D5",
       "pagenum": 37
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 38
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 38
+    },
+    {
+      "string": "101105r",
+      "pagenum": 38
     },
     {
       "string": "D6",
       "pagenum": 38
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 39
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 39
+    },
+    {
+      "string": "101105r",
+      "pagenum": 39
+    },
+    {
       "string": "DEA",
       "pagenum": 39
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 40
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 40
+    },
+    {
+      "string": "101105r",
+      "pagenum": 40
     },
     {
       "string": "DECANE",
       "pagenum": 40
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 41
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 41
+    },
+    {
+      "string": "101105r",
+      "pagenum": 41
+    },
+    {
       "string": "DEE",
       "pagenum": 41
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 42
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 42
+    },
+    {
+      "string": "101105r",
+      "pagenum": 42
     },
     {
       "string": "DMC",
       "pagenum": 42
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 43
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 43
+    },
+    {
+      "string": "101105r",
+      "pagenum": 43
+    },
+    {
       "string": "DME",
       "pagenum": 43
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 44
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 44
+    },
+    {
+      "string": "101105r",
+      "pagenum": 44
     },
     {
       "string": "EBENZENE",
       "pagenum": 44
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 45
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 45
+    },
+    {
+      "string": "101105r",
+      "pagenum": 45
+    },
+    {
       "string": "EGLYCOL",
       "pagenum": 45
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 46
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 46
+    },
+    {
+      "string": "101105r",
+      "pagenum": 46
     },
     {
       "string": "ETHANE",
       "pagenum": 46
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 47
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 47
+    },
+    {
+      "string": "101105r",
+      "pagenum": 47
+    },
+    {
       "string": "ETHANOL",
       "pagenum": 47
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 48
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 48
+    },
+    {
+      "string": "101105r",
+      "pagenum": 48
     },
     {
       "string": "ETHYLENEOXIDE",
       "pagenum": 48
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 49
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 49
+    },
+    {
+      "string": "101105r",
+      "pagenum": 49
+    },
+    {
       "string": "ETHYLENE",
       "pagenum": 49
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 50
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 50
+    },
+    {
+      "string": "101105r",
+      "pagenum": 50
     },
     {
       "string": "FLUORINE",
       "pagenum": 50
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 51
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 51
+    },
+    {
+      "string": "101105r",
+      "pagenum": 51
+    },
+    {
       "string": "H2S",
       "pagenum": 51
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 52
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 52
+    },
+    {
+      "string": "101105r",
+      "pagenum": 52
     },
     {
       "string": "HCL",
       "pagenum": 52
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 53
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 53
+    },
+    {
+      "string": "101105r",
+      "pagenum": 53
+    },
+    {
       "string": "HELIUM",
       "pagenum": 53
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 54
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 54
+    },
+    {
+      "string": "101105r",
+      "pagenum": 54
     },
     {
       "string": "HEPTANE",
       "pagenum": 54
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 55
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 55
+    },
+    {
+      "string": "101105r",
+      "pagenum": 55
+    },
+    {
       "string": "HEXANE",
       "pagenum": 55
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 56
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 56
+    },
+    {
+      "string": "101105r",
+      "pagenum": 56
     },
     {
       "string": "HYDROGEN",
       "pagenum": 56
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 57
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 57
+    },
+    {
+      "string": "101105r",
+      "pagenum": 57
+    },
+    {
       "string": "IBUTENE",
       "pagenum": 57
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 58
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 58
+    },
+    {
+      "string": "101105r",
+      "pagenum": 58
     },
     {
       "string": "IHEXANE",
       "pagenum": 58
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 59
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 59
+    },
+    {
+      "string": "101105r",
+      "pagenum": 59
+    },
+    {
       "string": "IOCTANE",
       "pagenum": 59
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 60
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 60
+    },
+    {
+      "string": "101105r",
+      "pagenum": 60
     },
     {
       "string": "IPENTANE",
       "pagenum": 60
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 61
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 61
+    },
+    {
+      "string": "101105r",
+      "pagenum": 61
+    },
+    {
       "string": "ISOBUTAN",
       "pagenum": 61
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 62
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 62
+    },
+    {
+      "string": "101105r",
+      "pagenum": 62
     },
     {
       "string": "KRYPTON",
       "pagenum": 62
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 63
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 63
+    },
+    {
+      "string": "101105r",
+      "pagenum": 63
+    },
+    {
       "string": "MD2M",
       "pagenum": 63
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 64
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 64
+    },
+    {
+      "string": "101105r",
+      "pagenum": 64
     },
     {
       "string": "MD3M",
       "pagenum": 64
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 65
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 65
+    },
+    {
+      "string": "101105r",
+      "pagenum": 65
+    },
+    {
       "string": "MD4M",
       "pagenum": 65
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 66
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 66
+    },
+    {
+      "string": "101105r",
+      "pagenum": 66
     },
     {
       "string": "MDM",
       "pagenum": 66
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 67
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 67
+    },
+    {
+      "string": "101105r",
+      "pagenum": 67
+    },
+    {
       "string": "MEA",
       "pagenum": 67
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 68
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 68
+    },
+    {
+      "string": "101105r",
+      "pagenum": 68
     },
     {
       "string": "METHANE",
       "pagenum": 68
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 69
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 69
+    },
+    {
+      "string": "101105r",
+      "pagenum": 69
+    },
+    {
       "string": "METHANOL",
       "pagenum": 69
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 70
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 70
+    },
+    {
+      "string": "101105r",
+      "pagenum": 70
     },
     {
       "string": "MLINOLEA",
       "pagenum": 70
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 71
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 71
+    },
+    {
+      "string": "101105r",
+      "pagenum": 71
+    },
+    {
       "string": "MLINOLEN",
       "pagenum": 71
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 72
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 72
+    },
+    {
+      "string": "101105r",
+      "pagenum": 72
     },
     {
       "string": "MM",
       "pagenum": 72
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 73
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 73
+    },
+    {
+      "string": "101105r",
+      "pagenum": 73
+    },
+    {
       "string": "MOLEATE",
       "pagenum": 73
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 74
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 74
+    },
+    {
+      "string": "101105r",
+      "pagenum": 74
     },
     {
       "string": "MPALMITA",
       "pagenum": 74
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 75
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 75
+    },
+    {
+      "string": "101105r",
+      "pagenum": 75
+    },
+    {
       "string": "MSTEARAT",
       "pagenum": 75
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 76
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 76
+    },
+    {
+      "string": "101105r",
+      "pagenum": 76
     },
     {
       "string": "MXYLENE",
       "pagenum": 76
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 77
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 77
+    },
+    {
+      "string": "101105r",
+      "pagenum": 77
+    },
+    {
       "string": "N2O",
       "pagenum": 77
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 78
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 78
+    },
+    {
+      "string": "101105r",
+      "pagenum": 78
     },
     {
       "string": "NEON",
       "pagenum": 78
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 79
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 79
+    },
+    {
+      "string": "101105r",
+      "pagenum": 79
+    },
+    {
       "string": "NEOPENTN",
       "pagenum": 79
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 80
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 80
+    },
+    {
+      "string": "101105r",
+      "pagenum": 80
     },
     {
       "string": "NF3",
       "pagenum": 80
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 81
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 81
+    },
+    {
+      "string": "101105r",
+      "pagenum": 81
+    },
+    {
       "string": "NITROGEN",
       "pagenum": 81
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 82
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 82
+    },
+    {
+      "string": "101105r",
+      "pagenum": 82
     },
     {
       "string": "NONANE",
       "pagenum": 82
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 83
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 83
+    },
+    {
+      "string": "101105r",
+      "pagenum": 83
+    },
+    {
       "string": "NOVEC649",
       "pagenum": 83
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 84
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 84
+    },
+    {
+      "string": "101105r",
+      "pagenum": 84
     },
     {
       "string": "OCTANE",
       "pagenum": 84
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 85
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 85
+    },
+    {
+      "string": "101105r",
+      "pagenum": 85
+    },
+    {
       "string": "ORTHOHYD",
       "pagenum": 85
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 86
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 86
+    },
+    {
+      "string": "101105r",
+      "pagenum": 86
     },
     {
       "string": "OXYGEN",
       "pagenum": 86
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 87
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 87
+    },
+    {
+      "string": "101105r",
+      "pagenum": 87
+    },
+    {
       "string": "OXYLENE",
       "pagenum": 87
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 88
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 88
+    },
+    {
+      "string": "101105r",
+      "pagenum": 88
     },
     {
       "string": "PARAHYD",
       "pagenum": 88
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 89
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 89
+    },
+    {
+      "string": "101105r",
+      "pagenum": 89
+    },
+    {
       "string": "PENTANE",
       "pagenum": 89
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 90
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 90
+    },
+    {
+      "string": "101105r",
+      "pagenum": 90
     },
     {
       "string": "PROPADIENE",
       "pagenum": 90
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 91
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 91
+    },
+    {
+      "string": "101105r",
+      "pagenum": 91
+    },
+    {
       "string": "PROPANE",
       "pagenum": 91
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 92
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 92
+    },
+    {
+      "string": "101105r",
+      "pagenum": 92
     },
     {
       "string": "PROPYLENEOXIDE",
       "pagenum": 92
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 93
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 93
+    },
+    {
+      "string": "101105r",
+      "pagenum": 93
+    },
+    {
       "string": "PROPYLEN",
       "pagenum": 93
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 94
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 94
+    },
+    {
+      "string": "101105r",
+      "pagenum": 94
     },
     {
       "string": "PROPYNE",
       "pagenum": 94
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 95
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 95
+    },
+    {
+      "string": "101105r",
+      "pagenum": 95
+    },
+    {
       "string": "PXYLENE",
       "pagenum": 95
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 96
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 96
+    },
+    {
+      "string": "101105r",
+      "pagenum": 96
     },
     {
       "string": "R1123",
       "pagenum": 96
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 97
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 97
+    },
+    {
+      "string": "101105r",
+      "pagenum": 97
+    },
+    {
       "string": "R113",
       "pagenum": 97
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 98
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 98
+    },
+    {
+      "string": "101105r",
+      "pagenum": 98
     },
     {
       "string": "R114",
       "pagenum": 98
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 99
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 99
+    },
+    {
+      "string": "101105r",
+      "pagenum": 99
+    },
+    {
       "string": "R115",
       "pagenum": 99
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 100
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 100
+    },
+    {
+      "string": "101105r",
+      "pagenum": 100
     },
     {
       "string": "R116",
       "pagenum": 100
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 101
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 101
+    },
+    {
+      "string": "101105r",
+      "pagenum": 101
+    },
+    {
       "string": "R11",
       "pagenum": 101
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 102
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 102
+    },
+    {
+      "string": "101105r",
+      "pagenum": 102
     },
     {
       "string": "R1216",
       "pagenum": 102
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 103
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 103
+    },
+    {
+      "string": "101105r",
+      "pagenum": 103
+    },
+    {
       "string": "R1224YDZ",
       "pagenum": 103
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 104
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 104
+    },
+    {
+      "string": "101105r",
+      "pagenum": 104
     },
     {
       "string": "R1233ZDE",
       "pagenum": 104
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 105
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 105
+    },
+    {
+      "string": "101105r",
+      "pagenum": 105
+    },
+    {
       "string": "R1234YF",
       "pagenum": 105
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 106
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 106
+    },
+    {
+      "string": "101105r",
+      "pagenum": 106
     },
     {
       "string": "R1234ZEE",
       "pagenum": 106
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 107
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 107
+    },
+    {
+      "string": "101105r",
+      "pagenum": 107
+    },
+    {
       "string": "R1234ZEZ",
       "pagenum": 107
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 108
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 108
+    },
+    {
+      "string": "101105r",
+      "pagenum": 108
     },
     {
       "string": "R123",
       "pagenum": 108
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 109
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 109
+    },
+    {
+      "string": "101105r",
+      "pagenum": 109
+    },
+    {
       "string": "R1243ZF",
       "pagenum": 109
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 110
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 110
+    },
+    {
+      "string": "101105r",
+      "pagenum": 110
     },
     {
       "string": "R124",
       "pagenum": 110
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 111
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 111
+    },
+    {
+      "string": "101105r",
+      "pagenum": 111
+    },
+    {
       "string": "R125",
       "pagenum": 111
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 112
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 112
+    },
+    {
+      "string": "101105r",
+      "pagenum": 112
     },
     {
       "string": "R12",
       "pagenum": 112
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 113
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 113
+    },
+    {
+      "string": "101105r",
+      "pagenum": 113
+    },
+    {
       "string": "R1336MZZZ",
       "pagenum": 113
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 114
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 114
+    },
+    {
+      "string": "101105r",
+      "pagenum": 114
     },
     {
       "string": "R134A",
       "pagenum": 114
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 115
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 115
+    },
+    {
+      "string": "101105r",
+      "pagenum": 115
+    },
+    {
       "string": "R13",
       "pagenum": 115
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 116
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 116
+    },
+    {
+      "string": "101105r",
+      "pagenum": 116
     },
     {
       "string": "R141B",
       "pagenum": 116
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 117
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 117
+    },
+    {
+      "string": "101105r",
+      "pagenum": 117
+    },
+    {
       "string": "R142B",
       "pagenum": 117
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 118
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 118
+    },
+    {
+      "string": "101105r",
+      "pagenum": 118
     },
     {
       "string": "R143A",
       "pagenum": 118
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 119
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 119
+    },
+    {
+      "string": "101105r",
+      "pagenum": 119
+    },
+    {
       "string": "R14",
       "pagenum": 119
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 120
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 120
+    },
+    {
+      "string": "101105r",
+      "pagenum": 120
     },
     {
       "string": "R150",
       "pagenum": 120
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 121
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 121
+    },
+    {
+      "string": "101105r",
+      "pagenum": 121
+    },
+    {
       "string": "R152A",
       "pagenum": 121
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 122
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 122
+    },
+    {
+      "string": "101105r",
+      "pagenum": 122
     },
     {
       "string": "R161",
       "pagenum": 122
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 123
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 123
+    },
+    {
+      "string": "101105r",
+      "pagenum": 123
+    },
+    {
       "string": "R218",
       "pagenum": 123
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 124
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 124
+    },
+    {
+      "string": "101105r",
+      "pagenum": 124
     },
     {
       "string": "R21",
       "pagenum": 124
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 125
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 125
+    },
+    {
+      "string": "101105r",
+      "pagenum": 125
+    },
+    {
       "string": "R227EA",
       "pagenum": 125
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 126
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 126
+    },
+    {
+      "string": "101105r",
+      "pagenum": 126
     },
     {
       "string": "R22",
       "pagenum": 126
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 127
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 127
+    },
+    {
+      "string": "101105r",
+      "pagenum": 127
+    },
+    {
       "string": "R236EA",
       "pagenum": 127
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 128
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 128
+    },
+    {
+      "string": "101105r",
+      "pagenum": 128
     },
     {
       "string": "R236FA",
       "pagenum": 128
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 129
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 129
+    },
+    {
+      "string": "101105r",
+      "pagenum": 129
+    },
+    {
       "string": "R23",
       "pagenum": 129
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 130
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 130
+    },
+    {
+      "string": "101105r",
+      "pagenum": 130
     },
     {
       "string": "R245CA",
       "pagenum": 130
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 131
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 131
+    },
+    {
+      "string": "101105r",
+      "pagenum": 131
+    },
+    {
       "string": "R245FA",
       "pagenum": 131
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 132
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 132
+    },
+    {
+      "string": "101105r",
+      "pagenum": 132
     },
     {
       "string": "R32",
       "pagenum": 132
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 133
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 133
+    },
+    {
+      "string": "101105r",
+      "pagenum": 133
+    },
+    {
       "string": "R365MFC",
       "pagenum": 133
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 134
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 134
+    },
+    {
+      "string": "101105r",
+      "pagenum": 134
     },
     {
       "string": "R40",
       "pagenum": 134
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 135
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 135
+    },
+    {
+      "string": "101105r",
+      "pagenum": 135
+    },
+    {
       "string": "R41",
       "pagenum": 135
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 136
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 136
+    },
+    {
+      "string": "101105r",
+      "pagenum": 136
     },
     {
       "string": "RC318",
       "pagenum": 136
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 137
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 137
+    },
+    {
+      "string": "101105r",
+      "pagenum": 137
+    },
+    {
       "string": "RE143A",
       "pagenum": 137
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 138
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 138
+    },
+    {
+      "string": "101105r",
+      "pagenum": 138
     },
     {
       "string": "RE245CB2",
       "pagenum": 138
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 139
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 139
+    },
+    {
+      "string": "101105r",
+      "pagenum": 139
+    },
+    {
       "string": "RE245FA2",
       "pagenum": 139
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 140
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 140
+    },
+    {
+      "string": "101105r",
+      "pagenum": 140
     },
     {
       "string": "RE347MCC",
       "pagenum": 140
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 141
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 141
+    },
+    {
+      "string": "101105r",
+      "pagenum": 141
+    },
+    {
       "string": "SF6",
       "pagenum": 141
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 142
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 142
+    },
+    {
+      "string": "101105r",
+      "pagenum": 142
     },
     {
       "string": "SO2",
       "pagenum": 142
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 143
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 143
+    },
+    {
+      "string": "101105r",
+      "pagenum": 143
+    },
+    {
       "string": "T2BUTENE",
       "pagenum": 143
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 144
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 144
+    },
+    {
+      "string": "101105r",
+      "pagenum": 144
     },
     {
       "string": "TOLUENE",
       "pagenum": 144
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 145
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 145
+    },
+    {
+      "string": "101105r",
+      "pagenum": 145
+    },
+    {
       "string": "VINYLCHLORIDE",
       "pagenum": 145
     },
     {
+      "string": "101105rpSA",
+      "pagenum": 146
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 146
+    },
+    {
+      "string": "101105r",
+      "pagenum": 146
+    },
+    {
       "string": "WATER",
       "pagenum": 146
+    },
+    {
+      "string": "101105rpSA",
+      "pagenum": 147
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 147
+    },
+    {
+      "string": "101105r",
+      "pagenum": 147
     },
     {
       "string": "XENON",
@@ -591,11 +2355,15 @@
   ],
   "devs.pdf": [
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 1
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 1
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 1
     },
     {
@@ -603,11 +2371,15 @@
       "pagenum": 1
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 2
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 2
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 2
     },
     {
@@ -615,11 +2387,15 @@
       "pagenum": 2
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 3
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 3
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 3
     },
     {
@@ -629,11 +2405,15 @@
   ],
   "gooddevs.pdf": [
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 1
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 1
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 1
     },
     {
@@ -641,11 +2421,15 @@
       "pagenum": 1
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 2
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 2
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 2
     },
     {
@@ -653,11 +2437,15 @@
       "pagenum": 2
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 3
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 3
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 3
     },
     {
@@ -665,11 +2453,15 @@
       "pagenum": 3
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 4
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 4
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 4
     },
     {
@@ -677,11 +2469,15 @@
       "pagenum": 4
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 5
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 5
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 5
     },
     {
@@ -689,11 +2485,15 @@
       "pagenum": 5
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 6
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 6
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 6
     },
     {
@@ -701,11 +2501,15 @@
       "pagenum": 6
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 7
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 7
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 7
     },
     {
@@ -713,11 +2517,15 @@
       "pagenum": 7
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 8
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 8
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 8
     },
     {
@@ -725,11 +2533,15 @@
       "pagenum": 8
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 9
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 9
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 9
     },
     {
@@ -737,11 +2549,15 @@
       "pagenum": 9
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 10
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 10
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 10
     },
     {
@@ -749,11 +2565,15 @@
       "pagenum": 10
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 11
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 11
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 11
     },
     {
@@ -761,11 +2581,15 @@
       "pagenum": 11
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 12
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 12
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 12
     },
     {
@@ -773,11 +2597,15 @@
       "pagenum": 12
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 13
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 13
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 13
     },
     {
@@ -785,11 +2613,15 @@
       "pagenum": 13
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 14
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 14
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 14
     },
     {
@@ -797,11 +2629,15 @@
       "pagenum": 14
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 15
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 15
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 15
     },
     {
@@ -809,11 +2645,15 @@
       "pagenum": 15
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 16
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 16
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 16
     },
     {
@@ -821,11 +2661,15 @@
       "pagenum": 16
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 17
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 17
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 17
     },
     {
@@ -833,11 +2677,15 @@
       "pagenum": 17
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 18
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 18
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 18
     },
     {
@@ -845,11 +2693,15 @@
       "pagenum": 18
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 19
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 19
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 19
     },
     {
@@ -857,11 +2709,15 @@
       "pagenum": 19
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 20
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 20
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 20
     },
     {
@@ -869,11 +2725,15 @@
       "pagenum": 20
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 21
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 21
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 21
     },
     {
@@ -881,11 +2741,15 @@
       "pagenum": 21
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 22
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 22
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 22
     },
     {
@@ -893,11 +2757,15 @@
       "pagenum": 22
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 23
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 23
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 23
     },
     {
@@ -905,11 +2773,15 @@
       "pagenum": 23
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 24
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 24
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 24
     },
     {
@@ -917,11 +2789,15 @@
       "pagenum": 24
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 25
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 25
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 25
     },
     {
@@ -929,11 +2805,15 @@
       "pagenum": 25
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 26
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 26
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 26
     },
     {
@@ -941,11 +2821,15 @@
       "pagenum": 26
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 27
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 27
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 27
     },
     {
@@ -953,11 +2837,15 @@
       "pagenum": 27
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 28
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 28
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 28
     },
     {
@@ -965,11 +2853,15 @@
       "pagenum": 28
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 29
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 29
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 29
     },
     {
@@ -977,11 +2869,15 @@
       "pagenum": 29
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 30
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 30
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 30
     },
     {
@@ -989,11 +2885,15 @@
       "pagenum": 30
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 31
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 31
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 31
     },
     {
@@ -1001,11 +2901,15 @@
       "pagenum": 31
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 32
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 32
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 32
     },
     {
@@ -1013,11 +2917,15 @@
       "pagenum": 32
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 33
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 33
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 33
     },
     {
@@ -1025,11 +2933,15 @@
       "pagenum": 33
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 34
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 34
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 34
     },
     {
@@ -1037,11 +2949,15 @@
       "pagenum": 34
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 35
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 35
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 35
     },
     {
@@ -1049,11 +2965,15 @@
       "pagenum": 35
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 36
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 36
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 36
     },
     {
@@ -1061,11 +2981,15 @@
       "pagenum": 36
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 37
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 37
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 37
     },
     {
@@ -1073,11 +2997,15 @@
       "pagenum": 37
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 38
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 38
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 38
     },
     {
@@ -1085,11 +3013,15 @@
       "pagenum": 38
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 39
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 39
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 39
     },
     {
@@ -1097,11 +3029,15 @@
       "pagenum": 39
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 40
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 40
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 40
     },
     {
@@ -1109,11 +3045,15 @@
       "pagenum": 40
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 41
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 41
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 41
     },
     {
@@ -1121,11 +3061,15 @@
       "pagenum": 41
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 42
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 42
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 42
     },
     {
@@ -1133,11 +3077,15 @@
       "pagenum": 42
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 43
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 43
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 43
     },
     {
@@ -1145,11 +3093,15 @@
       "pagenum": 43
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 44
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 44
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 44
     },
     {
@@ -1157,11 +3109,15 @@
       "pagenum": 44
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 45
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 45
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 45
     },
     {
@@ -1169,11 +3125,15 @@
       "pagenum": 45
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 46
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 46
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 46
     },
     {
@@ -1181,11 +3141,15 @@
       "pagenum": 46
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 47
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 47
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 47
     },
     {
@@ -1193,11 +3157,15 @@
       "pagenum": 47
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 48
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 48
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 48
     },
     {
@@ -1205,11 +3173,15 @@
       "pagenum": 48
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 49
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 49
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 49
     },
     {
@@ -1217,11 +3189,15 @@
       "pagenum": 49
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 50
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 50
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 50
     },
     {
@@ -1229,11 +3205,15 @@
       "pagenum": 50
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 51
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 51
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 51
     },
     {
@@ -1241,11 +3221,15 @@
       "pagenum": 51
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 52
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 52
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 52
     },
     {
@@ -1253,11 +3237,15 @@
       "pagenum": 52
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 53
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 53
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 53
     },
     {
@@ -1265,11 +3253,15 @@
       "pagenum": 53
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 54
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 54
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 54
     },
     {
@@ -1277,11 +3269,15 @@
       "pagenum": 54
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 55
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 55
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 55
     },
     {
@@ -1289,11 +3285,15 @@
       "pagenum": 55
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 56
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 56
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 56
     },
     {
@@ -1301,11 +3301,15 @@
       "pagenum": 56
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 57
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 57
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 57
     },
     {
@@ -1313,11 +3317,15 @@
       "pagenum": 57
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 58
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 58
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 58
     },
     {
@@ -1325,11 +3333,15 @@
       "pagenum": 58
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 59
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 59
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 59
     },
     {
@@ -1337,11 +3349,15 @@
       "pagenum": 59
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 60
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 60
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 60
     },
     {
@@ -1349,11 +3365,15 @@
       "pagenum": 60
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 61
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 61
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 61
     },
     {
@@ -1361,11 +3381,15 @@
       "pagenum": 61
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 62
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 62
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 62
     },
     {
@@ -1373,11 +3397,15 @@
       "pagenum": 62
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 63
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 63
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 63
     },
     {
@@ -1385,11 +3413,15 @@
       "pagenum": 63
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 64
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 64
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 64
     },
     {
@@ -1397,11 +3429,15 @@
       "pagenum": 64
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 65
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 65
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 65
     },
     {
@@ -1409,11 +3445,15 @@
       "pagenum": 65
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 66
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 66
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 66
     },
     {
@@ -1421,11 +3461,15 @@
       "pagenum": 66
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 67
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 67
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 67
     },
     {
@@ -1433,11 +3477,15 @@
       "pagenum": 67
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 68
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 68
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 68
     },
     {
@@ -1445,11 +3493,15 @@
       "pagenum": 68
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 69
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 69
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 69
     },
     {
@@ -1457,11 +3509,15 @@
       "pagenum": 69
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 70
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 70
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 70
     },
     {
@@ -1469,11 +3525,15 @@
       "pagenum": 70
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 71
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 71
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 71
     },
     {
@@ -1481,11 +3541,15 @@
       "pagenum": 71
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 72
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 72
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 72
     },
     {
@@ -1493,11 +3557,15 @@
       "pagenum": 72
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 73
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 73
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 73
     },
     {
@@ -1505,11 +3573,15 @@
       "pagenum": 73
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 74
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 74
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 74
     },
     {
@@ -1517,11 +3589,15 @@
       "pagenum": 74
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 75
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 75
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 75
     },
     {
@@ -1529,11 +3605,15 @@
       "pagenum": 75
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 76
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 76
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 76
     },
     {
@@ -1541,11 +3621,15 @@
       "pagenum": 76
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 77
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 77
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 77
     },
     {
@@ -1553,11 +3637,15 @@
       "pagenum": 77
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 78
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 78
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 78
     },
     {
@@ -1565,11 +3653,15 @@
       "pagenum": 78
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 79
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 79
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 79
     },
     {
@@ -1577,11 +3669,15 @@
       "pagenum": 79
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 80
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 80
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 80
     },
     {
@@ -1589,11 +3685,15 @@
       "pagenum": 80
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 81
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 81
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 81
     },
     {
@@ -1601,11 +3701,15 @@
       "pagenum": 81
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 82
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 82
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 82
     },
     {
@@ -1613,11 +3717,15 @@
       "pagenum": 82
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 83
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 83
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 83
     },
     {
@@ -1625,11 +3733,15 @@
       "pagenum": 83
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 84
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 84
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 84
     },
     {
@@ -1637,11 +3749,15 @@
       "pagenum": 84
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 85
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 85
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 85
     },
     {
@@ -1649,11 +3765,15 @@
       "pagenum": 85
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 86
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 86
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 86
     },
     {
@@ -1661,11 +3781,15 @@
       "pagenum": 86
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 87
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 87
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 87
     },
     {
@@ -1673,11 +3797,15 @@
       "pagenum": 87
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 88
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 88
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 88
     },
     {
@@ -1685,11 +3813,15 @@
       "pagenum": 88
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 89
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 89
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 89
     },
     {
@@ -1697,11 +3829,15 @@
       "pagenum": 89
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 90
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 90
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 90
     },
     {
@@ -1709,11 +3845,15 @@
       "pagenum": 90
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 91
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 91
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 91
     },
     {
@@ -1721,11 +3861,15 @@
       "pagenum": 91
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 92
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 92
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 92
     },
     {
@@ -1733,11 +3877,15 @@
       "pagenum": 92
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 93
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 93
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 93
     },
     {
@@ -1745,11 +3893,15 @@
       "pagenum": 93
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 94
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 94
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 94
     },
     {
@@ -1757,11 +3909,15 @@
       "pagenum": 94
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 95
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 95
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 95
     },
     {
@@ -1769,11 +3925,15 @@
       "pagenum": 95
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 96
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 96
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 96
     },
     {
@@ -1781,11 +3941,15 @@
       "pagenum": 96
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 97
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 97
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 97
     },
     {
@@ -1793,11 +3957,15 @@
       "pagenum": 97
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 98
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 98
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 98
     },
     {
@@ -1805,11 +3973,15 @@
       "pagenum": 98
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 99
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 99
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 99
     },
     {
@@ -1817,11 +3989,15 @@
       "pagenum": 99
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 100
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 100
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 100
     },
     {
@@ -1829,11 +4005,15 @@
       "pagenum": 100
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 101
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 101
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 101
     },
     {
@@ -1841,11 +4021,15 @@
       "pagenum": 101
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 102
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 102
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 102
     },
     {
@@ -1853,11 +4037,15 @@
       "pagenum": 102
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 103
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 103
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 103
     },
     {
@@ -1865,11 +4053,15 @@
       "pagenum": 103
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 104
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 104
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 104
     },
     {
@@ -1877,11 +4069,15 @@
       "pagenum": 104
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 105
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 105
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 105
     },
     {
@@ -1889,11 +4085,15 @@
       "pagenum": 105
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 106
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 106
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 106
     },
     {
@@ -1901,11 +4101,15 @@
       "pagenum": 106
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 107
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 107
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 107
     },
     {
@@ -1913,11 +4117,15 @@
       "pagenum": 107
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 108
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 108
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 108
     },
     {
@@ -1925,11 +4133,15 @@
       "pagenum": 108
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 109
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 109
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 109
     },
     {
@@ -1937,11 +4149,15 @@
       "pagenum": 109
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 110
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 110
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 110
     },
     {
@@ -1949,11 +4165,15 @@
       "pagenum": 110
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 111
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 111
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 111
     },
     {
@@ -1961,11 +4181,15 @@
       "pagenum": 111
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 112
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 112
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 112
     },
     {
@@ -1973,11 +4197,15 @@
       "pagenum": 112
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 113
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 113
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 113
     },
     {
@@ -1985,11 +4213,15 @@
       "pagenum": 113
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 114
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 114
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 114
     },
     {
@@ -1997,11 +4229,15 @@
       "pagenum": 114
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 115
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 115
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 115
     },
     {
@@ -2009,11 +4245,15 @@
       "pagenum": 115
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 116
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 116
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 116
     },
     {
@@ -2021,11 +4261,15 @@
       "pagenum": 116
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 117
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 117
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 117
     },
     {
@@ -2033,11 +4277,15 @@
       "pagenum": 117
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 118
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 118
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 118
     },
     {
@@ -2045,11 +4293,15 @@
       "pagenum": 118
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 119
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 119
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 119
     },
     {
@@ -2057,11 +4309,15 @@
       "pagenum": 119
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 120
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 120
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 120
     },
     {
@@ -2069,11 +4325,15 @@
       "pagenum": 120
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 121
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 121
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 121
     },
     {
@@ -2081,11 +4341,15 @@
       "pagenum": 121
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 122
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 122
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 122
     },
     {
@@ -2093,11 +4357,15 @@
       "pagenum": 122
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 123
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 123
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 123
     },
     {
@@ -2105,11 +4373,15 @@
       "pagenum": 123
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 124
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 124
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 124
     },
     {
@@ -2117,11 +4389,15 @@
       "pagenum": 124
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 125
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 125
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 125
     },
     {
@@ -2129,11 +4405,15 @@
       "pagenum": 125
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 126
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 126
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 126
     },
     {
@@ -2141,11 +4421,15 @@
       "pagenum": 126
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 127
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 127
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 127
     },
     {
@@ -2153,11 +4437,15 @@
       "pagenum": 127
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 128
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 128
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 128
     },
     {
@@ -2165,11 +4453,15 @@
       "pagenum": 128
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 129
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 129
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 129
     },
     {
@@ -2177,11 +4469,15 @@
       "pagenum": 129
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 130
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 130
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 130
     },
     {
@@ -2189,11 +4485,15 @@
       "pagenum": 130
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 131
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 131
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 131
     },
     {
@@ -2201,11 +4501,15 @@
       "pagenum": 131
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 132
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 132
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 132
     },
     {
@@ -2213,11 +4517,15 @@
       "pagenum": 132
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 133
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 133
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 133
     },
     {
@@ -2225,11 +4533,15 @@
       "pagenum": 133
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 134
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 134
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 134
     },
     {
@@ -2237,11 +4549,15 @@
       "pagenum": 134
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 135
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 135
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 135
     },
     {
@@ -2249,11 +4565,15 @@
       "pagenum": 135
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 136
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 136
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 136
     },
     {
@@ -2261,11 +4581,15 @@
       "pagenum": 136
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 137
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 137
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 137
     },
     {
@@ -2273,11 +4597,15 @@
       "pagenum": 137
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 138
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 138
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 138
     },
     {
@@ -2285,11 +4613,15 @@
       "pagenum": 138
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 139
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 139
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 139
     },
     {
@@ -2297,11 +4629,15 @@
       "pagenum": 139
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 140
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 140
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 140
     },
     {
@@ -2309,11 +4645,15 @@
       "pagenum": 140
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 141
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 141
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 141
     },
     {
@@ -2321,11 +4661,15 @@
       "pagenum": 141
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 142
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 142
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 142
     },
     {
@@ -2333,11 +4677,15 @@
       "pagenum": 142
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 143
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 143
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 143
     },
     {
@@ -2345,16 +4693,4138 @@
       "pagenum": 143
     },
     {
-      "string": "|/prime//primeep 1|",
+      "string": "102|/prime//primeep 1|",
       "pagenum": 144
     },
     {
-      "string": "|/prime/prime//prime/primeep 1|",
+      "string": " =SA",
+      "pagenum": 144
+    },
+    {
+      "string": "102|/prime/prime//prime/primeep 1|",
       "pagenum": 144
     },
     {
       "string": "XENON",
       "pagenum": 144
+    }
+  ],
+  "invpanc_devs.pdf": [
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 1
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 1
+    },
+    {
+      "string": "p)",
+      "pagenum": 1
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 1
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 1
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 1
+    },
+    {
+      "string": "0.00.20.40.60.81.013BUTADIENE",
+      "pagenum": 1
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 2
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 2
+    },
+    {
+      "string": "p)",
+      "pagenum": 2
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 2
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 2
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 2
+    },
+    {
+      "string": "0.00.20.40.60.81.01BUTENE",
+      "pagenum": 2
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 3
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 3
+    },
+    {
+      "string": "p)",
+      "pagenum": 3
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 3
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 3
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 3
+    },
+    {
+      "string": "0.00.20.40.60.81.01BUTYNE",
+      "pagenum": 3
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 4
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 4
+    },
+    {
+      "string": "p)",
+      "pagenum": 4
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 4
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 4
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 4
+    },
+    {
+      "string": "0.00.20.40.60.81.01PENTENE",
+      "pagenum": 4
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 5
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 5
+    },
+    {
+      "string": "p)",
+      "pagenum": 5
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 5
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 5
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 5
+    },
+    {
+      "string": "0.00.20.40.60.81.022DIMETHYLBUTANE",
+      "pagenum": 5
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 6
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 6
+    },
+    {
+      "string": "p)",
+      "pagenum": 6
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 6
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 6
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 6
+    },
+    {
+      "string": "0.00.20.40.60.81.023DIMETHYLBUTANE",
+      "pagenum": 6
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 7
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 7
+    },
+    {
+      "string": "p)",
+      "pagenum": 7
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 7
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 7
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 7
+    },
+    {
+      "string": "0.00.20.40.60.81.03METHYLPENTANE",
+      "pagenum": 7
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 8
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 8
+    },
+    {
+      "string": "p)",
+      "pagenum": 8
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 8
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 8
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 8
+    },
+    {
+      "string": "0.00.20.40.60.81.0ACETONE",
+      "pagenum": 8
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 9
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 9
+    },
+    {
+      "string": "p)",
+      "pagenum": 9
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 9
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 9
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 9
+    },
+    {
+      "string": "0.00.20.40.60.81.0ACETYLENE",
+      "pagenum": 9
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 10
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 10
+    },
+    {
+      "string": "p)",
+      "pagenum": 10
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 10
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 10
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 10
+    },
+    {
+      "string": "0.00.20.40.60.81.0AMMONIA",
+      "pagenum": 10
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 11
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 11
+    },
+    {
+      "string": "p)",
+      "pagenum": 11
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 11
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 11
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 11
+    },
+    {
+      "string": "0.00.20.40.60.81.0ARGON",
+      "pagenum": 11
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 12
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 12
+    },
+    {
+      "string": "p)",
+      "pagenum": 12
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 12
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 12
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 12
+    },
+    {
+      "string": "0.00.20.40.60.81.0BENZENE",
+      "pagenum": 12
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 13
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 13
+    },
+    {
+      "string": "p)",
+      "pagenum": 13
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 13
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 13
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 13
+    },
+    {
+      "string": "0.00.20.40.60.81.0BUTANE",
+      "pagenum": 13
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 14
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 14
+    },
+    {
+      "string": "p)",
+      "pagenum": 14
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 14
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 14
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 14
+    },
+    {
+      "string": "0.00.20.40.60.81.0C11",
+      "pagenum": 14
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 15
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 15
+    },
+    {
+      "string": "p)",
+      "pagenum": 15
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 15
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 15
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 15
+    },
+    {
+      "string": "0.00.20.40.60.81.0C12",
+      "pagenum": 15
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 16
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 16
+    },
+    {
+      "string": "p)",
+      "pagenum": 16
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 16
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 16
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 16
+    },
+    {
+      "string": "0.00.20.40.60.81.0C16",
+      "pagenum": 16
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 17
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 17
+    },
+    {
+      "string": "p)",
+      "pagenum": 17
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 17
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 17
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 17
+    },
+    {
+      "string": "0.00.20.40.60.81.0C1CC6",
+      "pagenum": 17
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 18
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 18
+    },
+    {
+      "string": "p)",
+      "pagenum": 18
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 18
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 18
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 18
+    },
+    {
+      "string": "0.00.20.40.60.81.0C22",
+      "pagenum": 18
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 19
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 19
+    },
+    {
+      "string": "p)",
+      "pagenum": 19
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 19
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 19
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 19
+    },
+    {
+      "string": "0.00.20.40.60.81.0C2BUTENE",
+      "pagenum": 19
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 20
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 20
+    },
+    {
+      "string": "p)",
+      "pagenum": 20
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 20
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 20
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 20
+    },
+    {
+      "string": "0.00.20.40.60.81.0C3CC6",
+      "pagenum": 20
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 21
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 21
+    },
+    {
+      "string": "p)",
+      "pagenum": 21
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 21
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 21
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 21
+    },
+    {
+      "string": "0.00.20.40.60.81.0C4F10",
+      "pagenum": 21
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 22
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 22
+    },
+    {
+      "string": "p)",
+      "pagenum": 22
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 22
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 22
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 22
+    },
+    {
+      "string": "0.00.20.40.60.81.0C5F12",
+      "pagenum": 22
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 23
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 23
+    },
+    {
+      "string": "p)",
+      "pagenum": 23
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 23
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 23
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 23
+    },
+    {
+      "string": "0.00.20.40.60.81.0C6F14",
+      "pagenum": 23
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 24
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 24
+    },
+    {
+      "string": "p)",
+      "pagenum": 24
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 24
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 24
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 24
+    },
+    {
+      "string": "0.00.20.40.60.81.0CF3I",
+      "pagenum": 24
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 25
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 25
+    },
+    {
+      "string": "p)",
+      "pagenum": 25
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 25
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 25
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 25
+    },
+    {
+      "string": "0.00.20.40.60.81.0CHLORINE",
+      "pagenum": 25
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 26
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 26
+    },
+    {
+      "string": "p)",
+      "pagenum": 26
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 26
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 26
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 26
+    },
+    {
+      "string": "0.00.20.40.60.81.0CHLOROBENZENE",
+      "pagenum": 26
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 27
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 27
+    },
+    {
+      "string": "p)",
+      "pagenum": 27
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 27
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 27
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 27
+    },
+    {
+      "string": "0.00.20.40.60.81.0CO2",
+      "pagenum": 27
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 28
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 28
+    },
+    {
+      "string": "p)",
+      "pagenum": 28
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 28
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 28
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 28
+    },
+    {
+      "string": "0.00.20.40.60.81.0COS",
+      "pagenum": 28
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 29
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 29
+    },
+    {
+      "string": "p)",
+      "pagenum": 29
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 29
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 29
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 29
+    },
+    {
+      "string": "0.00.20.40.60.81.0CO",
+      "pagenum": 29
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 30
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 30
+    },
+    {
+      "string": "p)",
+      "pagenum": 30
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 30
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 30
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 30
+    },
+    {
+      "string": "0.00.20.40.60.81.0CYCLOBUTENE",
+      "pagenum": 30
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 31
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 31
+    },
+    {
+      "string": "p)",
+      "pagenum": 31
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 31
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 31
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 31
+    },
+    {
+      "string": "0.00.20.40.60.81.0CYCLOHEX",
+      "pagenum": 31
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 32
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 32
+    },
+    {
+      "string": "p)",
+      "pagenum": 32
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 32
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 32
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 32
+    },
+    {
+      "string": "0.00.20.40.60.81.0CYCLOPEN",
+      "pagenum": 32
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 33
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 33
+    },
+    {
+      "string": "p)",
+      "pagenum": 33
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 33
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 33
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 33
+    },
+    {
+      "string": "0.00.20.40.60.81.0CYCLOPRO",
+      "pagenum": 33
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 34
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 34
+    },
+    {
+      "string": "p)",
+      "pagenum": 34
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 34
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 34
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 34
+    },
+    {
+      "string": "0.00.20.40.60.81.0D2O",
+      "pagenum": 34
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 35
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 35
+    },
+    {
+      "string": "p)",
+      "pagenum": 35
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 35
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 35
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 35
+    },
+    {
+      "string": "0.00.20.40.60.81.0D2",
+      "pagenum": 35
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 36
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 36
+    },
+    {
+      "string": "p)",
+      "pagenum": 36
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 36
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 36
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 36
+    },
+    {
+      "string": "0.00.20.40.60.81.0D4",
+      "pagenum": 36
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 37
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 37
+    },
+    {
+      "string": "p)",
+      "pagenum": 37
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 37
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 37
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 37
+    },
+    {
+      "string": "0.00.20.40.60.81.0D5",
+      "pagenum": 37
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 38
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 38
+    },
+    {
+      "string": "p)",
+      "pagenum": 38
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 38
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 38
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 38
+    },
+    {
+      "string": "0.00.20.40.60.81.0D6",
+      "pagenum": 38
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 39
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 39
+    },
+    {
+      "string": "p)",
+      "pagenum": 39
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 39
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 39
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 39
+    },
+    {
+      "string": "0.00.20.40.60.81.0DEA",
+      "pagenum": 39
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 40
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 40
+    },
+    {
+      "string": "p)",
+      "pagenum": 40
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 40
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 40
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 40
+    },
+    {
+      "string": "0.00.20.40.60.81.0DECANE",
+      "pagenum": 40
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 41
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 41
+    },
+    {
+      "string": "p)",
+      "pagenum": 41
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 41
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 41
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 41
+    },
+    {
+      "string": "0.00.20.40.60.81.0DEE",
+      "pagenum": 41
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 42
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 42
+    },
+    {
+      "string": "p)",
+      "pagenum": 42
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 42
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 42
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 42
+    },
+    {
+      "string": "0.00.20.40.60.81.0DMC",
+      "pagenum": 42
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 43
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 43
+    },
+    {
+      "string": "p)",
+      "pagenum": 43
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 43
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 43
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 43
+    },
+    {
+      "string": "0.00.20.40.60.81.0DME",
+      "pagenum": 43
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 44
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 44
+    },
+    {
+      "string": "p)",
+      "pagenum": 44
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 44
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 44
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 44
+    },
+    {
+      "string": "0.00.20.40.60.81.0EBENZENE",
+      "pagenum": 44
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 45
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 45
+    },
+    {
+      "string": "p)",
+      "pagenum": 45
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 45
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 45
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 45
+    },
+    {
+      "string": "0.00.20.40.60.81.0EGLYCOL",
+      "pagenum": 45
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 46
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 46
+    },
+    {
+      "string": "p)",
+      "pagenum": 46
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 46
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 46
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 46
+    },
+    {
+      "string": "0.00.20.40.60.81.0ETHANE",
+      "pagenum": 46
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 47
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 47
+    },
+    {
+      "string": "p)",
+      "pagenum": 47
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 47
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 47
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 47
+    },
+    {
+      "string": "0.00.20.40.60.81.0ETHANOL",
+      "pagenum": 47
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 48
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 48
+    },
+    {
+      "string": "p)",
+      "pagenum": 48
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 48
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 48
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 48
+    },
+    {
+      "string": "0.00.20.40.60.81.0ETHYLENEOXIDE",
+      "pagenum": 48
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 49
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 49
+    },
+    {
+      "string": "p)",
+      "pagenum": 49
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 49
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 49
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 49
+    },
+    {
+      "string": "0.00.20.40.60.81.0ETHYLENE",
+      "pagenum": 49
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 50
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 50
+    },
+    {
+      "string": "p)",
+      "pagenum": 50
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 50
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 50
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 50
+    },
+    {
+      "string": "0.00.20.40.60.81.0FLUORINE",
+      "pagenum": 50
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 51
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 51
+    },
+    {
+      "string": "p)",
+      "pagenum": 51
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 51
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 51
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 51
+    },
+    {
+      "string": "0.00.20.40.60.81.0H2S",
+      "pagenum": 51
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 52
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 52
+    },
+    {
+      "string": "p)",
+      "pagenum": 52
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 52
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 52
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 52
+    },
+    {
+      "string": "0.00.20.40.60.81.0HCL",
+      "pagenum": 52
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 53
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 53
+    },
+    {
+      "string": "p)",
+      "pagenum": 53
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 53
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 53
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 53
+    },
+    {
+      "string": "0.00.20.40.60.81.0HELIUM",
+      "pagenum": 53
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 54
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 54
+    },
+    {
+      "string": "p)",
+      "pagenum": 54
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 54
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 54
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 54
+    },
+    {
+      "string": "0.00.20.40.60.81.0HEPTANE",
+      "pagenum": 54
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 55
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 55
+    },
+    {
+      "string": "p)",
+      "pagenum": 55
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 55
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 55
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 55
+    },
+    {
+      "string": "0.00.20.40.60.81.0HEXANE",
+      "pagenum": 55
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 56
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 56
+    },
+    {
+      "string": "p)",
+      "pagenum": 56
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 56
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 56
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 56
+    },
+    {
+      "string": "0.00.20.40.60.81.0HYDROGEN",
+      "pagenum": 56
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 57
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 57
+    },
+    {
+      "string": "p)",
+      "pagenum": 57
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 57
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 57
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 57
+    },
+    {
+      "string": "0.00.20.40.60.81.0IBUTENE",
+      "pagenum": 57
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 58
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 58
+    },
+    {
+      "string": "p)",
+      "pagenum": 58
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 58
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 58
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 58
+    },
+    {
+      "string": "0.00.20.40.60.81.0IHEXANE",
+      "pagenum": 58
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 59
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 59
+    },
+    {
+      "string": "p)",
+      "pagenum": 59
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 59
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 59
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 59
+    },
+    {
+      "string": "0.00.20.40.60.81.0IOCTANE",
+      "pagenum": 59
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 60
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 60
+    },
+    {
+      "string": "p)",
+      "pagenum": 60
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 60
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 60
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 60
+    },
+    {
+      "string": "0.00.20.40.60.81.0IPENTANE",
+      "pagenum": 60
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 61
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 61
+    },
+    {
+      "string": "p)",
+      "pagenum": 61
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 61
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 61
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 61
+    },
+    {
+      "string": "0.00.20.40.60.81.0ISOBUTAN",
+      "pagenum": 61
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 62
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 62
+    },
+    {
+      "string": "p)",
+      "pagenum": 62
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 62
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 62
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 62
+    },
+    {
+      "string": "0.00.20.40.60.81.0KRYPTON",
+      "pagenum": 62
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 63
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 63
+    },
+    {
+      "string": "p)",
+      "pagenum": 63
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 63
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 63
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 63
+    },
+    {
+      "string": "0.00.20.40.60.81.0MD2M",
+      "pagenum": 63
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 64
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 64
+    },
+    {
+      "string": "p)",
+      "pagenum": 64
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 64
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 64
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 64
+    },
+    {
+      "string": "0.00.20.40.60.81.0MD3M",
+      "pagenum": 64
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 65
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 65
+    },
+    {
+      "string": "p)",
+      "pagenum": 65
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 65
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 65
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 65
+    },
+    {
+      "string": "0.00.20.40.60.81.0MD4M",
+      "pagenum": 65
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 66
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 66
+    },
+    {
+      "string": "p)",
+      "pagenum": 66
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 66
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 66
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 66
+    },
+    {
+      "string": "0.00.20.40.60.81.0MDM",
+      "pagenum": 66
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 67
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 67
+    },
+    {
+      "string": "p)",
+      "pagenum": 67
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 67
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 67
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 67
+    },
+    {
+      "string": "0.00.20.40.60.81.0MEA",
+      "pagenum": 67
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 68
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 68
+    },
+    {
+      "string": "p)",
+      "pagenum": 68
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 68
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 68
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 68
+    },
+    {
+      "string": "0.00.20.40.60.81.0METHANE",
+      "pagenum": 68
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 69
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 69
+    },
+    {
+      "string": "p)",
+      "pagenum": 69
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 69
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 69
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 69
+    },
+    {
+      "string": "0.00.20.40.60.81.0METHANOL",
+      "pagenum": 69
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 70
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 70
+    },
+    {
+      "string": "p)",
+      "pagenum": 70
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 70
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 70
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 70
+    },
+    {
+      "string": "0.00.20.40.60.81.0MLINOLEA",
+      "pagenum": 70
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 71
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 71
+    },
+    {
+      "string": "p)",
+      "pagenum": 71
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 71
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 71
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 71
+    },
+    {
+      "string": "0.00.20.40.60.81.0MLINOLEN",
+      "pagenum": 71
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 72
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 72
+    },
+    {
+      "string": "p)",
+      "pagenum": 72
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 72
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 72
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 72
+    },
+    {
+      "string": "0.00.20.40.60.81.0MM",
+      "pagenum": 72
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 73
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 73
+    },
+    {
+      "string": "p)",
+      "pagenum": 73
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 73
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 73
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 73
+    },
+    {
+      "string": "0.00.20.40.60.81.0MOLEATE",
+      "pagenum": 73
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 74
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 74
+    },
+    {
+      "string": "p)",
+      "pagenum": 74
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 74
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 74
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 74
+    },
+    {
+      "string": "0.00.20.40.60.81.0MPALMITA",
+      "pagenum": 74
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 75
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 75
+    },
+    {
+      "string": "p)",
+      "pagenum": 75
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 75
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 75
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 75
+    },
+    {
+      "string": "0.00.20.40.60.81.0MSTEARAT",
+      "pagenum": 75
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 76
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 76
+    },
+    {
+      "string": "p)",
+      "pagenum": 76
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 76
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 76
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 76
+    },
+    {
+      "string": "0.00.20.40.60.81.0MXYLENE",
+      "pagenum": 76
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 77
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 77
+    },
+    {
+      "string": "p)",
+      "pagenum": 77
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 77
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 77
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 77
+    },
+    {
+      "string": "0.00.20.40.60.81.0N2O",
+      "pagenum": 77
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 78
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 78
+    },
+    {
+      "string": "p)",
+      "pagenum": 78
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 78
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 78
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 78
+    },
+    {
+      "string": "0.00.20.40.60.81.0NEON",
+      "pagenum": 78
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 79
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 79
+    },
+    {
+      "string": "p)",
+      "pagenum": 79
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 79
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 79
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 79
+    },
+    {
+      "string": "0.00.20.40.60.81.0NEOPENTN",
+      "pagenum": 79
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 80
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 80
+    },
+    {
+      "string": "p)",
+      "pagenum": 80
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 80
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 80
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 80
+    },
+    {
+      "string": "0.00.20.40.60.81.0NF3",
+      "pagenum": 80
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 81
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 81
+    },
+    {
+      "string": "p)",
+      "pagenum": 81
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 81
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 81
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 81
+    },
+    {
+      "string": "0.00.20.40.60.81.0NITROGEN",
+      "pagenum": 81
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 82
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 82
+    },
+    {
+      "string": "p)",
+      "pagenum": 82
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 82
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 82
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 82
+    },
+    {
+      "string": "0.00.20.40.60.81.0NONANE",
+      "pagenum": 82
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 83
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 83
+    },
+    {
+      "string": "p)",
+      "pagenum": 83
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 83
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 83
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 83
+    },
+    {
+      "string": "0.00.20.40.60.81.0NOVEC649",
+      "pagenum": 83
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 84
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 84
+    },
+    {
+      "string": "p)",
+      "pagenum": 84
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 84
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 84
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 84
+    },
+    {
+      "string": "0.00.20.40.60.81.0OCTANE",
+      "pagenum": 84
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 85
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 85
+    },
+    {
+      "string": "p)",
+      "pagenum": 85
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 85
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 85
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 85
+    },
+    {
+      "string": "0.00.20.40.60.81.0ORTHOHYD",
+      "pagenum": 85
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 86
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 86
+    },
+    {
+      "string": "p)",
+      "pagenum": 86
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 86
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 86
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 86
+    },
+    {
+      "string": "0.00.20.40.60.81.0OXYGEN",
+      "pagenum": 86
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 87
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 87
+    },
+    {
+      "string": "p)",
+      "pagenum": 87
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 87
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 87
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 87
+    },
+    {
+      "string": "0.00.20.40.60.81.0OXYLENE",
+      "pagenum": 87
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 88
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 88
+    },
+    {
+      "string": "p)",
+      "pagenum": 88
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 88
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 88
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 88
+    },
+    {
+      "string": "0.00.20.40.60.81.0PARAHYD",
+      "pagenum": 88
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 89
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 89
+    },
+    {
+      "string": "p)",
+      "pagenum": 89
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 89
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 89
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 89
+    },
+    {
+      "string": "0.00.20.40.60.81.0PENTANE",
+      "pagenum": 89
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 90
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 90
+    },
+    {
+      "string": "p)",
+      "pagenum": 90
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 90
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 90
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 90
+    },
+    {
+      "string": "0.00.20.40.60.81.0PROPADIENE",
+      "pagenum": 90
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 91
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 91
+    },
+    {
+      "string": "p)",
+      "pagenum": 91
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 91
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 91
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 91
+    },
+    {
+      "string": "0.00.20.40.60.81.0PROPANE",
+      "pagenum": 91
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 92
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 92
+    },
+    {
+      "string": "p)",
+      "pagenum": 92
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 92
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 92
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 92
+    },
+    {
+      "string": "0.00.20.40.60.81.0PROPYLENEOXIDE",
+      "pagenum": 92
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 93
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 93
+    },
+    {
+      "string": "p)",
+      "pagenum": 93
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 93
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 93
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 93
+    },
+    {
+      "string": "0.00.20.40.60.81.0PROPYLEN",
+      "pagenum": 93
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 94
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 94
+    },
+    {
+      "string": "p)",
+      "pagenum": 94
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 94
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 94
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 94
+    },
+    {
+      "string": "0.00.20.40.60.81.0PROPYNE",
+      "pagenum": 94
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 95
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 95
+    },
+    {
+      "string": "p)",
+      "pagenum": 95
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 95
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 95
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 95
+    },
+    {
+      "string": "0.00.20.40.60.81.0PXYLENE",
+      "pagenum": 95
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 96
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 96
+    },
+    {
+      "string": "p)",
+      "pagenum": 96
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 96
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 96
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 96
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1123",
+      "pagenum": 96
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 97
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 97
+    },
+    {
+      "string": "p)",
+      "pagenum": 97
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 97
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 97
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 97
+    },
+    {
+      "string": "0.00.20.40.60.81.0R113",
+      "pagenum": 97
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 98
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 98
+    },
+    {
+      "string": "p)",
+      "pagenum": 98
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 98
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 98
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 98
+    },
+    {
+      "string": "0.00.20.40.60.81.0R114",
+      "pagenum": 98
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 99
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 99
+    },
+    {
+      "string": "p)",
+      "pagenum": 99
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 99
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 99
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 99
+    },
+    {
+      "string": "0.00.20.40.60.81.0R115",
+      "pagenum": 99
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 100
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 100
+    },
+    {
+      "string": "p)",
+      "pagenum": 100
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 100
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 100
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 100
+    },
+    {
+      "string": "0.00.20.40.60.81.0R116",
+      "pagenum": 100
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 101
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 101
+    },
+    {
+      "string": "p)",
+      "pagenum": 101
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 101
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 101
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 101
+    },
+    {
+      "string": "0.00.20.40.60.81.0R11",
+      "pagenum": 101
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 102
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 102
+    },
+    {
+      "string": "p)",
+      "pagenum": 102
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 102
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 102
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 102
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1216",
+      "pagenum": 102
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 103
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 103
+    },
+    {
+      "string": "p)",
+      "pagenum": 103
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 103
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 103
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 103
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1224YDZ",
+      "pagenum": 103
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 104
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 104
+    },
+    {
+      "string": "p)",
+      "pagenum": 104
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 104
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 104
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 104
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1233ZDE",
+      "pagenum": 104
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 105
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 105
+    },
+    {
+      "string": "p)",
+      "pagenum": 105
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 105
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 105
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 105
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1234YF",
+      "pagenum": 105
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 106
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 106
+    },
+    {
+      "string": "p)",
+      "pagenum": 106
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 106
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 106
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 106
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1234ZEE",
+      "pagenum": 106
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 107
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 107
+    },
+    {
+      "string": "p)",
+      "pagenum": 107
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 107
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 107
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 107
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1234ZEZ",
+      "pagenum": 107
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 108
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 108
+    },
+    {
+      "string": "p)",
+      "pagenum": 108
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 108
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 108
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 108
+    },
+    {
+      "string": "0.00.20.40.60.81.0R123",
+      "pagenum": 108
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 109
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 109
+    },
+    {
+      "string": "p)",
+      "pagenum": 109
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 109
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 109
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 109
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1243ZF",
+      "pagenum": 109
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 110
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 110
+    },
+    {
+      "string": "p)",
+      "pagenum": 110
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 110
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 110
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 110
+    },
+    {
+      "string": "0.00.20.40.60.81.0R124",
+      "pagenum": 110
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 111
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 111
+    },
+    {
+      "string": "p)",
+      "pagenum": 111
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 111
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 111
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 111
+    },
+    {
+      "string": "0.00.20.40.60.81.0R125",
+      "pagenum": 111
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 112
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 112
+    },
+    {
+      "string": "p)",
+      "pagenum": 112
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 112
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 112
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 112
+    },
+    {
+      "string": "0.00.20.40.60.81.0R12",
+      "pagenum": 112
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 113
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 113
+    },
+    {
+      "string": "p)",
+      "pagenum": 113
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 113
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 113
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 113
+    },
+    {
+      "string": "0.00.20.40.60.81.0R1336MZZZ",
+      "pagenum": 113
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 114
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 114
+    },
+    {
+      "string": "p)",
+      "pagenum": 114
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 114
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 114
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 114
+    },
+    {
+      "string": "0.00.20.40.60.81.0R134A",
+      "pagenum": 114
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 115
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 115
+    },
+    {
+      "string": "p)",
+      "pagenum": 115
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 115
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 115
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 115
+    },
+    {
+      "string": "0.00.20.40.60.81.0R13",
+      "pagenum": 115
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 116
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 116
+    },
+    {
+      "string": "p)",
+      "pagenum": 116
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 116
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 116
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 116
+    },
+    {
+      "string": "0.00.20.40.60.81.0R141B",
+      "pagenum": 116
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 117
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 117
+    },
+    {
+      "string": "p)",
+      "pagenum": 117
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 117
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 117
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 117
+    },
+    {
+      "string": "0.00.20.40.60.81.0R142B",
+      "pagenum": 117
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 118
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 118
+    },
+    {
+      "string": "p)",
+      "pagenum": 118
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 118
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 118
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 118
+    },
+    {
+      "string": "0.00.20.40.60.81.0R143A",
+      "pagenum": 118
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 119
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 119
+    },
+    {
+      "string": "p)",
+      "pagenum": 119
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 119
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 119
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 119
+    },
+    {
+      "string": "0.00.20.40.60.81.0R14",
+      "pagenum": 119
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 120
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 120
+    },
+    {
+      "string": "p)",
+      "pagenum": 120
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 120
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 120
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 120
+    },
+    {
+      "string": "0.00.20.40.60.81.0R150",
+      "pagenum": 120
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 121
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 121
+    },
+    {
+      "string": "p)",
+      "pagenum": 121
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 121
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 121
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 121
+    },
+    {
+      "string": "0.00.20.40.60.81.0R152A",
+      "pagenum": 121
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 122
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 122
+    },
+    {
+      "string": "p)",
+      "pagenum": 122
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 122
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 122
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 122
+    },
+    {
+      "string": "0.00.20.40.60.81.0R161",
+      "pagenum": 122
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 123
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 123
+    },
+    {
+      "string": "p)",
+      "pagenum": 123
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 123
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 123
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 123
+    },
+    {
+      "string": "0.00.20.40.60.81.0R218",
+      "pagenum": 123
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 124
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 124
+    },
+    {
+      "string": "p)",
+      "pagenum": 124
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 124
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 124
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 124
+    },
+    {
+      "string": "0.00.20.40.60.81.0R21",
+      "pagenum": 124
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 125
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 125
+    },
+    {
+      "string": "p)",
+      "pagenum": 125
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 125
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 125
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 125
+    },
+    {
+      "string": "0.00.20.40.60.81.0R227EA",
+      "pagenum": 125
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 126
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 126
+    },
+    {
+      "string": "p)",
+      "pagenum": 126
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 126
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 126
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 126
+    },
+    {
+      "string": "0.00.20.40.60.81.0R22",
+      "pagenum": 126
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 127
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 127
+    },
+    {
+      "string": "p)",
+      "pagenum": 127
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 127
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 127
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 127
+    },
+    {
+      "string": "0.00.20.40.60.81.0R236EA",
+      "pagenum": 127
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 128
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 128
+    },
+    {
+      "string": "p)",
+      "pagenum": 128
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 128
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 128
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 128
+    },
+    {
+      "string": "0.00.20.40.60.81.0R236FA",
+      "pagenum": 128
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 129
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 129
+    },
+    {
+      "string": "p)",
+      "pagenum": 129
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 129
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 129
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 129
+    },
+    {
+      "string": "0.00.20.40.60.81.0R23",
+      "pagenum": 129
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 130
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 130
+    },
+    {
+      "string": "p)",
+      "pagenum": 130
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 130
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 130
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 130
+    },
+    {
+      "string": "0.00.20.40.60.81.0R245CA",
+      "pagenum": 130
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 131
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 131
+    },
+    {
+      "string": "p)",
+      "pagenum": 131
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 131
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 131
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 131
+    },
+    {
+      "string": "0.00.20.40.60.81.0R245FA",
+      "pagenum": 131
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 132
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 132
+    },
+    {
+      "string": "p)",
+      "pagenum": 132
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 132
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 132
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 132
+    },
+    {
+      "string": "0.00.20.40.60.81.0R32",
+      "pagenum": 132
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 133
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 133
+    },
+    {
+      "string": "p)",
+      "pagenum": 133
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 133
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 133
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 133
+    },
+    {
+      "string": "0.00.20.40.60.81.0R365MFC",
+      "pagenum": 133
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 134
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 134
+    },
+    {
+      "string": "p)",
+      "pagenum": 134
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 134
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 134
+    },
+    {
+      "string": "0.100.150.200.250.300.350.400.450.50 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 134
+    },
+    {
+      "string": "0.00.20.40.60.81.0R40",
+      "pagenum": 134
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 135
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 135
+    },
+    {
+      "string": "p)",
+      "pagenum": 135
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 135
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 135
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 135
+    },
+    {
+      "string": "0.00.20.40.60.81.0R41",
+      "pagenum": 135
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 136
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 136
+    },
+    {
+      "string": "p)",
+      "pagenum": 136
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 136
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 136
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 136
+    },
+    {
+      "string": "0.00.20.40.60.81.0RC318",
+      "pagenum": 136
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 137
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 137
+    },
+    {
+      "string": "p)",
+      "pagenum": 137
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 137
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 137
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 137
+    },
+    {
+      "string": "0.00.20.40.60.81.0RE143A",
+      "pagenum": 137
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 138
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 138
+    },
+    {
+      "string": "p)",
+      "pagenum": 138
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 138
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 138
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 138
+    },
+    {
+      "string": "0.00.20.40.60.81.0RE245CB2",
+      "pagenum": 138
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 139
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 139
+    },
+    {
+      "string": "p)",
+      "pagenum": 139
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 139
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 139
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 139
+    },
+    {
+      "string": "0.00.20.40.60.81.0RE245FA2",
+      "pagenum": 139
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 140
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 140
+    },
+    {
+      "string": "p)",
+      "pagenum": 140
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 140
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 140
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 140
+    },
+    {
+      "string": "0.00.20.40.60.81.0RE347MCC",
+      "pagenum": 140
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 141
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 141
+    },
+    {
+      "string": "p)",
+      "pagenum": 141
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 141
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 141
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 141
+    },
+    {
+      "string": "0.00.20.40.60.81.0SF6",
+      "pagenum": 141
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 142
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 142
+    },
+    {
+      "string": "p)",
+      "pagenum": 142
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 142
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 142
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 142
+    },
+    {
+      "string": "0.00.20.40.60.81.0SO2",
+      "pagenum": 142
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 143
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 143
+    },
+    {
+      "string": "p)",
+      "pagenum": 143
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 143
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 143
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 143
+    },
+    {
+      "string": "0.00.20.40.60.81.0T2BUTENE",
+      "pagenum": 143
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 144
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 144
+    },
+    {
+      "string": "p)",
+      "pagenum": 144
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 144
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 144
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 144
+    },
+    {
+      "string": "0.00.20.40.60.81.0TOLUENE",
+      "pagenum": 144
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 145
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 145
+    },
+    {
+      "string": "p)",
+      "pagenum": 145
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 145
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 145
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 145
+    },
+    {
+      "string": "0.00.20.40.60.81.0VINYLCHLORIDE",
+      "pagenum": 145
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 146
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 146
+    },
+    {
+      "string": "p)",
+      "pagenum": 146
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 146
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 146
+    },
+    {
+      "string": "0.1 0.2 0.3 0.4 0.5 0.6 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 146
+    },
+    {
+      "string": "0.00.20.40.60.81.0WATER",
+      "pagenum": 146
+    },
+    {
+      "string": "101|Troundtrip Torig| / K",
+      "pagenum": 147
+    },
+    {
+      "string": "SA/invBrent(4",
+      "pagenum": 147
+    },
+    {
+      "string": "p)",
+      "pagenum": 147
+    },
+    {
+      "string": "SA/Brent",
+      "pagenum": 147
+    },
+    {
+      "string": "REFPROP",
+      "pagenum": 147
+    },
+    {
+      "string": "0.10 0.15 0.20 0.25 0.30 0.35 0.40 0.45 0.0 0.2 0.4 0.6 0.8 1.0",
+      "pagenum": 147
+    },
+    {
+      "string": "0.00.20.40.60.81.0XENON",
+      "pagenum": 147
     }
   ]
 }
