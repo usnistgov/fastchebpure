@@ -20,7 +20,7 @@ import scipy.optimize
 
 import teqp
 
-def plot_criticals_FLD(*, FLD):
+def plot_criticals_FLD(*, FLD, Thetamin=1e-6, Thetamax=-1e-6, deltamin=0.9, deltamax=1.1):
     model = teqp.build_multifluid_model([FLD], 'teqp_REFPROP10')
     j = json.load(open(f'output/check/{FLD}_check.json'))
     df = pandas.DataFrame(j['data'])
@@ -46,13 +46,15 @@ def plot_criticals_FLD(*, FLD):
             if abs(dpdrho) > 1e-9: continue
             if abs(d2pdrho2) > 1e-9: continue
             print(Tcrittrue, rhocrittrue, dpdrho, d2pdrho2)
-            plt.plot(rhocrittrue, Tcrittrue, 'o')
-    plt.xlim(*rhobox)
-    plt.ylim(Tcrit*.9, Tcrit*1.1)
-    plt.plot(rhomolarcrit, Tcrit, '*', color='yellow', ms=12)
-    plt.show()
+            plt.plot(rhocrittrue, Tcrittrue, 'bs')
+    plt.xlim(deltamin*rhocrittrue, deltamax*rhocrittrue)
+    plt.ylim((1-Thetamin)*Tcrittrue, (1-Thetamax)*Tcrittrue)
+    plt.gca().set(xlabel=r'$\rho$ / mol/m$^3$', ylabel='$T$ / K')
 
-# plot_criticals_FLD(FLD='PROPANE')
+    plt.plot(rhomolarcrit, Tcrit, '*', color='yellow', ms=12)
+    plt.tight_layout(pad=0.2)
+    plt.savefig(f'{FLD}_near_crit.pdf')
+    plt.close()
 
 def numprofile_stats():
     N = []
@@ -1105,10 +1107,14 @@ if __name__ == '__main__':
 
     FLDs = sorted([os.path.split(FLD)[1].split('.')[0] for FLD in glob.glob(root+'/FLUIDS/*.FLD')])
     ref = get_all_references(FLDs)
-    bibs = dois2bibs(list(set(ref.dois+ref.newdois)))
-    with open('FLD_bibs.bib', 'w', encoding='utf-8') as fp:
-        fp.write(bibs)
-    cleanupbibtex('FLD_bibs.bib')
+    # bibs = dois2bibs(list(set(ref.dois+ref.newdois)))
+    # with open('FLD_bibs.bib', 'w', encoding='utf-8') as fp:
+    #     fp.write(bibs)
+    # cleanupbibtex('FLD_bibs.bib')
+
+    plot_criticals_FLD(FLD='MXYLENE', Thetamin=5e-8, Thetamax=-1e-8, deltamin=0.98, deltamax=1.02)
+    plot_criticals_FLD(FLD='CHLORINE', Thetamin=1e-6, Thetamax=-3e-7)
+    plot_criticals_FLD(FLD='DMC', Thetamin=1e-8, Thetamax=-1e-9, deltamin=0.99, deltamax=1.01)
 
     # test_inverse_functions()
     # plot_panc_devs()
