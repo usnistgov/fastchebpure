@@ -362,6 +362,28 @@ def test_inverse_functions():
                 plt.plot(xx, yy)
                 plt.savefig(f'nonmono_p_{FLD}_{ce.xmin()}.pdf')
                 plt.close()
+
+        # Check that all T(p) calcs work with superancillary
+        xmin = cep.get_exps()[0].xmin()
+        xmax = cep.get_exps()[-1].xmax()
+        xx = np.linspace(xmin, xmax, 100000)
+        yy = [cep(x_) for x_ in xx]
+        func_calls = []
+        for i, y in enumerate(yy):
+            resid = lambda T: (cep(T)-y)/y
+            try:
+                TBrent, info = scipy.optimize.brentq(resid, xmin, xmax, full_output=True)
+                if abs(TBrent/xx[i]-1) > 1e-10:
+                    raise ValueError(y)
+                else:
+                    func_calls.append(info.function_calls)
+            except BaseException as be:
+                print(cep(xmin) - y)
+                print(cep(xmax) - y)
+                print('[BRENTP]:', FLD, y, be)
+        print(FLD, np.mean(func_calls), 'function calls needed on average')
+
+        continue
         
         for ce in ceV.get_exps():
             TT = np.linspace(ce.xmin(), ce.xmax(), 10000)
