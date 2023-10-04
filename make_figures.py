@@ -97,24 +97,67 @@ def plot_water_nonmono(RP):
     df['errV'] = np.abs(df["rho''(SA) / mol/m^3"]/df["rho''(mp) / mol/m^3"]-1)
     df['Theta'] = (Tcrit-df['T / K'])/Tcrit
     plt.plot(df['T / K'], df["rho'(mp) / mol/m^3"], 'o')
-    i = np.argmax(df["rho'(mp) / mol/m^3"])
-    print(df['T / K'].iloc[i]-273.15, '°C at density maximum')
-    x = np.linspace(273.15, 285, 10000)
+    
+    Tstationary = []
+    for ce in ceL.get_exps():
+        Tstationary += ce.deriv(1).real_roots(True)
+    Trhomax = Tstationary[0]
+    print(Trhomax-273.15, '°C at density maximum')
+    x = np.linspace(273.17, 285, 10000)
     y = [ceL(x_) for x_ in x]
     plt.plot(x, y)
-    plt.xlim(273.15, 285)
-    plt.ylim(55470, 55510)
+    plt.xlim(273.15, 282)
+    plt.ylim(55495, 55506)
+    # plt.axvline(Trhomax)
 
-    cepinverses = cep.make_inverse(12, 273.15, ceV.get_exps()[-1].xmax(), 3, 1e-12, 12, True)
-    for T in np.linspace(273.15, 283):
-        # Tback = cepinverses(cep(T))
+    n = 4.0
+    def get_T(rt4rho):
+        if rt4rho <= rhomin**(1/n): return Tmin
+        if rt4rho >= rhomax**(1/n): return Tmax
+        rho = rt4rho**n
+        def objective(T):
+            return (ceL(T)-rho)/rho
+        fL = objective(Tmin)
+        fR = objective(Tmax)
+        if abs(fL) < 1e-10:
+            return Tmin
+        if abs(fR) < 1e-10:
+            return Tmax
+        return scipy.optimize.brentq(objective, Tmin, Tmax)
+    def callback(i, exps):
+        # print(i)
+        pass
 
-        Tback2 = cep.solve_for_x(cep(T)+0.0001)
-        print(Tback2)
-        print(T, Tback2/T-1)
-
-    # for ce in cepinverses.get_exps():
-    #     print(ce.xmin(), ce.xmax())
+    Tmin = 273.18
+    Tmax = Trhomax
+    rhomin = ceL(Tmin)
+    rhomax = ceL(Tmax)
+    invrt4rhoBrent = ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_T, rhomin**(1/n), rhomax**(1/n), 3, 1e-13, 20))
+    for rho in np.linspace(rhomin, rhomax, 10000):
+        plt.plot(invrt4rhoBrent(rho**0.25), rho, 'c.', mfc=None, zorder=-100)
+    
+    n = 4.0
+    def get_T(rt4rho):
+        if rt4rho <= rhomin**(1/n): return Tmax
+        if rt4rho >= rhomax**(1/n): return Tmin
+        rho = rt4rho**n
+        def objective(T):
+            return (ceL(T)-rho)/rho
+        fL = objective(Tmin)
+        fR = objective(Tmax)
+        if abs(fL) < 1e-10:
+            return Tmin
+        if abs(fR) < 1e-10:
+            return Tmax
+        return scipy.optimize.brentq(objective, Tmin, Tmax)
+    
+    Tmin = Trhomax
+    Tmax = 285
+    rhomin = ceL(Tmax)
+    rhomax = ceL(Tmin)
+    invrt4rhoBrent = ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_T, rhomin**(1/n), rhomax**(1/n), 3, 1e-13, 20))
+    for rho in np.linspace(rhomin, rhomax, 10000):
+        plt.plot(invrt4rhoBrent(rho**0.25), rho, 'c.', mfc=None, zorder=-100)
 
     RP.SETFLUIDSdll(FLD)
     for rho in np.linspace(55470, np.max(df["rho'(mp) / mol/m^3"]), 200):
@@ -122,7 +165,20 @@ def plot_water_nonmono(RP):
         if r.ierr != 0:
             print(r.herr)
         plt.plot(r.Output[0], rho, 'kX', mfc=None)
-    plt.gca().set(xlabel='$T$ / K', ylabel=r"$\rho'$ / mol/m$^3$")
+
+    # Idea from: https://stackoverflow.com/a/10517481
+    ax1 = plt.gca()
+    ax2 = ax1.twiny()
+    new_tick_locations = np.array([1, 2, 3, 4, 5, 6])+273.15 # temperatures in K
+    def tick_function(X):
+        V = X-273.15
+        return ["%.0f" % z for z in V]
+    ax2.set_xlim(ax1.get_xlim())
+    ax2.set_xticks(new_tick_locations)
+    ax2.set_xticklabels(tick_function(new_tick_locations))
+    ax2.set_xlabel(r"$T$ / °C")
+
+    ax1.set(xlabel='$T$ / K', ylabel=r"$\rho'$ / mol/m$^3$")
     plt.tight_layout(pad=0.2)
     plt.savefig('water_nonmono.pdf')
     plt.close()
@@ -441,6 +497,8 @@ def whyrt4():
     ax1.plot(df['T / K'], p)
     ax2.plot(df['T / K'], np.log10(p))
     ax3.plot(df['T / K'], np.array(p)**0.25)
+    print('min,max of p: ', [f(np.array(p)) for f in (min, max)])
+    print('min,max of p^{1/4}: ', [f(np.array(p)**0.25) for f in (min, max)])
     ax3.set_xlabel('$T$ / K')
     ax1.set_ylabel(r'$p$ / Pa')
     ax2.set_ylabel(r'$\log_{10}(p~/~{\rm Pa})$')
@@ -479,7 +537,7 @@ def plot_invpanc_devs():
             pmin = cep(Tmin)
             pmax = cep(Tmax)
 
-            n = 1.0
+            n = 4.0
             def get_T(rt4p):
                 if rt4p <= pmin**(1/n): return Tmin
                 if rt4p >= pmax**(1/n): return Tmax
@@ -494,7 +552,8 @@ def plot_invpanc_devs():
                     return Tmax
                 return scipy.optimize.brentq(objective, Tmin, Tmax)
             def callback(i, exps):
-                print(i)
+                # print(i)
+                pass
             invrt4pBrent = ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_T, pmin**(1/n), pmax**(1/n), 3, 1e-13, 20, callback))
                     
             # def add_Troundtrip(row):
@@ -899,8 +958,8 @@ if __name__ == '__main__':
     # test_inverse_functions()
     # plot_panc_devs()
     # whyrt4()
-    plot_invpanc_devs()
-    # plot_water_nonmono(RP)
+    # plot_invpanc_devs()
+    plot_water_nonmono(RP)
     # plot_ancillary("PROPANE")
     # plot_worst()
     # plot_pmu_devs()
