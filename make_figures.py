@@ -1096,7 +1096,9 @@ def make_fluid_info_table(ref):
     df = pandas.DataFrame(o)
     with pandas.option_context("max_colwidth", 1000):
         with open('EOS_info.tex.in', 'w') as fp:
-            fp.write(df.to_latex(index=False, caption=caption, longtable=True, label='tab:EOSlist', escape=False))
+            contents = df.to_latex(index=False, caption=caption, longtable=True, label='tab:EOSlist', escape=False)
+            contents = contents.replace('begin{longtable}', 'begin{longtable*}').replace('end{longtable}', 'end{longtable*}')
+            fp.write(contents)
             
     o = []
     for FLD in ref.FLDs:

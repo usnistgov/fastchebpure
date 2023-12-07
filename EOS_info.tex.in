@@ -1,4 +1,4 @@
-\begin{longtable}{lll}
+\begin{longtable*}{lll}
 \caption{     Equations of state considered in this work. \listsumdelim All EOS coefficients      are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for      books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients      are assumed to be the same as in REFPROP 10.0.     }
 \label{tab:EOSlist}\\
 \toprule
@@ -164,4 +164,4 @@
    VINYLCHLORIDE &                                               Chloroethylene &  Ref. \citenum{10.1007/s10765-021-02961-3}(n) \\
            WATER &                                                        Water &              Ref. \citenum{10.1063/1.1461829} \\
            XENON &                                                        Xenon &              Ref. \citenum{10.1021/je050186n} \\
-\end{longtable}
+\end{longtable*}
