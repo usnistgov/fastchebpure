@@ -1,11 +1,11 @@
 \begin{longtable}{lrlll}
-\caption{     Check values. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. All EOS coefficients      are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for      books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients      are assumed to be the same as in REFPROP 10.0.     }
+\caption{     Check values. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer.      }
 \label{tab:checkvalues}\\
 \toprule
     REFPROP name &  $T$ / K &  $\rho'$ / mol/m$^3$ & $\rho''$ / mol/m$^3$ &             $p$ / Pa \\
 \midrule
 \endfirsthead
-\caption[]{     Check values. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. All EOS coefficients      are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for      books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients      are assumed to be the same as in REFPROP 10.0.     } \\
+\caption[]{     Check values. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer.      } \\
 \toprule
     REFPROP name &  $T$ / K &  $\rho'$ / mol/m$^3$ & $\rho''$ / mol/m$^3$ &             $p$ / Pa \\
 \midrule

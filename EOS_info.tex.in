@@ -1,11 +1,11 @@
 \begin{longtable}{lll}
-\caption{     Equations of state considered in this work with check values. \listsumdelim All EOS coefficients      are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for      books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients      are assumed to be the same as in REFPROP 10.0.     }
+\caption{     Equations of state considered in this work. \listsumdelim All EOS coefficients      are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for      books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients      are assumed to be the same as in REFPROP 10.0.     }
 \label{tab:EOSlist}\\
 \toprule
     REFPROP name &                                                         name &                                           ref \\
 \midrule
 \endfirsthead
-\caption[]{     Equations of state considered in this work with check values. \listsumdelim All EOS coefficients      are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for      books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients      are assumed to be the same as in REFPROP 10.0.     } \\
+\caption[]{     Equations of state considered in this work. \listsumdelim All EOS coefficients      are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for      books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients      are assumed to be the same as in REFPROP 10.0.     } \\
 \toprule
     REFPROP name &                                                         name &                                           ref \\
 \midrule

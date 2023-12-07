@@ -1087,7 +1087,7 @@ def make_fluid_info_table(ref):
             'ref': refstring
         })
     caption = r"""
-    Equations of state considered in this work with check values. \listsumdelim All EOS coefficients 
+    Equations of state considered in this work. \listsumdelim All EOS coefficients 
     are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for 
     books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients 
     are assumed to be the same as in REFPROP 10.0.
@@ -1121,10 +1121,7 @@ def make_fluid_info_table(ref):
         {k:v for k,v in zip(check_val_keys, check_vals)}
         )
     caption = r"""
-    Check values. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. All EOS coefficients 
-    are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for 
-    books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients 
-    are assumed to be the same as in REFPROP 10.0.
+    Check values. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. 
     """
     caption = ' '.join(caption.split('\n'))
     df = pandas.DataFrame(o)
