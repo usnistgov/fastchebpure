@@ -244,7 +244,7 @@ def plot_water_nonmono(RP):
     ax2.set_xlim(ax1.get_xlim())
     ax2.set_xticks(new_tick_locations)
     ax2.set_xticklabels(tick_function(new_tick_locations))
-    ax2.set_xlabel(r"$T$ / °C")
+    ax2.set_xlabel(r"$t$ / °C")
 
     ax1.set(xlabel='$T$ / K', ylabel=r"$\rho'$ / mol/m$^3$")
     plt.tight_layout(pad=0.2)
