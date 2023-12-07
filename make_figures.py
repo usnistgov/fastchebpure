@@ -20,6 +20,9 @@ import scipy.optimize
 
 import teqp
 
+# Set to True to plot only a few, for testing purposes
+DEV = False 
+
 def plot_criticals_FLD(*, FLD, Thetamin=1e-6, Thetamax=-1e-6, deltamin=0.9, deltamax=1.1):
     model = teqp.build_multifluid_model([FLD], 'teqp_REFPROP10')
     j = json.load(open(f'output/check/{FLD}_check.json'))
@@ -234,7 +237,7 @@ def plot_water_nonmono(RP):
     # Idea from: https://stackoverflow.com/a/10517481
     ax1 = plt.gca()
     ax2 = ax1.twiny()
-    new_tick_locations = np.array([1, 2, 3, 4, 5, 6])+273.15 # temperatures in K
+    new_tick_locations = np.array([1, 2, 3, 4, 5, 6, 7, 8])+273.15 # temperatures in K
     def tick_function(X):
         V = X-273.15
         return ["%.0f" % z for z in V]
@@ -296,6 +299,9 @@ def plot_worst():
 
                 # REFPROP calculations
                 FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
+                
+                if DEV and FLD not in ['R152A', 'PROPANE']: continue # for testing
+                
                 RP.SETFLUIDSdll(FLD)
                 def add_REFPROP(row):
                     r = RP.REFPROPdll('','TQ','DLIQ;DVAP',RP.MOLAR_BASE_SI,0,0,row['T / K'],0,[1.0])
@@ -323,11 +329,9 @@ def plot_worst():
                 ax1.set_xscale('log')
                 ax1.set_yscale('log')
                 ax2.set_yscale('log')
-                ax1.set_ylim(1e-16, 100)
-                ax2.set_ylim(1e-16, 100)
+                
                 ax1.legend(loc='best')
                 
-                plt.suptitle(FLD)
                 for ax in ax1, ax2:
                     ax.axhline(1e-12, dashes=[2,2], color='k', lw=0.5)
                     ax.axvline(1e-6, dashes=[2,2], color='k', lw=0.5)
@@ -336,9 +340,10 @@ def plot_worst():
                 ax1.set_ylabel(r"$|\rho'_{\Upsilon}/\rho'_{\rm ep}-1|$")
                 ax2.set_ylabel(r"$|\rho''_{\Upsilon}/\rho''_{\rm ep}-1|$")
                 ax2.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
+                
 
-                if FLD in ['R152A', 'NF3']:
-                    df.to_csv(f'{FLD}_calcs.csv', index=False)
+                # if FLD in ['R152A', 'NF3']:
+                #     df.to_csv(f'{FLD}_calcs.csv', index=False)
 
                 plt.tight_layout(pad=0.2)
                 xticks = ax.get_xticks()
@@ -346,7 +351,16 @@ def plot_worst():
                 for ax in ax1, ax2:
                     yticks = ax.get_yticks()
                     ax.set_yticks(yticks[0:len(yticks):2])
-
+                
+                ax1.set_ylim(1e-16, 1e-1)
+                ax2.set_ylim(1e-16, 1e-1)
+                ax1.set_xlim(right=1)
+                for ax in ax1, ax2:
+                    ax.text(1e-6/1.3, ax.get_ylim()[-1]/50, r'$10^{-6}$', ha='right', va='top')
+                    ax.text(ax.get_xlim()[-1]/2, 1e-12, r'$10^{-12}$', ha='right', va='bottom')
+                
+                ax2.text(ax2.get_xlim()[-1], ax2.get_ylim()[-1], FLD, ha='right', va='top', bbox=dict(color='lightgrey', boxstyle='round,pad=0'))
+                
                 if good:
                     goodPDF.savefig(fig)
                 else:
@@ -368,6 +382,8 @@ def plot_pmu_devs():
             df['Theta'] = (Tcrit-df['T / K'])/Tcrit
 
             FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
+            if DEV and FLD not in ['PROPANE','R13']: continue 
+            
             model = teqp.build_multifluid_model([f'teqp_REFPROP10/dev/fluids/{FLD}.json'], teqp.get_datapath())
             z = np.array([1.0])
             R = model.get_R(z)
@@ -422,7 +438,7 @@ def plot_pmu_devs():
             ax1.set_ylim(1e-17, 100)
             ax2.set_ylim(1e-17, 100)
             
-            plt.suptitle(FLD)
+            # plt.suptitle(FLD)
             for ax in ax1, ax2:
                 ax.axhline(1e-12, dashes=[2,2], color='k', lw=0.5)
                 ax.axvline(1e-6, dashes=[2,2], color='k', lw=0.5)
@@ -431,14 +447,20 @@ def plot_pmu_devs():
             ax1.set_ylabel(r"$r_p$")
             ax2.set_ylabel(r"$r_\mu$")
             ax2.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
-
-            plt.tight_layout(pad=0.2)
+            
             xticks = ax.get_xticks()
             ax.set_xticks(xticks[0:len(xticks):2])
             for ax in ax1, ax2:
                 yticks = ax.get_yticks()
                 ax.set_yticks(yticks[0:len(yticks):2])
+            ax2.text(ax2.get_xlim()[-1], ax2.get_ylim()[-1], FLD, ha='right', va='top', bbox=dict(color='lightgrey', boxstyle='round,pad=0'))
 
+            plt.tight_layout(pad=0.2)
+            
+            for ax in ax1, ax2:
+                ax.text(1e-6/1.3, ax.get_ylim()[-1]/50, r'$10^{-6}$', ha='right', va='top')
+                ax.text(1e-4, 1e-12, r'$10^{-12}$', ha='right', va='bottom')
+                    
             PDF.savefig(fig)
             plt.close()
 
@@ -590,6 +612,7 @@ def plot_invpanc_devs():
             FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
             # if FLD != 'PROPANE': continue
             print('inv(p) for ' + FLD)
+            if DEV and FLD not in ['R152A', 'PROPANE']: continue # for testing
 
             j = json.load(open(f))
             Tcrit = j['meta']['Tcrittrue / K']
@@ -677,7 +700,7 @@ def plot_invpanc_devs():
             axes[0].set_xscale('log')
             axes[1].set_xscale('linear')
 
-            plt.suptitle(FLD)
+            # plt.suptitle(FLD)
             axes[0].set_ylabel(r'$|T_{\rm roundtrip} - T_{\rm orig}|$ / K')
             axes[0].set_ylim(1e-17, 100)
             axes[0].set_yscale('log')
@@ -689,7 +712,9 @@ def plot_invpanc_devs():
             xticks = axes[0].get_xticks()
             axes[0].set_xticks([x for x in xticks[0:len(xticks):2] if x <= Thetasplit])
 
-            plt.tight_layout(pad=0.2,rect=[0.0, 0.07, 1, 0.92])
+            plt.tight_layout(pad=0.2,rect=[0.0, 0.07, 1, 0.99])
+            ax2 = axes[1]
+            ax2.text(ax2.get_xlim()[-1], ax2.get_ylim()[-1], FLD, ha='right', va='top', bbox=dict(color='lightgrey', boxstyle='round,pad=0'))
 
             # add a big axis, hide frame
             fig.add_subplot(111, frameon=False)
@@ -706,6 +731,8 @@ def plot_panc_devs():
             
             FLD = os.path.split(f)[1].split('.')[0].replace('_check',  '')
             # if FLD != 'WATER': continue 
+            # if FLD not in ['PROPANE','R13']: continue
+            if DEV and FLD not in ['R152A', 'PROPANE']: continue # for testing
             ceL, ceV = get_expansions(FLD, and_p=False)
 
             fig, axes = plt.subplots(1,2,sharey=True,figsize=(6,3), width_ratios=[2,2])
@@ -790,7 +817,7 @@ def plot_panc_devs():
             ax2.set_xlim(Thetasplit, ax2.get_xlim()[1])
             
             # plt.suptitle(FLD)            
-            ax1.set_ylabel(r"$(p/R)/(p/R)_{\rm ep}-1$")
+            ax1.set_ylabel(r"$|(p/R)/(p/R)_{\rm ep}-1|$")
             # ax1.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
 
             for ax in [ax1, ax2]:
@@ -803,14 +830,16 @@ def plot_panc_devs():
             xticks = [t for t in ax1.get_xticks() if t <= Thetasplit-1e-6]
             ax1.set_xticks(xticks[0:len(xticks)])
 
-            plt.tight_layout(pad=0.2,rect=[0.0,0.07,1,0.92])
+            plt.tight_layout(pad=0.2,rect=[0.0,0.07,1,0.99])
+            ax2.text(ax2.get_xlim()[-1], ax2.get_ylim()[-1], FLD, ha='right', va='top', bbox=dict(color='lightgrey', boxstyle='round,pad=0'))
+            # fig.text(1, 0.5, rotation=90, s=FLD,ha='right', va='center')
 
             # add a big axis, hide frame
             fig.add_subplot(111, frameon=False)
             # hide tick and tick label of the big axis
             plt.tick_params(labelcolor='none', which='both', top=False, bottom=False, left=False, right=False)
             plt.xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
-            plt.title(FLD)
+            # plt.title(FLD)
             
             PDF.savefig(fig)
             plt.close()
@@ -1049,14 +1078,17 @@ def make_fluid_info_table(ref):
 
         ceL, ceV, cep = get_expansions(FLD=FLD, and_p=True)
         Tcheck = np.floor(cep.get_exps()[-1].xmax()*0.9)
-        check_vals = f'{ceL(Tcheck):20.12e},{ceV(Tcheck):20.12e},{cep(Tcheck):20.12e}'
+        check_vals = f'{ceL(Tcheck):20.12e}',f'{ceV(Tcheck):20.12e}',f'{cep(Tcheck):20.12e}'
+        check_val_keys = "$\rho'$ / mol/m$^3$","$\rho''$ / mol/m$^3$","$p$ / Pa"
         
         o.append({
             'REFPROP name': FLD,
-            'authors': refstring,
+            'reference': refstring,
             '$T$ / K': Tcheck,
-            "$\rho'$ / mol/m$^3$, $\rho''$ / mol/m$^3$, $p$ / Pa": check_vals
-        })
+        } 
+        | 
+        {k:v for k,v in zip(check_val_keys, check_vals)}
+        )
     caption = r"""
     Equations of state considered in this work with check values calculated from the superancillary functions.\listsumdelim The 
     temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. All EOS coefficients 
@@ -1107,24 +1139,27 @@ if __name__ == '__main__':
 
     FLDs = sorted([os.path.split(FLD)[1].split('.')[0] for FLD in glob.glob(root+'/FLUIDS/*.FLD')])
     ref = get_all_references(FLDs)
+    
+    # Disabled: needed to manually fix article numbers, bugs in crossref
     # bibs = dois2bibs(list(set(ref.dois+ref.newdois)))
     # with open('FLD_bibs.bib', 'w', encoding='utf-8') as fp:
     #     fp.write(bibs)
     # cleanupbibtex('FLD_bibs.bib')
 
-    plot_criticals_FLD(FLD='MXYLENE', Thetamin=5e-8, Thetamax=-1e-8, deltamin=0.98, deltamax=1.02)
-    plot_criticals_FLD(FLD='CHLORINE', Thetamin=1e-6, Thetamax=-3e-7)
-    plot_criticals_FLD(FLD='DMC', Thetamin=1e-8, Thetamax=-1e-9, deltamin=0.99, deltamax=1.01)
+    # plot_criticals_FLD(FLD='MXYLENE', Thetamin=5e-8, Thetamax=-1e-8, deltamin=0.98, deltamax=1.02)
+    # plot_criticals_FLD(FLD='CHLORINE', Thetamin=1e-6, Thetamax=-3e-7)
+    # plot_criticals_FLD(FLD='DMC', Thetamin=1e-8, Thetamax=-1e-9, deltamin=0.99, deltamax=1.01)
 
     # test_inverse_functions()
-    # plot_panc_devs()
-    # whyrt4()
-    # plot_invpanc_devs()
-    # plot_water_nonmono(RP)
+    plot_panc_devs()
+    plot_invpanc_devs()
+    plot_water_nonmono(RP)
     # plot_ancillary("PROPANE")
-    # plot_worst()
-    # plot_pmu_devs()
+    plot_worst()
+    plot_pmu_devs()
     # plot_widths('WATER')
+    
+    # whyrt4()
     
     if not os.path.exists('FLD_page_cache.json'):
         cache = map_pages(['pmu_devs.pdf','devs.pdf','gooddevs.pdf','invpanc_devs.pdf'])

@@ -1,4 +1,4 @@
-# Code to accompany "Superancillary Equations for the Multiparameter EOS in REFPROP 10.0"
+# Code to accompany "Superancillary Equations for the Multiparameter Equations of State in REFPROP 10.0"
 
 ## Requirements
 
