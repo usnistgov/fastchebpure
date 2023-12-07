@@ -1077,25 +1077,15 @@ def make_fluid_info_table(ref):
             refstring = r'Ref. \citenum{' + key + '}' 
             if key in ref.newdois:
                 refstring += '(n)'
-
-        ceL, ceV, cep = get_expansions(FLD=FLD, and_p=True)
-        Tcheck = np.floor(cep.get_exps()[-1].xmax()*0.9)
-        check_vals = f'{ceL(Tcheck):20.12e}',f'{ceV(Tcheck):20.12e}',f'{cep(Tcheck):20.12e}'
-        check_val_keys = "$\rho'$ / mol/m$^3$","$\rho''$ / mol/m$^3$","$p$ / Pa"
         suggested = dfsugg.loc[FLD, 'SuggestedName']
         
         o.append({
             'REFPROP name': FLD,
             'name': suggested,
-            'ref': refstring,
-            '$T$ / K': Tcheck,
-        } 
-        | 
-        {k:v for k,v in zip(check_val_keys, check_vals)}
-        )
+            'ref': refstring
+        })
     caption = r"""
-    Equations of state considered in this work with check values calculated from the superancillary functions.\listsumdelim The 
-    temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. All EOS coefficients 
+    Equations of state considered in this work with check values. \listsumdelim All EOS coefficients 
     are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for 
     books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients 
     are assumed to be the same as in REFPROP 10.0.
@@ -1105,6 +1095,40 @@ def make_fluid_info_table(ref):
     with pandas.option_context("max_colwidth", 1000):
         with open('EOS_info.tex.in', 'w') as fp:
             fp.write(df.to_latex(index=False, caption=caption, longtable=True, label='tab:EOSlist', escape=False))
+            
+    o = []
+    for FLD in ref.FLDs:
+        key = ref.keymap.get(FLD, None)
+        if key is None:
+            refstring = ''
+        else:
+            refstring = r'Ref. \citenum{' + key + '}' 
+            if key in ref.newdois:
+                refstring += '(n)'
+
+        ceL, ceV, cep = get_expansions(FLD=FLD, and_p=True)
+        Tcheck = np.floor(cep.get_exps()[-1].xmax()*0.9)
+        check_vals = f'{ceL(Tcheck):20.12e}',f'{ceV(Tcheck):20.12e}',f'{cep(Tcheck):20.12e}'
+        check_val_keys = "$\rho'$ / mol/m$^3$","$\rho''$ / mol/m$^3$","$p$ / Pa"
+        
+        o.append({
+            'REFPROP name': FLD,
+            '$T$ / K': Tcheck,
+        } 
+        | 
+        {k:v for k,v in zip(check_val_keys, check_vals)}
+        )
+    caption = r"""
+    Check values. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. All EOS coefficients 
+    are taken from REFPROP 10.0. The reference information was looked up by digital object identifier(doi) when available, or looked up from CoolProp \cite{Bell-IECR-2014} for 
+    books without a doi. EOS published in the literature after the release of REFPROP 10.0 are indicated by (n), and the coefficients 
+    are assumed to be the same as in REFPROP 10.0.
+    """
+    caption = ' '.join(caption.split('\n'))
+    df = pandas.DataFrame(o)
+    with pandas.option_context("max_colwidth", 1000):
+        with open('check_values.tex.in', 'w') as fp:
+            fp.write(df.to_latex(index=False, caption=caption, longtable=True, label='tab:checkvalues', escape=False))
 
 def cleanupbibtex(BibTeXfile):
     f = open(BibTeXfile, encoding='utf-8').read()
