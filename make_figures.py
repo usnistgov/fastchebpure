@@ -453,6 +453,8 @@ def plot_pmu_devs():
             for ax in ax1, ax2:
                 yticks = ax.get_yticks()
                 ax.set_yticks(yticks[0:len(yticks):2])
+            ax1.set_ylim(1e-16, 1)
+            ax2.set_ylim(1e-16, 1e-8)
             ax2.text(ax2.get_xlim()[-1], ax2.get_ylim()[-1], FLD, ha='right', va='top', bbox=dict(color='lightgrey', boxstyle='round,pad=0'))
 
             plt.tight_layout(pad=0.2)
