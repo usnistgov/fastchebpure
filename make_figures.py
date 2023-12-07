@@ -1066,6 +1066,8 @@ def check_all_conversions(RP, FLUIDS):
                 print(pR_REFPROP, pR_teqp, o.Output[0]/o.Output[1])
 
 def make_fluid_info_table(ref):
+    dfsugg = pandas.read_csv('SuggestedNames.csv', index_col='FLD')
+    
     o = []
     for FLD in ref.FLDs:
         key = ref.keymap.get(FLD, None)
@@ -1080,10 +1082,12 @@ def make_fluid_info_table(ref):
         Tcheck = np.floor(cep.get_exps()[-1].xmax()*0.9)
         check_vals = f'{ceL(Tcheck):20.12e}',f'{ceV(Tcheck):20.12e}',f'{cep(Tcheck):20.12e}'
         check_val_keys = "$\rho'$ / mol/m$^3$","$\rho''$ / mol/m$^3$","$p$ / Pa"
+        suggested = dfsugg.loc[FLD, 'SuggestedName']
         
         o.append({
             'REFPROP name': FLD,
-            'reference': refstring,
+            'name': suggested,
+            'ref': refstring,
             '$T$ / K': Tcheck,
         } 
         | 
