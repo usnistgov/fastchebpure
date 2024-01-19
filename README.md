@@ -15,6 +15,10 @@
 
 After running, the output should be in the ``output`` folder. If files already exist in that destination they will not be over-written.
 
+## Figures
+
+Once the expansions have been generated, the figures can be created by running the script ``make_figures.py``
+
 Notes:
 
 * The code expects that the working directory when running is a subfolder of this code in order to properly find the fluid files
