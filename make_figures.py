@@ -1169,25 +1169,25 @@ if __name__ == '__main__':
     FLDs = sorted([os.path.split(FLD)[1].split('.')[0] for FLD in glob.glob(root+'/FLUIDS/*.FLD')])
     ref = get_all_references(FLDs)
     
-    # Disabled: needed to manually fix article numbers, bugs in crossref
+    ### Disabled: needed to manually fix article numbers, bugs in crossref
     # bibs = dois2bibs(list(set(ref.dois+ref.newdois)))
     # with open('FLD_bibs.bib', 'w', encoding='utf-8') as fp:
     #     fp.write(bibs)
     # cleanupbibtex('FLD_bibs.bib')
 
-    # plot_criticals_FLD(FLD='MXYLENE', Thetamin=5e-8, Thetamax=-1e-8, deltamin=0.98, deltamax=1.02)
-    # plot_criticals_FLD(FLD='CHLORINE', Thetamin=1e-6, Thetamax=-3e-7)
-    # plot_criticals_FLD(FLD='DMC', Thetamin=1e-8, Thetamax=-1e-9, deltamin=0.99, deltamax=1.01)
-
-    # test_inverse_functions()
+    # Figures for the paper
+    plot_criticals_FLD(FLD='MXYLENE', Thetamin=5e-8, Thetamax=-1e-8, deltamin=0.98, deltamax=1.02)
+    plot_criticals_FLD(FLD='CHLORINE', Thetamin=1e-6, Thetamax=-3e-7)
+    plot_criticals_FLD(FLD='DMC', Thetamin=1e-8, Thetamax=-1e-9, deltamin=0.99, deltamax=1.01)
     plot_panc_devs()
     plot_invpanc_devs()
     plot_water_nonmono(RP)
-    # plot_ancillary("PROPANE")
+    plot_ancillary("PROPANE")
     plot_worst()
     plot_pmu_devs()
-    # plot_widths('WATER')
+    plot_widths('WATER')
     
+    # test_inverse_functions()
     # whyrt4()
     
     if not os.path.exists('FLD_page_cache.json'):
