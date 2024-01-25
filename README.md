@@ -10,7 +10,7 @@
 1. Open a shell in the root of the code
 2. ``mkdir build`` then ``cd build``
 3. ``cmake .. -DCMAKE_BUILD_TYPE=Release``
-4. ``cmake --build . --target fastcheb --config Release``
+4. ``cmake --build . --target fitcheb --config Release``
 5. On windows with visual studio, ``Release\fitcheb.exe``, or on linux, ``./fitcheb``
 
 After running, the output should be in the ``output`` folder. If files already exist in that destination they will not be over-written.
