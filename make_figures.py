@@ -746,44 +746,57 @@ def plot_panc_devs():
             df['Theta'] = (Tcrit-df['T / K'])/Tcrit
             Tmin = ceL.get_exps()[0].xmin()
 
+            # Calculations in extended precision
             df['(p/R)_ep'] = df['p(mp) / Pa']/REOS
 
             model = teqp.build_multifluid_model([f'teqp_REFPROP10/dev/fluids/{FLD}.json'], teqp.get_datapath())
             z = np.array([1.0])
             R = model.get_R(z)
             print(R, FLD, REOS)
+            if (abs(R/REOS-1) > 1e-12):
+                raise ValueError('R does not match perfectly')
             print('{0:20.16f} {1:20.16f}'.format(ceL.get_exps()[0].xmin(), ceL.get_exps()[-1].xmax()))
             print('{0:20.16f} {1:20.16f}'.format(Tmin+1e-10, Tcrit-1e-10))
             print('{0:20.16f} {1:20.16f}'.format(df['T / K'].iloc[0], df['T / K'].iloc[-1]))
+            
+            # def get_p(row, rhokey):
+            #     T = row['T / K']
+            #     rho = row[rhokey]
+            #     return rho*T*(1+model.get_Ar01(T, rho, z))
+            # df['pLSA/R'] = df.apply(get_p, axis=1, rhokey="rho'(SA) / mol/m^3")
+            # df['pVSA / Pa'] = df.apply(get_p, axis=1, rhokey="rho''(SA) / mol/m^3")            
 
-            def build_panc_from_rhoanc():
+            def build_panc_from_rhoanc(W):
+                """ W: weighting parameter of the pressures"""
                 def get_p(T):
                     rhoL = ceL(T)
                     rhoV = ceV(T)
                     pL = rhoL*R*T*(1+model.get_Ar01(T, rhoL, z))
                     pV = rhoV*R*T*(1+model.get_Ar01(T, rhoV, z))
-                    return (pL + pV)/2
+                    if W == 0:
+                        return pL 
+                    elif W == 1:
+                        return pV 
+                    else:
+                        return W*pV + (1-W)*pL
                 return ChebTools.ChebyshevCollection(ChebTools.dyadic_splitting(12, get_p, Tmin, Tcrit, 3, 1e-12, 12))
-            panc = build_panc_from_rhoanc()
-            # invp = panc.make_inverse(12, Tmin, Tcrit, 3, 1e-12, 12, True)
-            # print(invp(4e6))
+            panc = build_panc_from_rhoanc(W=0.5)
+            pancL = build_panc_from_rhoanc(W=0)
+            pancV = build_panc_from_rhoanc(W=1)
 
-            def get_p(row, rhokey):
-                T = row['T / K']
-                rho = row[rhokey]
-                return rho*T*(1+model.get_Ar01(T, rho, z))
-            df['pLSA/R'] = df.apply(get_p, axis=1, rhokey="rho'(SA) / mol/m^3")
-            # df['pVSA / Pa'] = df.apply(get_p, axis=1, rhokey="rho''(SA) / mol/m^3")
-
-            def evalp(row):
+            def evalp(row, anc):
                 try: 
-                    return panc(row['T / K']) 
+                    return anc(row['T / K']) 
                 except BaseException as be:
                     print(be) 
                     return np.nan
-            df['panc(T)/R'] = df.apply(evalp, axis=1)/R
+            df['panc(T)/R'] = df.apply(evalp, axis=1, anc=panc)/R
+            df['pancL(T)/R'] = df.apply(evalp, axis=1, anc=pancL)/R
+            df['pancV(T)/R'] = df.apply(evalp, axis=1, anc=pancV)/R
             for ax in axes:
-                ax.plot(df['Theta'], np.abs(df['panc(T)/R']/df['(p/R)_ep']-1), color='b', label=r'$p_{\rm SA}(\rho_{\rm SA}(T))$', dashes=[2,2])
+                # ax.plot(df['Theta'], np.abs(df['panc(T)/R']/df['(p/R)_ep']-1), color='b', label=r"$[\frac{1}{2}p(\rho'_{\rm SA}(T))+\frac{1}{2}p(\rho''_{\rm SA}(T))]_{\rm SA}$", dashes=[2,2])
+                ax.plot(df['Theta'], np.abs(df['pancL(T)/R']/df['(p/R)_ep']-1), color='c', label=r"$p_{\rm SA}(\rho'_{\rm SA}(T))$", dashes=[2,2])
+                ax.plot(df['Theta'], np.abs(df['pancV(T)/R']/df['(p/R)_ep']-1), color='orange', label=r"$p_{\rm SA}(\rho''_{\rm SA}(T))$", dashes=[2,2])
                 ax.plot(df['Theta'], np.abs((df['p(SA) / Pa']/REOS)/df['(p/R)_ep']-1), color='green', label=r'$p_{\rm SA}(T)$')
 
             RP.SETFLUIDSdll(FLD)
@@ -819,7 +832,7 @@ def plot_panc_devs():
             ax2.set_xlim(Thetasplit, ax2.get_xlim()[1])
             
             # plt.suptitle(FLD)            
-            ax1.set_ylabel(r"$|(p/R)/(p/R)_{\rm ep}-1|$")
+            ax1.set_ylabel(r"$|p_{\rm calc}/p_{\rm ep}-1|$")
             # ax1.set_xlabel(r'$\Theta\equiv (T_{\rm crit,num}-T)/T_{\rm crit,num}$')
 
             for ax in [ax1, ax2]:
@@ -1123,7 +1136,7 @@ def make_fluid_info_table(ref):
         {k:v for k,v in zip(check_val_keys, check_vals)}
         )
     caption = r"""
-    Check values. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. 
+    Check values calculated from the superancillary functions. The temperature considered is nominally $0.9T_{\rm crit}$, rounded down to the next integer. 
     """
     caption = ' '.join(caption.split('\n'))
     df = pandas.DataFrame(o)
@@ -1147,7 +1160,11 @@ def cleanupbibtex(BibTeXfile):
 
     # Protect title capitalization with outer { }
     import re
-    f = re.sub(r'title = \{(.+)\}', r'title = {{\1}}', f)
+    f = re.sub(r'title\s+= \{(.+)\}', r'title = {{\1}}', f)
+    
+    # Fix typos
+    for old, new in {'625K': '625 K', '150MPa': '150 MPa', 'trans-1':'$trans$-1', 'Cv,': 'C$_v$,'}.items():
+        f = f.replace(old, new)
 
     with open(BibTeXfile, 'w', encoding='utf-8') as fp:
         fp.write(f)
@@ -1169,25 +1186,25 @@ if __name__ == '__main__':
     FLDs = sorted([os.path.split(FLD)[1].split('.')[0] for FLD in glob.glob(root+'/FLUIDS/*.FLD')])
     ref = get_all_references(FLDs)
     
-    ### Disabled: needed to manually fix article numbers, bugs in crossref
+    # Disabled: needed to manually fix article numbers, bugs in crossref
     # bibs = dois2bibs(list(set(ref.dois+ref.newdois)))
     # with open('FLD_bibs.bib', 'w', encoding='utf-8') as fp:
     #     fp.write(bibs)
     # cleanupbibtex('FLD_bibs.bib')
 
-    # Figures for the paper
-    plot_criticals_FLD(FLD='MXYLENE', Thetamin=5e-8, Thetamax=-1e-8, deltamin=0.98, deltamax=1.02)
-    plot_criticals_FLD(FLD='CHLORINE', Thetamin=1e-6, Thetamax=-3e-7)
-    plot_criticals_FLD(FLD='DMC', Thetamin=1e-8, Thetamax=-1e-9, deltamin=0.99, deltamax=1.01)
+    # plot_criticals_FLD(FLD='MXYLENE', Thetamin=5e-8, Thetamax=-1e-8, deltamin=0.98, deltamax=1.02)
+    # plot_criticals_FLD(FLD='CHLORINE', Thetamin=1e-6, Thetamax=-3e-7)
+    # plot_criticals_FLD(FLD='DMC', Thetamin=1e-8, Thetamax=-1e-9, deltamin=0.99, deltamax=1.01)
+
+    # test_inverse_functions()
     plot_panc_devs()
     plot_invpanc_devs()
     plot_water_nonmono(RP)
-    plot_ancillary("PROPANE")
+    # plot_ancillary("PROPANE")
     plot_worst()
     plot_pmu_devs()
-    plot_widths('WATER')
+    # plot_widths('WATER')
     
-    # test_inverse_functions()
     # whyrt4()
     
     if not os.path.exists('FLD_page_cache.json'):
