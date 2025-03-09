@@ -8,15 +8,15 @@
 #include <boost/asio/post.hpp>
 
 // Paths are defined in the actual code
-extern const std::string teqp_datapath;
-extern const std::string output_prefix;
-extern const std::string check_destination;
+extern const std::filesystem::path teqp_datapath;
+extern const std::filesystem::path output_prefix;
+extern const std::filesystem::path check_destination;
 
 const int FASTCHEB_PROCESSORS = 6;
 
 // Prototype for builder and checker
-void build_superancillaries(const std::string &, const std::string &);
-void check_superancillaries(const std::string &, const std::string &, const std::string&);
+void build_superancillaries(const std::string &, const std::filesystem::path &);
+void check_superancillaries(const std::string &, const std::filesystem::path&, const std::filesystem::path&);
 
 int main(){
     
@@ -29,11 +29,15 @@ int main(){
         std::cout << "output checkfile destination doesn't exist: " << check_destination << std::endl;
         return EXIT_FAILURE;
     }
+    if (!std::filesystem::exists(teqp_datapath)) {
+        std::cout << "teqp_datapath doesn't exist: " << teqp_datapath << std::endl;
+        return EXIT_FAILURE;
+    }
 
     // Launch the pool with desired number of threads.
     boost::asio::thread_pool pool(FASTCHEB_PROCESSORS);
     
-    for (auto const& dir_entry : std::filesystem::directory_iterator{ teqp_datapath + "/dev/fluids" }){
+    for (auto const& dir_entry : std::filesystem::directory_iterator{ teqp_datapath / "dev" / "fluids" }){
         if (dir_entry.is_regular_file()) {
             auto fluid = dir_entry.path().stem().string();
             
@@ -43,8 +47,8 @@ int main(){
             if (fluid == ".DS_Store"){ continue; }
             
             auto job = [fluid]() {
-                auto outfile_path = output_prefix + fluid + "_exps.json";
-                auto checkfile_path = output_prefix + "/check/" + fluid + "_check.json";
+                auto outfile_path = output_prefix / (fluid + "_exps.json");
+                auto checkfile_path = check_destination / (fluid + "_check.json");
                 
                 try {
                     if (!std::filesystem::exists(outfile_path)) {

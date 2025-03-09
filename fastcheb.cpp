@@ -26,9 +26,9 @@ using my_float_mp = boost::multiprecision::number<boost::multiprecision::cpp_bin
 
 #include "ChebTools/ChebTools.h"
 
-extern const std::string teqp_datapath = "../teqp_REFPROP10";
-extern const std::string output_prefix = "../output/";
-extern const std::string check_destination = output_prefix + "/check/";
+extern const std::filesystem::path teqp_datapath{ "../teqp_REFPROP10" };
+extern const std::filesystem::path output_prefix{"../output/"};
+extern const std::filesystem::path check_destination{"../outputcheck/"};
 
 using namespace ChebTools;
 
@@ -258,9 +258,9 @@ auto aggressively_solve_pure_critical(const Model& model, double Tcrit0, double 
  
  \note It is thread-safe, so can be run in parallel
  */
-void build_superancillaries(const std::string &fluid, const std::string &ofpath){
-    const std::string fluid_json_path = teqp_datapath + "/dev/fluids/" + fluid + ".json";
-    auto model = teqp::build_multifluid_model({ fluid_json_path }, teqp_datapath);
+void build_superancillaries(const std::string &fluid, const std::filesystem::path &ofpath){
+    const std::filesystem::path fluid_json_path = teqp_datapath / "dev" / "fluids" / (fluid + ".json");
+    auto model = teqp::build_multifluid_model({ fluid_json_path.string()}, teqp_datapath.string());
 
     // Build conventional ancillaries
     auto build_ancillaries = [](const auto& c, double Tctrue, double rhoctrue) {
@@ -298,7 +298,7 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
     struct DensitiesType { const my_float_mp rhoL, rhoV, pL, pV, DeltarhocritL, DeltarhocritV; };
     std::unordered_map<double, DensitiesType, boost::hash<double>> densitydb;
 
-    auto j = teqp::load_a_JSON_file(fluid_json_path);
+    auto j = teqp::load_a_JSON_file(fluid_json_path.string());
     double Tcrit = j.at("STATES").at("critical").at("T"); // Critical temperature, according to the EOS developers
     double rhomolarcrit = j.at("STATES").at("critical").at("rhomolar"); // Critical density, according to the EOS developers
     double Treducing = j.at("EOS")[0].at("STATES").at("reducing").at("T"); // Reducing temperature
@@ -616,12 +616,12 @@ void build_superancillaries(const std::string &fluid, const std::string &ofpath)
  \param input_file_path The path to the superancillaries to be loaded from, in JSON format
  \param outfile The path to the file to be written by this file
  */
-void check_superancillaries(const std::string& fluid, const std::string& input_file_path, const std::string& outfile) {
-    const std::string fluid_json_path = teqp_datapath + "/dev/fluids/" + fluid + ".json";
-    auto model = teqp::build_multifluid_model({ fluid_json_path }, teqp_datapath);
+void check_superancillaries(const std::string& fluid, const std::filesystem::path& input_file_path, const std::filesystem::path& outfile) {
+    const std::filesystem::path fluid_json_path = teqp_datapath / "dev" / "fluids" / (fluid + ".json");
+    auto model = teqp::build_multifluid_model({ fluid_json_path.string()}, teqp_datapath.string());
 
-    auto get_collection = [](const std::string& expansion_file){
-        const nlohmann::json jfile = teqp::load_a_JSON_file(expansion_file);
+    auto get_collection = [](const std::filesystem::path & expansion_file) {
+        const nlohmann::json jfile = teqp::load_a_JSON_file(expansion_file.string());
         auto parser_ = [&](const auto& key){
             std::vector<ChebTools::ChebyshevExpansion> o;
             for (const auto& ex : jfile.at(key)) {
@@ -638,7 +638,7 @@ void check_superancillaries(const std::string& fluid, const std::string& input_f
     // Load expansions from file for liquid and vapor
     auto [ccL, ccV, ccp] = get_collection(input_file_path);
     auto& ccL_ = ccL, ccV_ = ccV;
-    auto meta = teqp::load_a_JSON_file(input_file_path)["meta"];
+    auto meta = teqp::load_a_JSON_file(input_file_path.string())["meta"];
     double Tcrittrue = meta.at("Tcrittrue / K");
     double R = meta.at("gas_constant / J/mol/K");
     double rhocrittrue = meta.at("rhocrittrue / mol/m^3");
